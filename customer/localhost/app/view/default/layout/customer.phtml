@@ -1,0 +1,34 @@
+<? $p = $this->pParametros(); ?>
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <?php include('core/include.tags.core.php');?>
+
+      <?php require_once('core/include.scripts.core.php');?>
+      
+      <link rel="stylesheet" href="<?=Configuracoes::CheckFileCustomer('css/Devem.css', true)?>">
+      <script src="<?=Configuracoes::CheckFileCustomer('js/Devem.class.js', true)?>"></script>
+    
+  </head>
+  
+  <body>
+
+    <div class="content">
+      <!-- @HEADER -->
+      <?php include('core/include.header.core.php');?>
+    <!-- @END HEADER -->
+      <div class="sub-content">       
+
+        <p>
+          HELLO BICHO!<br /><span>Customer</span>
+        </p>
+
+      </div>
+      <!-- @FOOTER -->
+      <?php include('core/include.footer.core.php');?>
+    <!-- @END FOOTER -->
+    </div>
+  
+  </body>
+</html>

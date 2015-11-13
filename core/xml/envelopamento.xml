@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<agendamento>
+
+  <envelope>
+    <nome>[NOME_CONTROLE]</nome>
+    <dt_inicio>20150101</dt_inicio>
+    <dt_fim>20150201</dt_fim>
+    <hr_inicio>00:00:00</hr_inicio>
+    <hr_fim>23:59:59</hr_fim>
+    <pasta_customer>[PASTA_CUSTOMER]</pasta_customer>
+  </envelope>
+
+</agendamento>

@@ -1,0 +1,255 @@
+<? $p = $this->pParametros(); ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Devem Admin - Dvillagra</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Devem Admin - Dvillagra" />
+
+    <meta name="author" content="Dvillagra" />
+
+    <link rel="shortcut icon" href="<?=Url::baseAdmin('view/img/favicon.ico')?>">
+
+    <?php include('admin/include/scriptMenu.admin.php');?>
+
+  </head>
+
+  <body>
+
+    <!-- @HEADER -->
+      <?php include('admin/include/header.admin.php');?>
+    <!-- @END HEADER -->
+
+        <!-- Sub Nav End -->
+        <div class="sub-nav hidden-sm hidden-xs">
+          <ul>
+            <li><a href="" class="heading">Calendar</a></li>
+          </ul>
+          <div class="custom-search hidden-sm hidden-xs">
+            <input type="text" class="search-query" placeholder="Search here ...">
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+        <!-- Sub Nav End -->
+
+        <!-- Dashboard Wrapper Start -->
+        <div class="dashboard-wrapper">
+          
+          <!-- Left Sidebar Start -->
+          <div class="left-sidebar">
+            
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Calendar
+                    </div>
+                    <span class="tools">
+                      <i class="fa fa-cogs"></i>
+                    </span>
+                  </div>
+                  <div class="widget-body">
+                    <div id='calendar'></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->           
+
+          </div>
+          <!-- Left Sidebar End -->
+
+          <!-- Right Sidebar Start -->
+          <div class="right-sidebar">
+            <div class="wrapper">
+              <button class="btn btn-lg btn-block btn-info" type="button">
+                Block level button
+              </button>
+              <button class="btn btn-lg btn-block btn-warning" type="button">
+                Block level button
+              </button>
+              <button class="btn btn-lg btn-block btn-success" type="button">
+                Block level button
+              </button>
+            </div>
+            
+            <hr class="hr-stylish-1">
+            
+            <div class="wrapper">
+              <button class="btn btn-lg btn-info btn-block" type="button">
+                Large button
+              </button>
+              <button class="btn btn-warning btn-block" type="button">
+                Default button
+              </button>
+              <button class="btn btn-sm btn-success btn-block" type="button">
+                Small button
+              </button>
+              <button class="btn btn-xs btn-primary btn-block" type="button">
+                Mini button
+              </button>
+              <a href="#" class="btn btn-xs btn-default disabled btn-block">
+                Primary link
+              </a>
+              <a href="#" class="btn btn-xs disabled btn-block">
+                Link
+              </a>
+            </div>
+            
+            <hr class="hr-stylish-1">
+            
+            <div class="wrapper">
+              <a class="btn btn-sm btn-success" href="">Link</a>
+              <button class="btn btn-sm btn-success" type="submit">Button</button>
+              <input class="btn btn-sm btn-success" type="button" value="Input">
+            </div>
+            
+            <hr class="hr-stylish-1">
+            
+            <div class="wrapper">
+              <div class="hero-unit no-margin" style="padding: 10px;">
+                <h1 class="text-info">Head1</h1>
+                <h2 class="text-warning">Heading 2</h2>
+                <h3 class="text-danger">Heading 3</h3>
+                <h4 class="text-success">Heading 4</h4>
+                <h5 class="text-info">Heading 5</h5>
+                <h6>Heading 6</h6>
+              </div>
+            </div>
+          </div>
+          <!-- Right Sidebar End -->
+
+        </div>
+        <!-- Dashboard Wrapper End -->
+
+        <!-- @FOOTER -->
+        <?php include('admin/include/footer.admin.php');?>
+      <!-- @END FOOTER -->
+
+      </div>
+    </div>
+    <!-- Main Container end -->
+
+    <script src="<?=Url::baseAdmin('view/js/jquery.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/bootstrap.min.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/jquery.scrollUp.js')?>"></script>
+
+    <!-- Calendar JS -->
+    <script src="<?=Url::baseAdmin('view/js/fullcalendar/jquery-ui.custom.min.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/fullcalendar/fullcalendar.min.js')?>"></script>
+
+    <!-- Custom JS -->
+    <script src="<?=Url::baseAdmin('view/js/menu.js')?>"></script>
+    
+    <script type="text/javascript">
+      //ScrollUp
+      $(function () {
+        $.scrollUp({
+          scrollName: 'scrollUp', // Element ID
+          topDistance: '300', // Distance from top before showing element (px)
+          topSpeed: 300, // Speed back to top (ms)
+          animation: 'fade', // Fade, slide, none
+          animationInSpeed: 400, // Animation in speed (ms)
+          animationOutSpeed: 400, // Animation out speed (ms)
+          scrollText: 'Top', // Text for element
+          activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+      });
+
+      //Tooltip
+      $('a').tooltip('hide');
+
+      //Popover
+      $('.popover-pop').popover('hide');
+
+      //Dropdown
+      $('.dropdown-toggle').dropdown();
+
+      $(document).ready(function() {
+      
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+        
+        var calendar = $('#calendar').fullCalendar({
+          header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+          },
+          selectable: true,
+          selectHelper: true,
+          select: function(start, end, allDay) {
+            var title = prompt('Event Title:');
+            if (title) {
+              calendar.fullCalendar('renderEvent',
+                {
+                  title: title,
+                  start: start,
+                  end: end,
+                  allDay: allDay
+                },
+                true // make the event "stick"
+              );
+            }
+            calendar.fullCalendar('unselect');
+          },
+          editable: true,
+          events: [
+            {
+              title: 'All Day Event',
+              start: new Date(y, m, 1)
+            },
+            {
+              title: 'Long Event',
+              start: new Date(y, m, d-5),
+              end: new Date(y, m, d-2)
+            },
+            {
+              id: 999,
+              title: 'Repeating Event',
+              start: new Date(y, m, d-3, 16, 0),
+              allDay: false
+            },
+            {
+              id: 999,
+              title: 'Repeating Event',
+              start: new Date(y, m, d+4, 16, 0),
+              allDay: false
+            },
+            {
+              title: 'Meeting',
+              start: new Date(y, m, d, 10, 30),
+              allDay: false
+            },
+            {
+              title: 'Lunch',
+              start: new Date(y, m, d, 12, 0),
+              end: new Date(y, m, d, 14, 0),
+              allDay: false
+            },
+            {
+              title: 'Birthday Party',
+              start: new Date(y, m, d+1, 19, 0),
+              end: new Date(y, m, d+1, 22, 30),
+              allDay: false
+            },
+            {
+              title: 'Click for Google',
+              start: new Date(y, m, 28),
+              end: new Date(y, m, 29),
+              url: 'http://google.com/'
+            }
+          ]
+        });
+        
+      });
+
+    </script>
+
+  </body>
+</html>

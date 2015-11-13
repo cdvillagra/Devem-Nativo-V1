@@ -1,0 +1,600 @@
+<? $p = $this->pParametros(); ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Devem Admin - Dvillagra</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Devem Admin - Dvillagra" />
+
+    <meta name="author" content="Dvillagra" />
+
+    <link rel="shortcut icon" href="<?=Url::baseAdmin('view/img/favicon.ico')?>">
+
+    <?php include('admin/include/scriptMenu.admin.php');?>
+
+    
+  </head>
+
+  <body>
+
+    <!-- @HEADER -->
+      <?php include('admin/include/header.admin.php');?>
+    <!-- @END HEADER -->
+
+        <!-- Sub Nav End -->
+        <div class="sub-nav hidden-sm hidden-xs">
+          <ul>
+            <li><a href="" class="heading">Graphs</a></li>
+            <li class="hidden-sm hidden-xs">
+              <a href="#" class="selected">Vector Maps</a>
+            </li>
+            <li class="hidden-sm hidden-xs">
+              <a href="flot.html">Flot Graphs</a>
+            </li>
+            <li class="hidden-sm hidden-xs">
+              <a href="graphs.html">Google Graphs</a>
+            </li>
+          </ul>
+          <div class="custom-search hidden-sm hidden-xs">
+            <input type="text" class="search-query" placeholder="Search here ...">
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+        <!-- Sub Nav End -->
+
+        <!-- Dashboard Wrapper Start -->
+        <div class="dashboard-wrapper">
+          
+          <!-- Left Sidebar Start -->
+          <div class="left-sidebar">
+
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-6 col-md-6">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      World Map
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div id="world" style="height: 400px;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Germany Map
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div id="germany" style="height: 400px;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-6 col-md-6">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      US Map
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div id="usa" style="height: 400px;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Russia Map
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div id="russia" style="height: 400px;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+
+          </div>
+          <!-- Left Sidebar End -->
+
+          <!-- Right Sidebar Start -->
+          <div class="right-sidebar">
+            
+            <div class="wrapper">
+              <div id="scrollbar">
+                <div class="scrollbar">
+                  <div class="track">
+                    <div class="thumb">
+                      <div class="end">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="viewport">
+                  <div class="overview">
+                    <div class="featured-articles-container">
+                      <h5 class="heading">
+                        Recent Articles
+                      </h5>
+                      <div class="articles">
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Hosting Made For WordPress
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Reinvent cutting-edge
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          partnerships models 24/7
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Eyeballs frictionless
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Empower deliver innovate
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Portals technologies
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Collaborative innovate
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Mashups experiences plug
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Portals technologies
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Collaborative innovate
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Mashups experiences plug
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          B2B plug and play
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Need some interesting
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Portals technologies
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Collaborative innovate
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Portals technologies
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Collaborative innovate
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Mashups experiences plug
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          B2B plug and play
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Need some interesting
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Portals technologies
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Collaborative innovate
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Mashups experiences plug
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Need some interesting
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Portals technologies
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Collaborative innovate
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Mashups experiences plug
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          B2B plug and play
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Need some interesting
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Portals technologies
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Collaborative innovate
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Portals technologies
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Collaborative innovate
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Mashups experiences plug
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          B2B plug and play
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Need some interesting
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Portals technologies
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Collaborative innovate
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet">
+                            &nbsp;
+                          </span>
+                          Mashups experiences plug
+                        </a>
+                      </div>
+                      
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <hr class="hr-stylish-1">
+            
+            <div class="wrapper">
+              <div id="scrollbar-two">
+                <div class="scrollbar">
+                  <div class="track">
+                    <div class="thumb">
+                      <div class="end">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="viewport">
+                  <div class="overview">
+                    <div class="featured-articles-container">
+                      <h5 class="heading-blue">
+                        Featured posts
+                      </h5>
+                      <div class="articles">
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Hosting Made For WordPress
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Reinvent cutting-edge
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          partnerships models 24/7
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Eyeballs frictionless
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Empower deliver innovate
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Portals technologies
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Collaborative innovate
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Mashups experiences plug
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Need some interesting
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Portals technologies
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Collaborative innovate
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Mashups experiences plug
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          B2B plug and play
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Need some interesting
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Portals technologies
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Collaborative innovate
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Portals technologies
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Collaborative innovate
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Mashups experiences plug
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          B2B plug and play
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Need some interesting
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Portals technologies
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Collaborative innovate
+                        </a>
+                        <a href="#">
+                          <span class="label-bullet-blue">
+                            &nbsp;
+                          </span>
+                          Mashups experiences plug
+                        </a>
+                      </div>
+                      
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right Sidebar End -->
+        </div>
+        <!-- Dashboard Wrapper End -->
+
+        <!-- @FOOTER -->
+        <?php include('admin/include/footer.admin.php');?>
+      <!-- @END FOOTER -->
+
+      </div>
+    </div>
+    <!-- Main Container end -->
+
+    <script src="<?=Url::baseAdmin('view/js/jquery.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/bootstrap.min.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/jquery.scrollUp.js')?>"></script>
+    
+    <!-- Tiny Scrollbar JS -->
+    <script src="<?=Url::baseAdmin('view/js/tiny-scrollbar.js')?>"></script>
+    
+    <!-- Maps JS -->
+    <script src="<?=Url::baseAdmin('view/js/jqvmap/jquery.vmap.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/jqvmap/maps/jquery.vmap.russia.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/jqvmap/maps/jquery.vmap.usa.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/jqvmap/maps/jquery.vmap.world.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/jqvmap/maps/jquery.vmap.germany.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/jqvmap/data/jquery.vmap.sampledata.js')?>"></script>
+
+    <!-- Custom JS -->
+    <script src="<?=Url::baseAdmin('view/js/menu.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/custom-maps.js')?>"></script>
+
+    <script type="text/javascript">
+      //ScrollUp
+      $(function () {
+        $.scrollUp({
+          scrollName: 'scrollUp', // Element ID
+          topDistance: '300', // Distance from top before showing element (px)
+          topSpeed: 300, // Speed back to top (ms)
+          animation: 'fade', // Fade, slide, none
+          animationInSpeed: 400, // Animation in speed (ms)
+          animationOutSpeed: 400, // Animation out speed (ms)
+          scrollText: 'Top', // Text for element
+          activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+      });
+
+      //Tiny Scrollbar
+      $('#scrollbar').tinyscrollbar();
+      $('#scrollbar-two').tinyscrollbar();
+    </script>
+
+  </body>
+</html>

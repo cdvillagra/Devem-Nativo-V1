@@ -1,0 +1,40 @@
+# Error pages redirect
+# NOT FOUND
+ErrorDocument 404	/index.php?controle=Principal&acao=errorPage&code=404
+# BAD REQUEST
+ErrorDocument 400	/index.php?controle=Principal&acao=errorPage&code=400
+# INTERNAL SERVER ERROR
+ErrorDocument 500	/index.php?controle=Principal&acao=errorPage&code=500
+# REQUEST TIMEOUT
+ErrorDocument 408	/index.php?controle=Principal&acao=errorPage&code=408
+# BAD GATEWAY
+ErrorDocument 502	/index.php?controle=Principal&acao=errorPage&code=502
+# SERVICE UNAVAILABLE
+ErrorDocument 503	/index.php?controle=Principal&acao=errorPage&code=503
+
+Options +FollowSymLinks -MultiViews
+# Turn mod_rewrite on
+RewriteEngine On
+
+RewriteBase /
+
+# Regras para a instalação
+RewriteRule ^no-install\.php$ - [L]
+RewriteRule ^instalacao-concluida/?$ no-install.php [L,QSA]
+RewriteRule ^install - [L,NC]
+
+# Pastas que estão ignoradas nas regras seguintes
+RewriteCond %{REQUEST_URI} "/api/" [OR]
+RewriteCond %{REQUEST_URI} "/upload/" [OR]
+RewriteCond %{REQUEST_URI} "/media/"
+RewriteRule (.*) $1 [L]
+
+# Regras de URL do Admin
+RewriteRule ^admin/([^/]+)/([^/]+)/?$ index.php?controle=$1&acao=$2&admin=true [L,QSA]
+RewriteRule ^admin/([^/]+)/?$ index.php?controle=$1&acao=index&admin=true [L,QSA]
+RewriteRule ^admin/?$ index.php?controle=Principal&acao=index&admin=true [L,QSA]
+
+# Regras de URL da aplicação
+RewriteRule ^([^/]+)/([^/]+)/?$ index.php?controle=$1&acao=$2 [L,QSA]
+RewriteRule ^([^/]+)/?$ index.php?controle=$1&acao=index [L,QSA]
+RewriteRule ^/?$ index.php?controle=Principal&acao=index [L,QSA]

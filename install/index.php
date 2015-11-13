@@ -1,0 +1,52 @@
+<? unset($_SESSION); require_once ('../config/globals.php'); if(!defined('DV_INSTALL')) { ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Install Devem - Dvillagra</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="view/css/Install.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="view/js/Install.class.js"></script>
+  </head>
+  <body>
+
+    <div class="content">
+    	<div class="titulo">
+    		<img src="view/img/logo_urso1.jpg" width="60px">
+    		<h1>Instalação DEVEM</h1>
+    		<span>Bem Vindo</span>
+    	</div>
+    	<div class="sub-content">
+
+    		<div class="demo">
+	    		<i class="fa fa-file-text"></i>
+	    		<i class="fa fa-arrow-right"></i>
+	    		<i class="fa fa-database"></i>
+	    		<i class="fa fa-arrow-right"></i>
+	    		<i class="fa fa-cogs"></i>
+	    		<i class="fa fa-arrow-right"></i>
+	    		<i class="fa fa-check"></i>
+	    	</div>
+    		
+
+    		<p>
+                Vamos lá! <br/>
+                Nesses quatro passos, vamos definir algumas informações importantes para que você desenvolva seu sistema ou website com o DEVEM.<br/>
+                É importante que o apontamento da sua aplicação esteja apontada para a raiz do DEVEM. Caso esteja trabalhando local, configure seu arquivo httpd.conf para sertar o document root para a pasta que vocÊ descarregou o Devem.<br/>
+                Esperamos que você tenha sucesso com a sua aplicação.
+    		</p>
+
+    		<button id="bt-iniciar">Iniciar<i class="fa fa-sign-out"></i></button>
+
+    	</div>
+    	<div class="footer">
+    		<span>Direitos Reservados | DVillagra</span>
+    	</div>
+    </div>
+  
+  </body>
+</html>
+
+<? }else{ header('location: sucesso'); }?>

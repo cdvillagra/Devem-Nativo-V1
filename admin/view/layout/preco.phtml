@@ -1,0 +1,269 @@
+<? $p = $this->pParametros(); ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Devem Admin - Dvillagra</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Devem Admin - Dvillagra" />
+
+    <meta name="author" content="Dvillagra" />
+
+    <link rel="shortcut icon" href="<?=Url::baseAdmin('view/img/favicon.ico')?>">
+
+    <?php include('admin/include/scriptMenu.admin.php');?>
+
+  </head>
+
+  <body>
+
+    <!-- @HEADER -->
+      <?php include('admin/include/header.admin.php');?>
+    <!-- @END HEADER -->
+
+        <!-- Sub Nav End -->
+        <div class="sub-nav hidden-sm hidden-xs">
+          <ul>
+            <li><a href="" class="heading">Tables</a></li>
+            <li class="hidden-sm hidden-xs">
+              <a href="#" class="selected">Pricing Plans</a>
+            </li>
+            <li class="hidden-sm hidden-xs">
+              <a href="tables.html">Tables</a>
+            </li>
+          </ul>
+          <div class="custom-search hidden-sm hidden-xs">
+            <input type="text" class="search-query" placeholder="Search here ...">
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+        <!-- Sub Nav End -->
+
+        <!-- Dashboard Wrapper Start -->
+        <div class="dashboard-wrapper-lg">
+          <div class="cd-pricing-container cd-full-width cd-secondary-theme">
+            <div class="cd-pricing-switcher clearfix">
+              <p class="fieldset pull-right">
+                <input type="radio" name="duration" value="monthly" id="monthly" checked>
+                <label for="monthly">Monthly</label>
+                <input type="radio" name="duration" value="yearly" id="yearly">
+                <label for="yearly">Yearly</label>
+                <span class="cd-switch"></span>
+              </p>
+            </div> <!-- .cd-pricing-switcher -->
+
+            <ul class="cd-pricing-list cd-bounce-invert">
+              <li>
+                <ul class="cd-pricing-wrapper">
+                  <li data-type="monthly" class="is-visible">
+                    <header class="cd-pricing-header">
+                      <h2>Basic</h2>
+
+                      <div class="cd-price">
+                        <span class="cd-currency">$</span>
+                        <span class="cd-value">25</span>
+                        <span class="cd-duration">mo</span>
+                      </div>
+                    </header> <!-- .cd-pricing-header -->
+
+                    <div class="cd-pricing-body">
+                      <ul class="cd-pricing-features">
+                        <li><em>256MB</em> Memory</li>
+                        <li><em>1</em> User</li>
+                        <li><em>1</em> Website</li>
+                        <li><em>1</em> Domain</li>
+                        <li><em>Unlimited</em> Bandwidth</li>
+                        <li><em>24/7</em> Support</li>
+                      </ul>
+                    </div> <!-- .cd-pricing-body -->
+
+                    <footer class="cd-pricing-footer">
+                      <a class="cd-select" href="#">Select</a>
+                    </footer> <!-- .cd-pricing-footer -->
+                  </li>
+
+                  <li data-type="yearly" class="is-hidden">
+                    <header class="cd-pricing-header">
+                      <h2>Basic</h2>
+
+                      <div class="cd-price">
+                        <span class="cd-currency">$</span>
+                        <span class="cd-value">250</span>
+                        <span class="cd-duration">yr</span>
+                      </div>
+                    </header> <!-- .cd-pricing-header -->
+
+                    <div class="cd-pricing-body">
+                      <ul class="cd-pricing-features">
+                        <li><em>256MB</em> Memory</li>
+                        <li><em>1</em> User</li>
+                        <li><em>1</em> Website</li>
+                        <li><em>1</em> Domain</li>
+                        <li><em>Unlimited</em> Bandwidth</li>
+                        <li><em>24/7</em> Support</li>
+                      </ul>
+                    </div> <!-- .cd-pricing-body -->
+
+                    <footer class="cd-pricing-footer">
+                      <a class="cd-select" href="#">Select</a>
+                    </footer> <!-- .cd-pricing-footer -->
+                  </li>
+                </ul> <!-- .cd-pricing-wrapper -->
+              </li>
+
+              <li class="cd-popular">
+                <ul class="cd-pricing-wrapper">
+                  <li data-type="monthly" class="is-visible">
+                    <header class="cd-pricing-header">
+                      <h2>Popular</h2>
+
+                      <div class="cd-price">
+                        <span class="cd-currency">$</span>
+                        <span class="cd-value">50</span>
+                        <span class="cd-duration">mo</span>
+                      </div>
+                    </header> <!-- .cd-pricing-header -->
+
+                    <div class="cd-pricing-body">
+                      <ul class="cd-pricing-features">
+                        <li><em>512MB</em> Memory</li>
+                        <li><em>3</em> Users</li>
+                        <li><em>5</em> Websites</li>
+                        <li><em>7</em> Domains</li>
+                        <li><em>Unlimited</em> Bandwidth</li>
+                        <li><em>24/7</em> Support</li>
+                      </ul>
+                    </div> <!-- .cd-pricing-body -->
+
+                    <footer class="cd-pricing-footer">
+                      <a class="cd-select" href="#">Select</a>
+                    </footer> <!-- .cd-pricing-footer -->
+                  </li>
+
+                  <li data-type="yearly" class="is-hidden">
+                    <header class="cd-pricing-header">
+                      <h2>Popular</h2>
+
+                      <div class="cd-price">
+                        <span class="cd-currency">$</span>
+                        <span class="cd-value">550</span>
+                        <span class="cd-duration">yr</span>
+                      </div>
+                    </header> <!-- .cd-pricing-header -->
+
+                    <div class="cd-pricing-body">
+                      <ul class="cd-pricing-features">
+                        <li><em>512MB</em> Memory</li>
+                        <li><em>3</em> Users</li>
+                        <li><em>5</em> Websites</li>
+                        <li><em>7</em> Domains</li>
+                        <li><em>Unlimited</em> Bandwidth</li>
+                        <li><em>24/7</em> Support</li>
+                      </ul>
+                    </div> <!-- .cd-pricing-body -->
+
+                    <footer class="cd-pricing-footer">
+                      <a class="cd-select" href="#">Select</a>
+                    </footer> <!-- .cd-pricing-footer -->
+                  </li>
+                </ul>
+              </li> <!-- .cd-pricing-wrapper -->
+
+              <li>
+                <ul class="cd-pricing-wrapper">
+                  <li data-type="monthly" class="is-visible">
+                    <header class="cd-pricing-header">
+                      <h2>Premier</h2>
+
+                      <div class="cd-price">
+                        <span class="cd-currency">$</span>
+                        <span class="cd-value">75</span>
+                        <span class="cd-duration">mo</span>
+                      </div>
+                    </header> <!-- .cd-pricing-header -->
+
+                    <div class="cd-pricing-body">
+                      <ul class="cd-pricing-features">
+                        <li><em>1024MB</em> Memory</li>
+                        <li><em>5</em> Users</li>
+                        <li><em>10</em> Websites</li>
+                        <li><em>10</em> Domains</li>
+                        <li><em>Unlimited</em> Bandwidth</li>
+                        <li><em>24/7</em> Support</li>
+                      </ul>
+                    </div> <!-- .cd-pricing-body -->
+
+                    <footer class="cd-pricing-footer">
+                      <a class="cd-select" href="#">Select</a>
+                    </footer> <!-- .cd-pricing-footer -->
+                  </li>
+
+                  <li data-type="yearly" class="is-hidden">
+                    <header class="cd-pricing-header">
+                      <h2>Premier</h2>
+
+                      <div class="cd-price">
+                        <span class="cd-currency">$</span>
+                        <span class="cd-value">900</span>
+                        <span class="cd-duration">yr</span>
+                      </div>
+                    </header> <!-- .cd-pricing-header -->
+
+                    <div class="cd-pricing-body">
+                      <ul class="cd-pricing-features">
+                        <li><em>1024MB</em> Memory</li>
+                        <li><em>5</em> Users</li>
+                        <li><em>10</em> Websites</li>
+                        <li><em>10</em> Domains</li>
+                        <li><em>Unlimited</em> Bandwidth</li>
+                        <li><em>24/7</em> Support</li>
+                      </ul>
+                    </div> <!-- .cd-pricing-body -->
+
+                    <footer class="cd-pricing-footer">
+                      <a class="cd-select" href="#">Select</a>
+                    </footer> <!-- .cd-pricing-footer -->
+                  </li>
+                </ul> <!-- .cd-pricing-wrapper -->
+              </li>
+            </ul> <!-- .cd-pricing-list -->
+          </div> <!-- .cd-pricing-container -->
+
+        </div>
+        <!-- Dashboard Wrapper End -->
+
+        <!-- @FOOTER -->
+        <?php include('admin/include/footer.admin.php');?>
+      <!-- @END FOOTER -->
+
+      </div>
+    </div>
+    <!-- Main Container end -->
+
+    <script src="<?=Url::baseAdmin('view/js/jquery.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/bootstrap.min.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/jquery.scrollUp.js')?>"></script>
+
+    <script src="<?=Url::baseAdmin('view/js/modernizr.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/pricing.js')?>"></script>
+    
+    <script src="<?=Url::baseAdmin('view/js/menu.js')?>"></script>
+    <script type="text/javascript">
+      //ScrollUp
+      $(function () {
+        $.scrollUp({
+          scrollName: 'scrollUp', // Element ID
+          topDistance: '300', // Distance from top before showing element (px)
+          topSpeed: 300, // Speed back to top (ms)
+          animation: 'fade', // Fade, slide, none
+          animationInSpeed: 400, // Animation in speed (ms)
+          animationOutSpeed: 400, // Animation out speed (ms)
+          scrollText: 'Top', // Text for element
+          activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+      });
+
+    </script>
+
+  </body>
+</html>

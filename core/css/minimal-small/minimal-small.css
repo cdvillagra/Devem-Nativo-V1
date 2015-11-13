@@ -1,0 +1,392 @@
+﻿/*
+	Skin Name: Minimal Small
+	Class: minimal-small
+	Description: Minimal Small skin for Advanced Slider jQuery plugin
+	Author: David
+*/
+
+
+/* MAIN SLIDE */
+
+.minimal-small .slide-wrapper
+{
+	background-color:#fff;
+
+}
+
+/* END OF MAIN SLIDE */
+
+
+/* SLIDE PRELOADER */
+
+.minimal-small .preloader
+{
+	background:url(images/preloader2.gif) no-repeat;
+	width:62px;
+	height:14px;
+}
+
+/* END OF SLIDE PRELOADER */
+
+
+/* SLIDE ARROWS */
+
+.minimal-small .navigation-arrows a
+{
+	background:url(images/arrows.png) no-repeat;
+	width:15px;
+	height:50px;
+	bottom:0px;
+}
+
+
+.minimal-small .navigation-arrows a.previous
+{
+	right:450px;
+}
+
+
+.minimal-small .navigation-arrows a.next
+{
+	right:0px;
+	background-position: -15px 0px;
+}
+
+/* SLIDE ARROWS */
+
+
+/* SLIDESHOW CONTROLS */
+
+.minimal-small .slideshow-controls
+{
+	background:url(images/playpause.png) no-repeat;
+	width:24px;
+	height:24px;
+	bottom:20px;
+	right:49px;
+}
+
+
+.minimal-small .slideshow-controls.pause
+{
+	background-position: 0px 0px;
+}
+
+
+.minimal-small .slideshow-controls.play
+{
+	background-position: -24px 0px;
+}
+
+/* END OF SLIDESHOW CONTROLS */
+
+
+
+/* TIMER ANIMATION */
+
+.minimal-small .timer-animation
+{
+	top:20px;
+	right:20px;
+}
+
+/* END OF TIMER ANIMATION */
+
+
+/* SLIDE CAPTION */
+
+.minimal-small .caption .background
+{
+	background-color:#000;
+	width:100%;
+	height:100%;
+}
+
+
+.minimal-small .caption .content
+{	
+	color:#FFF;
+	margin:0px;
+	padding:8px 45px 8px 45px;
+	font-size:13px;
+	line-height:18px;
+}
+
+.minimal-small .caption .content span
+{	
+	color:#FF3333;
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+/* END OF SLIDE CAPTION */
+
+
+/* NAVIGATION BUTTONS/BULLETS */
+
+/* main container of the navigation buttons */
+.minimal-small .navigation-buttons
+{
+	bottom:20px;
+	right:105px !important;
+	left:auto !important;
+}
+
+
+/* 
+ left, right and middle of the main container 
+ for this skin, these elements are not styled by default
+ feel free to add your own styling
+*/
+.minimal-small .navigation-buttons .left, .minimal-small .navigation-buttons .right {}
+
+
+.minimal-small .navigation-buttons .left {}
+
+
+.minimal-small .navigation-buttons .middle {}
+
+
+.minimal-small .navigation-buttons .right {}
+
+
+/* this contains the buttons */
+.minimal-small .navigation-buttons .buttons {}
+
+
+/* this is a button */
+.minimal-small .navigation-buttons .buttons a
+{
+	background:url(images/buttons.png) no-repeat;
+	background-position:0px 0px;
+	cursor:pointer;
+	width:24px;
+	height:24px;
+	margin:0px 2px;
+	text-align:center;
+}
+
+
+.minimal-small .navigation-buttons .buttons a.over
+{
+	background-position:-24px 0px; 
+}
+
+
+.minimal-small .navigation-buttons .buttons a.select
+{
+	background-position:-48px 0px; 
+}
+
+
+/* this is used to style the numbers from within the buttons, when they are used */
+.minimal-small .navigation-buttons .buttons a .number
+{
+	margin-top:3px;
+	font-size:12px;
+	line-height:12px;
+	padding:2px;
+	font-weight:bold;
+	color:#EEE;
+}
+
+
+.ie9.minimal-small .navigation-buttons .buttons a .number
+{
+	margin-top:5px;
+}
+
+
+.minimal-small .navigation-buttons .buttons a.over .number
+{
+	color:#333;
+}
+
+
+.minimal-small .navigation-buttons .buttons a.select .number
+{
+	color:#333;
+}
+
+
+/* 
+ applied to the thumbnail when the thumbnail is used only as a tooltip
+ sets the distance between the button and the thumbnail
+*/
+.minimal-small .navigation-buttons .buttons .thumbnail
+{
+	margin-bottom:10px;
+}
+
+/* END OF NAVIGATION BUTTONS/BULLETS */
+
+
+/* THUMBNAIL IMAGE */
+
+.minimal-small .thumbnail
+{
+	background-image:url(images/preloader.gif);
+	background-color:#fff;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+
+/* END OF THUMBNAIL IMAGE */
+
+
+/* NAVIGATION THUMBNAILS / THUMBNAIL SCROLLER */
+
+.minimal-small .navigation-thumbnails.vertical
+{
+	margin-left:0px;/*originale era 40px*/
+	padding:0px 0px;
+}
+
+
+.minimal-small .navigation-thumbnails .thumbnail
+{
+	cursor:pointer;
+	margin:4px 8px;
+}
+
+
+
+
+/* THUMBNAIL CAPTION */
+
+.minimal-small .thumbnail .caption .background
+{
+	background-color:#000;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+}
+
+
+.minimal-small .thumbnail .caption .content
+{
+	color:#FFF;
+	font-size:12px;
+	line-height:14px;
+	text-align:center;
+	padding:2px 0px;
+	margin:0px;
+}
+
+/* END OF THUMBNAIL CAPTION */
+
+
+/* NAVIGATION THUMBNAILS ARROWS */
+
+.minimal-small .navigation-thumbnails .arrows a
+{
+	background:url(images/arrows.png) no-repeat;
+	width:24px;
+	height:24px;
+}
+
+
+.minimal-small .navigation-thumbnails.vertical .arrows a
+{
+	background:url(images/arrows_v.png) no-repeat;
+}
+
+
+.minimal-small .navigation-thumbnails .arrows a.next
+{
+	background-position:-24px 0px;
+}
+
+
+.minimal-small .navigation-thumbnails.horizontal .arrows a.previous
+{
+	left:0px;
+}
+
+
+.minimal-small .navigation-thumbnails.horizontal .arrows a.next
+{
+	right:0px;
+}
+
+
+.minimal-small .navigation-thumbnails.vertical .arrows a.previous
+{
+	top:0px;
+}
+
+
+.minimal-small .navigation-thumbnails.vertical .arrows a.next
+{
+	bottom:0px;
+}
+
+/* END OF NAVIGATION THUMBNAILS ARROWS */
+
+
+/* NAVIGATION THUMBNAILS BUTTONS */
+
+.minimal-small .navigation-thumbnails .buttons a
+{
+	background:url(images/buttons_small.png) no-repeat;
+	background-position:0px 0px; 
+	width:12px;
+	height:12px;
+	margin:2px;
+}
+
+
+.minimal-small .navigation-thumbnails .buttons a.over
+{
+	background-position:-12px 0px; 
+}
+
+
+.minimal-small .navigation-thumbnails .buttons a.select
+{
+	background-position:-24px 0px; 
+}
+
+/* END OF NAVIGATION THUMBNAILS BUTTONS */
+
+
+/* NAVIGATION THUMBNAILS SCROLLBAR */
+
+.minimal-small .navigation-thumbnails.horizontal .scrollbar
+{
+	margin-top:30px;
+}
+
+
+.minimal-small .navigation-thumbnails.vertical .scrollbar
+{
+	margin-left:30px;
+}
+
+/* END OF NAVIGATION THUMBNAILS SCROLLBAR */
+
+/* END OF NAVIGATION THUMBNAILS / THUMBNAIL SCROLLER */
+
+
+/* TOOLTIP */
+
+.minimal-small .tooltip
+{
+	background-color:#DDD;
+	margin-bottom:20px;
+	border:#EEE solid 4px;
+	border-radius:8px;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+}
+
+
+.minimal-small .tooltip .content
+{
+	color:#999;
+	padding:10px;
+	margin:0px;
+}
+
+/* END OF TOOLTIP */

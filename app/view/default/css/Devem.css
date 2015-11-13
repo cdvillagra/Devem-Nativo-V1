@@ -1,0 +1,155 @@
+
+body{
+
+	font-family: 'Open Sans', sans-serif;
+
+}
+
+.content{
+
+	width: 650px;
+	position: absolute;
+	left: 50%;
+	margin-left: -325px;
+	vertical-align: middle;
+}
+
+.titulo, .footer {
+    background: #150f4d;
+    border-radius: 10px 10px 0 0;
+    color: #F4EAEA;
+    padding: 10px;
+    width: 630px;
+}
+
+.footer {
+    border-radius: 0 0 10px 10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.titulo > img {
+    border-right: 2px solid #f4eaea;
+    float: left;
+    margin-right: 12px;
+}
+
+.titulo h1 {
+    font-size: 28px;
+    line-height: 43px;
+    margin: 0;
+}
+
+.sub-content span {
+    font-size: 21px;
+}
+
+.sub-content {
+    background: #f4eaea none repeat scroll 0 0;
+    color: #150f4d;
+    font-size: 59px;
+    overflow: hidden;
+    padding: 10px;
+    text-align: center;
+    width: 630px;
+}
+
+button {
+    border: 1px solid #150f4d;
+    border-radius: 5px;
+    color: #bf4444;
+    font-size: 16px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+button i {
+    margin-left: 5px;
+}
+
+.sub-content button {
+    float: right;
+    margin-right: 10px;
+}
+
+.demo {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.sub-content .demo i{
+	font-size: 42px;
+}
+
+.sub-content .demo i {
+    margin-right: 27px;
+}
+
+.sub-content .demo i.fa-arrow-right{
+	font-size: 21px !important;
+	color: #ffabab;
+}
+
+form {
+    margin-bottom: 30px;
+    margin-left: 160px;
+    width: 300px;
+}
+
+input[type="text"], input[type="password"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 30px;
+    margin-bottom: 7px;
+    padding-left: 10px;
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    float: left;
+}
+
+.form-parametros {
+    margin-left: 0 !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 628px;
+    height: 165px;
+}
+
+.form-parametros input[type="text"] {
+    width: 287px !important;
+}
+
+form span {
+    float: left;
+    font-size: 12px;
+    width: 270px;
+    margin-left: 4px;
+}
+
+
+.alert {
+    border-radius: 0 0 10px 10px;
+    margin-top: -10px;
+    padding: 5px 20px;
+    position: absolute;
+    right: 20px;
+    display: none;
+    color: #FFF;
+}
+
+
+
+.loader {
+    margin-left: 220px;
+    margin-top: 20px;
+    width: 200px;
+}
+
+
+p.txt_loader {
+    background: #dfdfdf none repeat scroll 0 0;
+    padding: 11px 0;
+    text-align: center;
+}

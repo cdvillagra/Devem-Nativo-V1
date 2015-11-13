@@ -1,0 +1,67 @@
+/* Autocomplete
+----------------------------------*/
+.ui-autocomplete { position: absolute; cursor: default; overflow-y:auto;}
+.ui-autocomplete-loading { background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
+ 
+/* workarounds */
+* html .ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
+ 
+/* Menu
+----------------------------------*/
+.ui-menu {
+	list-style:none;
+	background:#ffffff;
+	margin:0;
+	display:block;
+	width:227px;
+	border:1px solid #bababa;
+	border-top:none;
+	border-radius:0 0 8px 8px;
+}
+.ui-menu .ui-menu-item {
+	margin:2px 0;
+	padding: 0;
+}
+.ui-menu .ui-menu-item a {
+	color:#4d4d4d;
+	text-decoration:none;
+	display:block;
+	padding:3px 0;
+	text-indent:6px;
+}
+.ui-menu .ui-menu-item a.ui-state-hover,
+.ui-menu .ui-menu-item a.ui-state-active {
+	background:#c8c8c8;
+	border:none;
+	font-weight:normal;
+}
+/*
+.ui-menu{
+	background:#ffffff;
+	border:1px solid #bababa;
+	border-radius:0 0 8px 8px;
+}
+a{
+	color:#4d4d4d;
+}
+.ui-menu-item{
+	float:left;
+	margin:2px 0;
+	width:100%;
+}
+.ui-menu-item a{
+	border:0;
+	color:#4d4d4d;
+	float:left;
+	font-family:'open_sans_regular', Arial, sans-serif;
+	font-size:12px;
+	padding:3px 0;
+	text-decoration:none;
+	text-indent:4px;
+	width:100%;
+}
+.ui-menu-item a.ui-state-hover{
+	border:0;
+	background:#c8c8c8;
+	color:#4d4d4d;
+}*/

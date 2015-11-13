@@ -1,0 +1,393 @@
+<? $p = $this->pParametros(); ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Devem Admin - Dvillagra</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Devem Admin - Dvillagra" />
+
+    <meta name="author" content="Dvillagra" />
+
+    <link rel="shortcut icon" href="<?=Url::baseAdmin('view/img/favicon.ico')?>">
+
+    <?php include('admin/include/scriptMenu.admin.php');?>
+
+    
+  </head>
+
+  <body>
+
+    <!-- @HEADER -->
+      <?php include('admin/include/header.admin.php');?>
+    <!-- @END HEADER -->
+
+        <!-- Sub Nav End -->
+        <div class="sub-nav hidden-sm hidden-xs">
+          <ul>
+            <li><a href="" class="heading">Graphs</a></li>
+            <li class="hidden-sm hidden-xs">
+              <a href="graphs.html" class="selected">Google Graphs</a>
+            </li>
+            <li class="hidden-sm hidden-xs">
+              <a href="vector-maps.html">Vector Maps</a>
+            </li>
+            <li class="hidden-sm hidden-xs">
+              <a href="flot.html">Flot Graphs</a>
+            </li>
+          </ul>
+          <div class="custom-search hidden-sm hidden-xs">
+            <input type="text" class="search-query" placeholder="Search here ...">
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+        <!-- Sub Nav End -->
+
+        <!-- Dashboard Wrapper Start -->
+        <div class="dashboard-wrapper">
+          
+          <!-- Left Sidebar Start -->
+          <div class="left-sidebar">
+            
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Geo Chart
+                    </div>
+                    <span class="tools">
+                      <i class="fa fa-cogs"></i>
+                    </span>
+                  </div>
+                  <div class="widget-body">
+                    <div id="geo_chart"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Bubble Chart<a id="bubble-chart">t</a>
+                    </div>
+                    <span class="tools">
+                      <i class="fa fa-cogs"></i>
+                    </span>
+                  </div>
+                  <div class="widget-body">
+                    <div id="bubble_chart"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Area Char<a id="area-chart">t</a>
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div id="area_chart"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Line Char<a id="line-chart">t</a>
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div id="line_chart"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Candlestick Char<a id="candlestick-chart">t</a>
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div id="candlestick_chart"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Column Char<a id="column-chart">t</a>
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div id="column_chart"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Pie Char<a id="pie-chart">t</a>
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div id="pie_chart"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Combo Chart
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div id="combo_chart"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Table Char<a id="table-chart">t</a>
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div id="table_chart"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+
+          </div>
+          <!-- Left Sidebar End -->
+
+          <!-- Right Sidebar Start -->
+          <div class="right-sidebar">
+            <div class="wrapper">
+              <ul class="month-income">
+                <li>
+                  <span class="icon-block blue-block">
+                    <i class="fa fa-html5 fa-lg"></i>
+                  </span>
+                  <h5>
+                    @srinubasava 
+                    <small class="info-fade">
+                      Developer
+                    </small>
+                  </h5>
+                  <p>
+                    10 minutes ago
+                  </p>
+                </li>
+                <li>
+                  <span class="icon-block orange-block">
+                    <i class="fa fa-apple fa-lg"></i>
+                  </span>
+                  <h5>
+                    @prempillai 
+                    <small class="info-fade">
+                      Sr. Developer
+                    </small>
+                  </h5>
+                  <p>
+                    28 minutes ago
+                  </p>
+                </li>
+                <li>
+                  <span class="icon-block green-block">
+                    <i class="fa fa-github fa-lg"></i>
+                  </span>
+                  <h5>
+                    @arjunurs 
+                    <small class="info-fade">
+                      Developer
+                    </small>
+                  </h5>
+                  <p>
+                    14 minutes ago
+                  </p>
+                </li>
+                <li>
+                  <span class="icon-block red-block">
+                    <i class="fa fa-xing fa-lg"></i>
+                  </span>
+                  <h5>
+                    @gajjugujju 
+                    <small class="info-fade">
+                      Team Leader
+                    </small>
+                  </h5>
+                  <p>
+                    28 minutes ago
+                  </p>
+                </li>
+                <li>
+                  <span class="icon-block yellow-block">
+                    <i class="fa fa-css3 fa-lg"></i>
+                  </span>
+                  <h5>
+                    @boomer 
+                    <small class="info-fade">
+                      Business
+                    </small>
+                  </h5>
+                  <p>
+                    28 minutes ago
+                  </p>
+                </li>
+              </ul>
+            </div>
+            
+            <hr class="hr-stylish-1">
+            
+            <div class="wrapper">
+              <div class="mini-dashboard">
+                <div class="graph-container">
+                  <p class="city">
+                    Omnms
+                    <span class="time">Today 10:10 AM</span>
+                  </p>
+                  <div class="graph">
+                    <span id="stock-graph">
+                      3, 5, 8, -5, 1, 5, -2, 9, 6, 8, 9, -5, 2, -9, 6, 8, 9, 6, 8, 9, -5, 8, 1, 6, -3, 7, 9
+                    </span>
+                  </div>
+                  <div class="info-container">
+                    <div class="blocks-container">
+                      <div class="block">
+                        <i class="arrow">
+                        </i>
+                        3.10p
+                      </div>
+                      <div class="block last">
+                        <i class="arrow">
+                        </i>
+                        7.89p
+                      </div>
+                      <div class="clearfix">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right Sidebar End -->
+        </div>
+        <!-- Dashboard Wrapper End -->
+
+        <!-- @FOOTER -->
+        <?php include('admin/include/footer.admin.php');?>
+      <!-- @END FOOTER -->
+
+      </div>
+    </div>
+    <!-- Main Container end -->
+
+    <script src="<?=Url::baseAdmin('view/js/jquery.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/bootstrap.min.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/jquery.scrollUp.js')?>"></script>
+
+    <!-- Google Visualization JS -->
+    <script src="<?=Url::baseAdmin('view/js/google-api.js')?>"></script>
+
+    <!-- Sparkline graphs -->
+    <script src="<?=Url::baseAdmin('view/js/sparkline.js')?>"></script>
+
+    <!-- Custom JS -->
+    <script src="<?=Url::baseAdmin('view/js/menu.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/custom-google.js')?>"></script>
+    
+    <script type="text/javascript">
+      //ScrollUp
+      $(function () {
+        $.scrollUp({
+          scrollName: 'scrollUp', // Element ID
+          topDistance: '300', // Distance from top before showing element (px)
+          topSpeed: 300, // Speed back to top (ms)
+          animation: 'fade', // Fade, slide, none
+          animationInSpeed: 400, // Animation in speed (ms)
+          animationOutSpeed: 400, // Animation out speed (ms)
+          scrollText: 'Top', // Text for element
+          activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+      });
+
+      //Tooltip
+      $('a').tooltip('hide');
+
+      //Popover
+      $('.popover-pop').popover('hide');
+
+      //Dropdown
+      $('.dropdown-toggle').dropdown();
+
+      $(document).ready(function () {
+        sparkline_graphs();
+      });
+
+      function sparkline_graphs() {
+        $(function () {
+          $('#stock-graph').sparkline('html', {
+            type: 'bar',
+            barColor: '#0daed3',
+            barWidth: 7,
+            height: 38,
+          });
+        });
+      }
+
+    </script>
+
+  </body>
+</html>

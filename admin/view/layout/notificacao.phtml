@@ -1,0 +1,417 @@
+<? $p = $this->pParametros(); ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Devem Admin - Dvillagra</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Devem Admin - Dvillagra" />
+
+    <meta name="author" content="Dvillagra" />
+
+    <link rel="shortcut icon" href="<?=Url::baseAdmin('view/img/favicon.ico')?>">
+
+    <?php include('admin/include/scriptMenu.admin.php');?>
+
+  </head>
+
+  <body>
+
+    <!-- @HEADER -->
+      <?php include('admin/include/header.admin.php');?>
+    <!-- @END HEADER -->
+
+        <!-- Sub Nav End -->
+        <div class="sub-nav hidden-sm hidden-xs">
+          <ul>
+            <li><a href="" class="heading">UI Elements</a></li>
+            <li class="hidden-sm hidden-xs">
+              <a href="#" class="selected">Notifications</a>
+            </li>
+            <li class="hidden-sm hidden-xs">
+              <a href="panels.html">Panels</a>
+            </li>
+          </ul>
+          <div class="custom-search hidden-sm hidden-xs">
+            <input type="text" class="search-query" placeholder="Search here ...">
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+        <!-- Sub Nav End -->
+
+        <!-- Dashboard Wrapper Start -->
+        <div class="dashboard-wrapper">
+          
+          <!-- Left Sidebar Start -->
+          <div class="left-sidebar">
+
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Alerts
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <a class="btn btn-primary" href="#" id="alert">
+                      Alert
+                    </a>
+                    <a class="btn btn-success" href="#" id="confirm">
+                      Confirm
+                    </a>
+                    <a class="btn btn-info" href="#" id="prompt">
+                      Prompt
+                    </a>
+                    <a class="btn btn-warning" href="#" id="notification">
+                      Standard
+                    </a>
+                    <a class="btn btn-success" href="#" id="success">
+                      Success
+                    </a>
+                    <a class="btn btn-danger" href="#" id="error">
+                      Error
+                    </a>
+                    <a class="btn btn-warning" href="#" id="delay">
+                      Hide in 8 Sec
+                    </a>
+                    <a class="btn btn-info" href="#" id="forever">
+                      Persistent
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Notifications with icon
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div class="notice red">
+                      <p>This is an error notice, it provides feedback of a negative nature to the user.</p>
+                    </div>
+                    <div class="notice blue">
+                      <p>This is a an info notice, it provides feedback of a neutral nature to the user.</p>
+                    </div>
+                    <div class="notice green">
+                      <p>This is a success notice, it provides feedback of a positive nature to the user.</p>
+                    </div>
+                    <div class="notice yellow">
+                      <p>This is a warning notice, it provides feedback of a potentially negative nature to the user.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Notifications with icon
+                    </div>
+                  </div>
+                  <div class="widget-body clearfix">
+                    <div class="widget-body">
+                      <div class="alert alert-block alert-danger fade in">
+                        <button data-dismiss="alert" class="close" type="button">
+                          ×
+                        </button>
+                        <p>
+                          <i class="fa fa-times-circle fa-lg"></i> Methodologies eyeballs incentivize models. Platforms web-enabled cultivate dynamic synergies: technologies content
+                        </p>
+                      </div>
+                      <div class="alert alert-block alert-warning fade in">
+                        <button data-dismiss="alert" class="close" type="button">
+                          ×
+                        </button>
+                        <p>
+                          <i class="fa fa-warning fa-lg"></i> Methodologies eyeballs incentivize models. Platforms web-enabled cultivate dynamic synergies: technologies content deploy ROI communities
+                        </p>
+                      </div>
+                      <div class="alert alert-block alert-success fade in">
+                        <button data-dismiss="alert" class="close" type="button">
+                          ×
+                        </button>
+                        <p>
+                          <i class="fa fa-check-circle fa-lg"></i> Methodologies eyeballs incentivize models. Platforms web-enabled cultivate dynamic synergies: technologies deploy communities methodologies sticky
+                        </p>
+                      </div>
+                      <div class="alert alert-block alert-info fade in no-margin">
+                        <button data-dismiss="alert" class="close" type="button">
+                          ×
+                        </button>
+                        <p>
+                          <i class="fa fa fa-exclamation-circle fa-lg"></i> Eyeballs incentivize models. Platforms web-enabled cultivate dynamic synergies: technologies content deploy ROI communities methodologies sticky
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Notifications with Heading
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div class="alert alert-block alert-danger fade in">
+                      <button data-dismiss="alert" class="close" type="button">
+                        ×
+                      </button>
+                      <p>
+                        <strong style="font-size: 16px;">Alert- </strong> Methodologies eyeballs incentivize models. Platforms web-enabled cultivate dynamic synergies: technologies content
+                      </p>
+                    </div>
+                    <div class="alert alert-block alert-warning fade in">
+                      <button data-dismiss="alert" class="close" type="button">
+                        ×
+                      </button>
+                      <p>
+                        <strong style="font-size: 16px;">Warning- </strong> Methodologies eyeballs incentivize models. Platforms web-enabled cultivate dynamic synergies: technologies content deploy ROI communities
+                      </p>
+                    </div>
+                    <div class="alert alert-block alert-success fade in">
+                      <button data-dismiss="alert" class="close" type="button">
+                        ×
+                      </button>
+                      <p>
+                        <strong style="font-size: 16px;">Success- </strong> Methodologies eyeballs incentivize models. Platforms web-enabled cultivate dynamic synergies: technologies deploy communities methodologies sticky
+                      </p>
+                    </div>
+                    
+                    <div class="alert alert-block alert-info fade in no-margin">
+                      <button data-dismiss="alert" class="close" type="button">
+                        ×
+                      </button>
+                      <p>
+                        <strong style="font-size: 16px;">Info- </strong> Eyeballs incentivize models. Platforms web-enabled cultivate dynamic synergies: technologies content deploy ROI communities methodologies sticky
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="widget no-margin">
+                  <div class="widget-header">
+                    <div class="title">
+                      Alert
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div class="alert alert-block alert-danger fade in">
+                      <button data-dismiss="alert" class="close" type="button">
+                        ×
+                      </button>
+                      <h4  style="margin-bottom: 6px;">Alert</h4>
+                      <p>
+                        Methodologies eyeballs incentivize models. Platforms web-enabled cultivate dynamic synergies: technologies content
+                      </p>
+                    </div>
+                    <div class="alert alert-block alert-warning fade in">
+                      <button data-dismiss="alert" class="close" type="button">
+                        ×
+                      </button>
+                      <h4  style="margin-bottom: 6px;">Warning</h4>
+                      <p>
+                        Methodologies eyeballs incentivize models. Platforms web-enabled cultivate dynamic synergies: technologies content deploy ROI communities
+                      </p>
+                    </div>
+                    <div class="alert alert-block alert-success fade in">
+                      <button data-dismiss="alert" class="close" type="button">
+                        ×
+                      </button>
+                      <h4  style="margin-bottom: 6px;">Success</h4>
+                      <p>
+                        Methodologies eyeballs incentivize models. Platforms web-enabled cultivate dynamic synergies: technologies deploy communities methodologies sticky
+                      </p>
+                    </div>
+                    
+                    <div class="alert alert-block alert-info fade in no-margin">
+                      <button data-dismiss="alert" class="close" type="button">
+                        ×
+                      </button>
+                      <h4 style="margin-bottom: 6px;">Info</h4>
+                      <p>
+                        Eyeballs incentivize models. Platforms web-enabled cultivate dynamic synergies: technologies content deploy ROI communities methodologies sticky
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->  
+
+          </div>
+          <!-- Left Sidebar End -->
+
+          <!-- Right Sidebar Start -->
+          <div class="right-sidebar">
+            <div class="wrapper">
+              <div class="list-group no-margin">
+                <a href="javascript:;" class="list-group-item">
+                  <span class="pull-right">
+                    <i class="fa fa-file fa-3x text-info"></i>
+                  </span>
+                  <h4 class="list-group-item-heading">239</h4>
+                  <p class="list-group-item-text">Files</p>
+                </a>
+                <a href="javascript:;" class="list-group-item">
+                  <span class="pull-right">
+                    <i class="fa fa-check-square-o fa-3x text-warning"></i>
+                  </span>
+                  <h4 class="list-group-item-heading">11689</h4>
+                  <p class="list-group-item-text">Paid</p>
+                </a>
+                <a href="javascript:;" class="list-group-item">
+                  <span class="pull-right">
+                    <i class="fa fa-users fa-3x text-success"></i>
+                  </span>
+                  <h4 class="list-group-item-heading">831</h4>
+                  <p class="list-group-item-text">Friends</p>      
+                </a>
+              </div>
+            </div>
+
+          </div>
+          <!-- Right Sidebar End -->
+
+        </div>
+        <!-- Dashboard Wrapper End -->
+
+        <!-- @FOOTER -->
+        <?php include('admin/include/footer.admin.php');?>
+      <!-- @END FOOTER -->
+
+      </div>
+    </div>
+    <!-- Main Container end -->
+
+    <script src="<?=Url::baseAdmin('view/js/jquery.js')?>"></script>
+    <script src="<?=Url::baseAdmin('view/js/bootstrap.min.js')?>"></script>
+
+    <script type="text/javascript" src="<?=Url::baseAdmin('view/js/alertify.min.js')?>"></script>
+    <!-- Custom JS -->
+    <script src="<?=Url::baseAdmin('view/js/menu.js')?>"></script>
+    
+    <script type="text/javascript">
+
+      //Tooltip
+      $('.btn').tooltip('hide');
+
+      //Popover
+      $('.btn').popover('hide');
+
+      //Dropdown
+      $('.dropdown-toggle').dropdown();
+
+      //Alertify JS
+      $ = function (id) {
+        return document.getElementById(id);
+      },
+      reset = function () {
+        $("toggleCSS").href = "css/alertify.core.css";
+        alertify.set({
+          labels: {
+            ok: "OK",
+            cancel: "Cancel"
+          },
+          delay: 5000,
+          buttonReverse: false,
+          buttonFocus: "ok"
+        });
+      };
+
+      // Standard Dialogs
+      $("alert").onclick = function () {
+        reset();
+        alertify.alert("This is an alert Dialog");
+        return false;
+      };
+
+      $("confirm").onclick = function () {
+        reset();
+        alertify.confirm("This is a confirm dialog", function (e) {
+          if (e) {
+            alertify.success("You've clicked OK");
+          } else {
+            alertify.error("You've clicked Cancel");
+          }
+        });
+        return false;
+      };
+
+      $("prompt").onclick = function () {
+        reset();
+        alertify.prompt("This is a prompt dialog", function (e, str) {
+          if (e) {
+            alertify.success("You've clicked OK and typed: " + str);
+          } else {
+            alertify.error("You've clicked Cancel");
+          }
+        }, "Default Value");
+        return false;
+      };
+
+      // Standard Dialogs
+      $("notification").onclick = function () {
+        reset();
+        alertify.log("Standard log message");
+        return false;
+      };
+
+      $("success").onclick = function () {
+        reset();
+        alertify.success("Success log message");
+        return false;
+      };
+
+      $("error").onclick = function () {
+        reset();
+        alertify.error("Error log message");
+        return false;
+      };
+
+      // Custom Properties
+      $("delay").onclick = function () {
+        reset();
+        alertify.set({
+          delay: 10000
+        });
+        alertify.log("Hiding in 10 seconds");
+        return false;
+      };
+
+      $("forever").onclick = function () {
+        reset();
+        alertify.log("Will stay until clicked", "", 0);
+        return false;
+      };
+      //Alertfy End
+    </script>
+
+  </body>
+</html>
