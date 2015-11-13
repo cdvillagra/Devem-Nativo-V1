@@ -1,4 +1,4 @@
-![Devem](https://github.com/cdvillagra/devem_dev/blob/master/app/view/default/img/icone_git.png) Devem Nativo V1
+![Devem](https://github.com/cdvillagra/Devem-Nativo-V1/blob/master/app/view/default/img/icone_git.png) Devem Nativo V1
 ====================
 
 ATENÇÃO > os links abaixo estão desativados temporariamente
