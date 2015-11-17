@@ -725,4 +725,35 @@ class Utilitarios
 		return $saida;
 	}
 
+	static public function difDatas($dt1, $dt2){
+
+		$date1Timestamp = strtotime($dt1);
+		$date2Timestamp = strtotime($dt2);
+
+		$difference1 = $date2Timestamp - $date1Timestamp;
+
+		$difference =  floor($difference1 / 60);
+
+		$txt = 'minuto';
+
+		if($difference > 60){
+
+			$difference =  floor($difference / 60);
+
+			$txt = 'hora';
+
+			if($difference > 24){
+
+				$difference =  floor($difference1 / (60*60*24) );
+
+				$txt = 'dia';
+
+			}
+
+		}
+
+		return $difference.' '.$txt.($difference > 1 ? 's' : '');
+
+	}
+
 }

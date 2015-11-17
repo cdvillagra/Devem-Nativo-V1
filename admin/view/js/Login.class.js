@@ -71,6 +71,8 @@ devem.admin.login = {
                 window.location.href = devem.core.defaults.url("admin/");
 
             }else{
+
+                alert('Erro ao Logar');
                 
             }
 

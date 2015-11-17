@@ -35,8 +35,8 @@ MINOR VERSION E FECHAMENTOS DE VERSÃO SERÁ INSERIDA COMO MAJOR VERSION.
 
 (function(window){
 
-  var WORKER_PATH = devem.default_app.url('core/js/devem/recorderWorker.js');
-  var encoderWorker = new Worker(devem.default_app.url('core/js/devem/mp3Worker.js'));
+  var WORKER_PATH = devem.default_app.url('modulo/Gravador/recorderWorker.js');
+  var encoderWorker = new Worker(devem.default_app.url('modulo/Gravador/mp3Worker.js'));
 
   var Recorder = function(source, cfg){
     var config = cfg || {};

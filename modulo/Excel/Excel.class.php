@@ -1,5 +1,6 @@
 <?php
 
+//# IMPORTANTE > REQUER DOWNLOAD DO PHP EXCEL, NÃO INSERIDO NA API.
 
 require_once 'modulo/Excel/PHPExcel/PHPExcel/IOFactory.php';
 
