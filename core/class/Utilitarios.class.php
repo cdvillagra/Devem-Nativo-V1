@@ -502,7 +502,7 @@ class Utilitarios
 		if(is_null($acao))
 			$acao = '';
 
-		header('Location: '. $controller.'/'. $acao . $qs);
+		header('Location: '. Url::base($controller.'/'. $acao . $qs));
 
 	}
 
