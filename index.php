@@ -128,7 +128,7 @@ try {
 
         }else{
 
-            Utilitarios::redirect('login');
+            Utilitarios::redirect((isset($_REQUEST['admin']) ? 'admin/' : '').'login');
 
         }
 
