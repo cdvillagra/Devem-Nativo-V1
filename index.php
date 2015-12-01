@@ -35,12 +35,11 @@ MINOR VERSION E FECHAMENTOS DE VERSÃO SERÁ INSERIDA COMO MAJOR VERSION.
 --------------------------------------------------------------------
 */
 
-
 //# Verifica se existe a pasta install para instalar as dependencias da framework
 if(is_dir('install')){
 
     //# Direciona para o diretorio de instalação
-    header('location: /install');
+    header('location: '.$_SERVER['REQUEST_URI'].'install');
     die;
 
 }

@@ -16,8 +16,6 @@ Options +FollowSymLinks -MultiViews
 # Turn mod_rewrite on
 RewriteEngine On
 
-RewriteBase /
-
 # Regras para a instalação
 RewriteRule ^no-install\.php$ - [L]
 RewriteRule ^instalacao-concluida/?$ no-install.php [L,QSA]

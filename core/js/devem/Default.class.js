@@ -72,8 +72,10 @@ devem.core.defaults = {
             var url = prefix+'.[seu_dominio]';
 
         }
+        
+        var location = window.location.pathname.split('/');
 
-        return $.trim("http://"+url+'/'+sufx);
+        return $.trim("http://"+url+'/'+location[1]+'/'+sufx);
 
     },
 

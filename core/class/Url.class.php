@@ -33,7 +33,9 @@ class Url
 		if(strpos(strtolower($protocolo_s), 'https') !== false)
 			$protocolo = 'https://';
 
-		return $protocolo . $host . '/';
+		$uri = explode('/',$_SERVER['REQUEST_URI']);
+
+		return $protocolo . $host . '/' . $uri[1] . '/' ;
 
 	}
 

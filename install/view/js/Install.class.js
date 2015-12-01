@@ -103,7 +103,9 @@ devem.install = {
 
         $("#bt-concluir").click(function(){
 
-            window.location.href = 'http://'+window.location.hostname+'/instalacao-concluida';
+            var location = window.location.pathname.split('/');
+
+            window.location.href = 'http://'+window.location.hostname+'/'+location[1]+'/instalacao-concluida';
 
         });
 

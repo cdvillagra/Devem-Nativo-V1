@@ -16,7 +16,6 @@ Options +FollowSymLinks -MultiViews
 # Turn mod_rewrite on
 RewriteEngine On
 
-RewriteBase /install/
 
 RewriteRule ^banco/?$ banco-teste.php [L,QSA]
 RewriteRule ^parametros/?$ parametros.php [L,QSA]

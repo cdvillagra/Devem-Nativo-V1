@@ -501,8 +501,8 @@ class Utilitarios
 
 		if(is_null($acao))
 			$acao = '';
-
-		header('Location: '. Url::base($controller.'/'. $acao . $qs));
+		
+		header('Location: '. Url::base((isset($_REQUEST['admin']) ? 'admin/' : '').$controller.'/'. $acao . $qs));
 
 	}
 
