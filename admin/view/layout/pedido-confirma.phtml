@@ -1,0 +1,25 @@
+<? $p = $this->pParametros(); ?>
+
+<div class="content-modal">
+
+	<h3>Finalizar Pedido</h3>
+
+	<br />
+
+	<p>
+		Selecione o cliente para o qual o pedido será realizado, ou selecione que este pedido é para você.
+	</p>
+
+	<p>Selecione:</p>
+	<select id="id_user_pedido">
+		<option value="<?=Session::get('ID')?>">Este Pedido é meu</option>
+		<? foreach ($p as $k) { ?>
+			<option value="<?=$k['id']?>"><?=$k['user_login']?></option>
+		<? } ?>
+	</select>
+	
+	<button class='btn bt-acao' onClick="devem.pedido.finalizaPedido();">Finalizar</button>
+	<button class='btn bt-ok' onClick="$.fancybox.close();">Cancelar</button>
+
+</div>
+ 

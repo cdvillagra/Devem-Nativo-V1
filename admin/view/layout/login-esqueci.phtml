@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Representantes Água Rocha Branca</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+
+    <link rel="icon" type="image/ico" href="<?=Url::imgApp('icone/favicon.ico')?>" />
+
+    <?php require_once('core/include.scripts-adm.core.php');?>
+
+  </head>
+
+  <body class="bg-1">
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+
+      <!-- Make page fluid -->
+      <div class="row">
+
+        <!-- Page content -->
+        <div id="content" class="col-md-12 full-page login">
+
+          <div class="inside-block">
+
+            <img src="<?=Url::imgApp('icone_git.png')?>" alt class="logo">
+
+            <h1><strong>Devem.anager</strong></h1>
+
+            <h4>Esqueci a senha</h4>
+
+            <form id="form_esqueci" class="form-signin">
+
+              <section>
+
+                <div class="input-group">
+                  <input type="text" class="form-control" id="es_email" name="es_email" placeholder="Seu usuário, e-mail ou cpf">
+                  <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                </div>
+
+              </section>
+
+            </form>
+
+            <section class="log-in">
+
+              <button class="btn btn-greensea" id="bt_esqueci" >Enviar</button>
+              <button class="btn btn-slategray" id="bt_retorna">Voltar</button>
+              
+            </section>
+
+          </div>
+
+        </div>
+        <!-- /Page content -->  
+
+      </div>
+
+    </div>
+    <!-- Wrap all page content end -->
+
+  </body>
+
+</html>
+      

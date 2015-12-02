@@ -112,7 +112,7 @@ devem.core.tratamentoerro = {
 	
 	formcamposComErro: function(collection_id)
 	{
-		console.log(collection_id);
+		// console.log(collection_id);
 		/* ============================================	*
 		 * @Felipe										*
 		 * ============================================	*

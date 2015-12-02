@@ -36,7 +36,7 @@ MINOR VERSION E FECHAMENTOS DE VERSÃO SERÁ INSERIDA COMO MAJOR VERSION.
 */
 
 /** 
- * Controller Tipografia
+ * Controller Login
  *
  * @package     app
  * @subpackage  controller 
@@ -55,7 +55,7 @@ final class LoginController extends Controller {
 
 	public function __construct() {
 
-        $this->model = new LoginModel();
+        $this->model = new LoginModel;
 
 	}
 
@@ -66,49 +66,232 @@ final class LoginController extends Controller {
         $view->Show();
     }
 
+    public function confirmaAction(){
+
+        $view = new View('layout/modal-confirma.phtml');
+
+        $view->pParametros(array(
+                                'titulo' => $_GET['titulo'],
+                                'texto' => $_GET['texto'],
+                                'label_bt' => $_GET['label_bt'],
+                                'acao_bt' => $_GET['acao_bt']
+                                )
+                        );
+
+        $view->Show();
+    }
+
+    public function alertaAction(){
+
+        $view = new View('layout/modal-alerta.phtml');
+
+        $view->pParametros(array(
+                                'titulo' => $_GET['titulo'],
+                                'texto' => $_GET['texto'],
+                                'label_bt' => $_GET['label_bt']
+                                )
+                        );
+
+        $view->Show();
+    }
+
+    public function esqueciAction(){
+
+        $view = new View('layout/login-esqueci.phtml');
+
+        $view->Show();
+    }
+
+    public function esqueciConfirmacaoAction(){
+
+        $view = new View('layout/login-esqueci-confirmacao.phtml');
+
+        $view->Show();
+    }
+
+    
+
     public function validarAction(){
 
         //# Indica que o retorno é do tipo json
         header('Content-type: application/json');
 
+        //# Atribui os valores do e-mail e senha inserido pelo usuario nas propriedades de EMAIL e SENHA
         $usr = FiltroDeDados::LimpaString($_POST['lg_usuario']);
         $psw = FiltroDeDados::LimpaString($_POST['lg_senha']);
+        $con = FiltroDeDados::LimpaString(@$_POST['contectado']); 
 
-        if(ADM_VIA_DB !== false){
+        $validador = $this->login($usr, $psw, $con); 
 
-            $this->model->pUsuario($usr);
 
-            $this->model->pSenha($psw);
+        echo json_encode($validador);
 
-            $validador = $this->model->validaLogin();
+    }
+
+    public function checkLoginCookie(){
+
+        if(!Session::get('login') && Cookie::verificaCookie('devem_lg_connect_'.ADM_KEY)){
+
+            $this->model->pcodeCookie(Cookie::valorCookie('devem_lg_connect_'.ADM_KEY));
+
+            $retorno = $this->model->checkLoginCookie();
+
+            if($retorno)
+               $this->login($retorno['auLogin'], false, true, $retorno['user_code_cookie']); 
+
+        }
+
+    }
+
+    private function login($usr, $psw, $con, $cookie = false){
+
+        $this->model->pUsuario($usr);
+
+        $this->model->pSenha($psw);
+
+        if($cookie !== false)
+            $this->model->pCodeCookie($cookie);
+
+        $validador = $this->model->validaLogin();
+        
+        if($validador !== false){
+
+            if(($cookie === false) && ($con !== false))
+                $code = $this->loginCookie($validador['idUsuario'], $con);
+
+            Session::set($validador);
+
+            Session::set('login', true);
+
+            $this->model->pId($validador['idUsuario']);
+            $this->model->pCode(Auth::atualizaLogado());
+
+            if(isset($code))
+                $this->model->pCodeCookie($code);
+
+            $this->model->atualizaCode();
+
+            $validador = true;
+
+        }
+
+        return $validador;
+
+    }
+
+    private function loginCookie($id, $con){
+
+        $con = filter_var($con, FILTER_VALIDATE_BOOLEAN);
+
+        if($con !== false){
+
+            $cod = md5(Utilitarios::geraSenha());
+
+            Cookie::criaCookie('devem_lg_adm_connect_'.ADM_KEY, $cod, false);
 
         }else{
 
-            $validador = false;
+            $cod = null;
 
-            if((ADM_CONN_USUARIO == $usr) && (ADM_CONN_SENHA == $psw))
-                $validador = true;
-
-        }
-
-        
-
-        if($validador !== false){
-
-            Auth::atualizaLogado();
+            Cookie::excluirCookie('devem_lg_adm_connect_'.ADM_KEY, false);
 
         }
 
-        echo json_encode($validador);
+        return $cod;
+
     }
 
-    public function deslogarAction(){
+    public function enviarSenhaAction(){
 
         //# Indica que o retorno é do tipo json
         header('Content-type: application/json');
 
-        Auth::atualizaDeslogado();
+        $this->model->pAberto(FiltroDeDados::LimpaString($_POST['es_email']));
 
-        echo json_encode(Auth::loginValido());
+        $existe = $this->model->cadastroExistente(true);
+
+        if($existe !== false){
+
+            $key = Utilitarios::geraSenha(9);
+
+            $email = new Email;
+
+            $conteudo = '<h3>Redefinição de senha do sistema de representantes Rocha Branca</h3>';
+            $conteudo .= '<p>Uma redefinição de senha foi solicitada, acessando o link abaixo você poderá redefinir a senha e acessar o sistema.</p>';
+            $conteudo .= '<p><a href="'.Url::base('login/redefinirSenha/'.$existe['ID'].'/'.$key).'">Redefina sua senha aqui</a></p>';
+            $conteudo .= '<p>Caso não tenha solicitado essa redefinição, ignore esta mensagem.</p>';
+            $conteudo .= '<p>Atenciosamente Água Rocha Branca</p>';
+            $conteudo .= '<br /><br />Fim da mensagem';
+
+            $arrMail = array('email_destino' => $existe['user_email'],
+                            'nome_destino' => $existe['user_email'],
+                            'assunto' => 'Redefinição de Senha - Água Rocha Branca',
+                            'html' => $conteudo
+                );
+
+            $email->send($arrMail);
+
+            $this->model->pId($existe['ID']);
+
+            $this->model->pCode($key);
+
+            $this->model->atualizaCodigoRedefinicao();
+
+        }
+
+        echo json_encode($existe);
+
     }
+
+    public function redefinirSenhaAction(){
+
+        $this->model->pId(FiltroDeDados::LimpaString(@$_GET['id']));
+        $this->model->pCode(FiltroDeDados::LimpaString(@$_GET['code']));
+
+        $pagina = 'login-redefinicao-inexistente';
+
+        $arrParametros = array('code' => null, 'id' => null);
+
+        if(($this->model->pId() != '') && ($this->model->pCode() != '')){
+
+            $existe = $this->model->redefinicaoExistente();
+
+            if($existe !== false){
+
+                $pagina = 'login-redefinicao';
+
+                $arrParametros = array('code' => $this->model->pCode(), 'id' => $existe['ID']);
+
+            }
+
+        }
+
+        $view = new View('layout/'.$pagina.'.phtml');
+
+        $view->pParametros($arrParametros);
+
+        $view->Show();
+    
+    }
+
+    public function redefinirAction(){
+
+        //# Indica que o retorno é do tipo json
+        header('Content-type: application/json');
+
+        $this->model->pId(FiltroDeDados::LimpaString($_POST['rd_id']));
+        $this->model->pCode(FiltroDeDados::LimpaString($_POST['rd_code']));
+        $this->model->pSenha(FiltroDeDados::LimpaString($_POST['rd_pass']));
+
+        $redefinir = $this->model->redefinicaoExistente();
+
+        $this->model->validaRedefinicao();
+
+        if($redefinir !== false)
+            $redefinir = $this->login($redefinir['user_login'], $this->model->pSenha());
+
+        echo json_encode($redefinir);
+
+    }
+
 }

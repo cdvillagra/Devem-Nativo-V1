@@ -1,0 +1,33 @@
+<? $p = $this->pParametros(); ?>
+
+<div class="content-modal">
+
+	<h3><?=$p['titulo']?></h3>
+
+	<br />
+
+	<p><?=$p['texto']?></p>
+	
+	<button class='btn bt-ok'><?=$p['label_bt']?></button>
+
+	<input type="hidden" id="acao" value="<?=@$p['acao_bt']?>" />
+
+</div>
+ 
+ <script> 
+
+ 	$('.content-modal .bt-ok').click(function(){
+
+ 		if($("#acao").val() !== ''){
+
+ 			eval($("#acao").val());
+
+ 		}else{
+
+ 			$.fancybox.close();
+
+ 		}
+
+ 	}); 
+
+ </script>

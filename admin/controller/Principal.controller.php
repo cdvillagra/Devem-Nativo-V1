@@ -46,8 +46,6 @@ MINOR VERSION E FECHAMENTOS DE VERSÃO SERÁ INSERIDA COMO MAJOR VERSION.
 
 final class PrincipalController extends Controller {
 
-    private $__mod = 'index';
-
     /**
     * Metodo Construtor da Classe
     *
@@ -57,23 +55,66 @@ final class PrincipalController extends Controller {
 
 	public function __construct() {
 
+        // MonitorController::checkLogado(true);
+
+        $this->mLogin = new LoginModel;
 	}
 
     public function indexAction(){
 
-        $view = new View('layout/index.phtml');
+        $view = new View("layout/home.phtml");
 
-        $view->pParametros(array('mod' => $this->__mod));
+        //$view->pParametros();
+
+        $view->Show();
+
+    }
+
+    public function confirmaAction(){
+
+        $view = new View('layout/modal-confirma.phtml');
+
+        $view->pParametros(array(
+                                'titulo' => $_GET['titulo'],
+                                'texto' => $_GET['texto'],
+                                'label_bt' => $_GET['label_bt'],
+                                'acao_bt' => $_GET['acao_bt']
+                                )
+                        );
 
         $view->Show();
     }
 
-    public function index2Action(){
+    public function alertaAction(){
 
-        $view = new View('layout/index2.phtml');
+        $view = new View('layout/modal-alerta.phtml');
 
-        $view->pParametros(array('mod' => $this->__mod));
+        $view->pParametros(array(
+                                'titulo' => $_GET['titulo'],
+                                'texto' => $_GET['texto'],
+                                'label_bt' => $_GET['label_bt'],
+                                'acao_bt' => @$_GET['acao_bt']
+                                )
+                        );
 
         $view->Show();
+    }
+
+    public function deslogarAction(){
+
+        //# Indica que o retorno é do tipo json
+        header('Content-type: application/json');
+
+        $this->mLogin->pId(Session::get('idUsuario'));
+        $this->mLogin->deslogaCode();
+
+        Session::setNull('login');
+
+        Auth::atualizaDeslogado();
+
+        Cookie::excluirCookie('devem_lg_connect');
+
+        echo json_encode(Auth::loginValido());
+
     }
 }

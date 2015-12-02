@@ -3,12 +3,11 @@
 abstract class Auth
 {
 
-    protected static $base;
+    static private $base = ADMIN_USE ? SESSION_ADMIN : SESSION_APP;
 
 	public function __construct()
 	{
 
-		 self::$base = isset($_REQUEST['admin']) ? 'admin' : 'app';
 	}
 
 	public static function atualizaLogado(){
@@ -18,6 +17,8 @@ abstract class Auth
 		Session::set('login_validate', true);
 		Session::set('login_key', $code);
 		Session::set('force_key', md5(md5($code)));
+
+		return $code;
 
 	}
 

@@ -1,0 +1,175 @@
+<? 
+
+  $p = $this->pParametros(); 
+
+  $cards = $p['cards'];
+
+  $at_cliente = $p['atividade']['cliente'];
+  $at_pedidos = $p['atividade']['pedidos'];
+
+  $reputacao = $p['reputacao'];
+
+  $cli_mensagem = $p['cli_mensagem'];
+
+?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+      <meta charset="utf-8">
+
+      <?php include('core/include.tags.core.php');?>
+
+      <?php require_once('core/include.scripts.core.php');?>
+
+      <link rel="stylesheet" href="<?=Url::base('core/js/vendor/datatables/css/dataTables.bootstrap.css')?>" type="text/css" />
+      <link rel="stylesheet" href="<?=Url::base('core/js/vendor/datatables/css/ColVis.css')?>" type="text/css" />
+      <link rel="stylesheet" href="<?=Url::base('core/js/vendor/datatables/css/TableTools.css')?>" type="text/css" />
+
+      <script  src="<?=Configuracoes::CheckFileCustomer('js/Cliente.class.js', true)?>" ></script>
+    
+  </head>
+
+  <body class="bg-1">
+
+    <!-- Preloader -->
+    <div class="mask"><div id="loader"></div></div>
+    <!--/Preloader -->
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+
+      <!-- Make page fluid -->
+      <div class="row">
+
+        <!-- @HEADER -->
+          <?php include('core/include.header.core.php');?>
+        <!-- @END HEADER -->
+        
+        <!-- Page content -->
+        <div id="content" class="col-md-12">
+          
+          <!-- page header -->
+          <div class="pageheader">
+            
+            <h2><i class="fa fa-users" style="line-height: 48px;padding-left: 0;"></i> Clientes</h2>
+            
+            <div class="breadcrumbs">
+
+              <ol class="breadcrumb">
+
+                <li>Você está em</li>
+                <li><a>Clientes</a></li>
+
+              </ol>
+
+            </div>
+
+            <button id="bt_add_cliente" style="float: right; margin: 30px 0px;" class="btn btn-default btn-lg margin-top-20" type="button"><i class="fa fa-plus"></i> Novo Cliente</button>
+
+          </div>
+          <!-- /page header -->
+          
+          <!-- content main container -->
+          <div class="main">
+
+            <!-- row -->
+            <div class="row">
+
+              <!-- col 12 -->
+              <div class="col-md-12">
+
+                <!-- tile -->
+                <section class="tile transparent">
+
+                  <!-- tile header -->
+                  <div class="tile-header transparent">
+
+                    <h1>Listagem dos seus Clientes </h1>
+
+                    <span class="note">* <span class="italic">apenas ativados</span></span>
+
+                    <div class="controls">
+
+                      <a href="#" class="minimize"><i class="fa fa-chevron-down"></i></a>
+                      <!--a href="#" class="refresh"><i class="fa fa-refresh"></i></a>
+                      <a href="#" class="remove"><i class="fa fa-times"></i></a-->
+
+                    </div>
+
+                  </div>
+                  <!-- /tile header -->
+
+                  <!-- tile body -->
+                  <div class="tile-body rounded-corners">
+                    
+                    <div class="table-responsive">
+
+                      <table  class="table table-datatable table-custom" id="drillDownDataTable">
+
+                        <thead>
+                          <tr>
+                            <th class="no-sort" style="width: 45px"></th>
+                            <th class="sort-alpha">ID</th>
+                            <th class="sort-alpha">NOME</th>
+                            <th class="sort-alpha">RANKING</th>
+                            <th class="sort-alpha">REPUTACAO</th>
+                            <th class="sort-alpha">DESEMPENHO (%)</th>
+                            <th class="sort-alpha">DATA REGISTRO</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+
+                      </table>
+
+                    </div>
+
+                  </div>
+                  <!-- /tile body -->
+                
+                </section>
+                <!-- /tile -->
+
+              </div>
+              <!-- /col 12 -->
+
+            </div>
+            <!-- /row -->
+          
+          </div>
+          <!-- /content container -->
+
+        </div>
+        <!-- Page content end -->
+
+      </div>
+      <!-- Make page fluid-->
+
+    </div>
+    <!-- Wrap all page content end -->
+
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&amp;skin=sons-of-obsidian"></script>
+    <script src="<?=Url::base('core/js/vendor/datatables/jquery.dataTables.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/datatables/ColReorderWithResize.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/datatables/colvis/dataTables.colVis.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/datatables/tabletools/ZeroClipboard.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/datatables/tabletools/dataTables.tableTools.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/datatables/dataTables.bootstrap.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/bootstrap/bootstrap.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/bootstrap/bootstrap-dropdown-multilevel.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/mmenu/js/jquery.mmenu.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/sparkline/jquery.sparkline.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/nicescroll/jquery.nicescroll.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/animate-numbers/jquery.animateNumbers.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/blockui/jquery.blockUI.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/tabdrop/bootstrap-tabdrop.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/summernote/summernote.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/chosen/chosen.jquery.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/devem/minimal.js')?>"></script>
+
+  </body>
+</html>
+      

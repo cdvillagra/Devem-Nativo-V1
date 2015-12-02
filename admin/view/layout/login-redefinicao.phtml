@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Representantes Água Rocha Branca</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+
+    <link rel="icon" type="image/ico" href="<?=Url::imgApp('icone/favicon.ico')?>" />
+
+    <?php require_once('core/include.scripts-adm.core.php');?>
+
+  </head>
+  <body class="bg-1">
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+
+      <!-- Make page fluid -->
+      <div class="row">
+
+        <!-- Page content -->
+        <div id="content" class="col-md-12 full-page login">
+
+          <div class="inside-block">
+
+            <img src="<?=Url::imgApp('logo-agua-rocha-branca.png')?>" alt class="logo">
+
+            <h1>Representantes <strong>Rocha Branca</strong></h1>
+            <h4>Redefinição de senha</h4>
+
+            <form id="form_redefinir" class="form-signin">
+
+              <section>
+
+                <div class="input-group">
+
+                  <input type="password" class="form-control" id="rd_pass" name="rd_pass" placeholder="Nova Senha">
+                  <div class="input-group-addon"><i class="fa fa-key"></i></div>
+
+                </div>
+
+                <div class="input-group">
+
+                  <input type="password" class="form-control" id="rd_pass_confirm" name="rd_pass_confirm" placeholder="Confirme a Senha">
+                  <div class="input-group-addon"><i class="fa fa-key"></i></div>
+
+                </div>
+
+                <input type="hidden" id="rd_id" name="rd_id" value="<?=@$_GET['id']?>" />
+                <input type="hidden" id="rd_code" name="rd_code" value="<?=@$_GET['code']?>" />
+
+              </section>
+
+            </form>
+
+            <section class="log-in">
+
+              <button class="btn btn-greensea" id="bt_redefinir" >Redefinir</button>
+
+            </section>
+
+          </div>
+
+        </div>
+        <!-- /Page content -->  
+
+      </div>
+
+    </div>
+    <!-- Wrap all page content end -->
+
+  </body>
+  
+</html>
+      

@@ -57,25 +57,27 @@ devem.core.defaults = {
 
     },
 
-    url: function(sufx, prefix){
+    url: function(sufx, prefix, admin){
+
+        if(typeof admin == 'undefined')
+            var admin = false;
 
         if(typeof sufx == 'undefined')
             var sufx = '';
 
-        if(typeof prefix == 'undefined'){
+        if((typeof prefix == 'undefined') || (prefix == null)){
 
-            var url = window.location.hostname;
+            var url = window.location.hostname; 
 
         }else{
 
-            var url = location.host;
             var url = prefix+'.[seu_dominio]';
 
         }
         
         var location = window.location.pathname.split('/');
 
-        return $.trim("http://"+url+'/'+location[1]+'/'+sufx);
+        return $.trim("http://"+url+'/'+location[1]+'/'+(admin ? 'admin/': '')+sufx);
 
     },
 

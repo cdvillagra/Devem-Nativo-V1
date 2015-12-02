@@ -1,66 +1,84 @@
-<? $p = $this->pParametros(); ?>
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Devem Admin - Dvillagra</title>
+
+    <title>Devem - Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <meta name="description" content="Devem Admin - Dvillagra" />
 
-    <meta name="author" content="Dvillagra" />
+    <link rel="icon" type="image/ico" href="<?=Url::imgApp('icone/favicon.ico')?>" />
 
-    <link rel="shortcut icon" href="<?=Url::baseAdmin('view/img/favicon.ico')?>">
-
-    <?php include('admin/include/scriptMenu.admin.php');?>
-    <script src="<?=Url::baseAdmin('view/js/Login.class.js')?>"></script>
+    <?php require_once('core/include.scripts-adm.core.php');?>
 
   </head>
+  <body class="bg-1">
 
-  <body>
+    <!-- Wrap all page content here -->
+    <div id="wrap">
 
-    <!-- Main Container start -->
-    <div class="dashboard-container">
+      <!-- Make page fluid -->
+      <div class="row">
 
-      <div class="container">
+        <!-- Page content -->
+        <div id="content" class="col-md-12 full-page login">
 
-        <!-- Row Start -->
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-md-offset-4">
-            <div class="sign-in-container">
-              <form class="login-wrapper" id="form_login">
-                <div class="header">
-                  <div class="row">
-                    <div class="col-md-12 col-lg-12">
-                      <h3>Devem Admin<img src="img/logo1.png" alt="Logo" class="pull-right"></h3>
-                    </div>
-                  </div>
+          <div class="inside-block">
+
+            <img src="<?=Url::imgApp('icone_git.png')?>" alt class="logo">
+
+            <h1><strong>Devem.anager</strong></h1>
+
+            <h4>Seja Bem Vindo</h4>
+
+            <form id="form_login" class="form-signin">
+
+              <section>
+
+                <div class="input-group">
+
+                  <input type="text" class="form-control" id="lg_usuario" name="lg_usuario" placeholder="Usuário">
+                  <div class="input-group-addon"><i class="fa fa-user"></i></div>
+
                 </div>
-                <div class="content">
-                  <div class="form-group">
-                    <label for="userName">Usuário</label>
-                    <input type="text" class="form-control" id="lg_usuario" name="lg_usuario" placeholder="Usuário">
-                  </div>
-                  <div class="form-group">
-                    <label for="Password1">Senha</label>
-                    <input type="password" class="form-control" name="lg_senha" id="lg_senha" placeholder="Senha">
-                  </div>
+
+                <div class="input-group">
+
+                  <input type="password" class="form-control" name="lg_senha" id="lg_senha" placeholder="Senha">
+                  <div class="input-group-addon"><i class="fa fa-key"></i></div>
+
                 </div>
-                <div class="actions">
-                  <input class="btn btn-danger" id="bt_login" type="button" value="Logar">
-                  <a class="link" href="#">Esqueceu a senha?</a>
-                  <div class="clearfix"></div>
+
+              </section>
+
+              <section class="controls">
+
+                <div class="checkbox check-transparent">
+                  <input type="checkbox" value="1" id="contectado" name="contectado">
+                  <label for="contectado">Manter conectado</label>
                 </div>
-              </form>
-            </div>
+                
+                <a href="<?=Url::baseAdmin('login/esqueci')?>">Esqueceu a senha?</a>
+
+              </section>
+
+            </form>
+
+              <section class="log-in">
+
+                <button class="btn btn-greensea" id="bt_login" >Logar</button>
+              </section>
+
           </div>
+
         </div>
-        <!-- Row End -->
-        
+        <!-- /Page content --> 
+
       </div>
+
     </div>
-    <!-- Main Container end -->
-    
-    <script src="<?=Url::baseAdmin('view/js/bootstrap.min.js')?>"></script>
+    <!-- Wrap all page content end -->
 
   </body>
+
 </html>
+      

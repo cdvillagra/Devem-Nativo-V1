@@ -7,12 +7,12 @@
 abstract class Session
 {
 
-    protected static $base;
+    static private $base = ADMIN_USE ? SESSION_ADMIN : SESSION_APP;
 
 	public function __construct()
 	{
 
-		 self::$base = isset($_REQUEST['admin']) ? SESSION_ADMIN : SESSION_APP;
+
 	}
 
 	public static function existe($key = null) {
@@ -28,12 +28,24 @@ abstract class Session
 
 	public static function get($val) 
 	{	
+		
 		return @$_SESSION['_devem_'][self::$base][$val];	
 	}
 
 	public static function set($key, $val = true) 
 	{
-		return @$_SESSION['_devem_'][self::$base][$key] = $val;
+
+		if(is_array($key)){
+
+			foreach ($key as $k => $v) {
+				$_SESSION['_devem_'][self::$base][$k] = $v;
+			}
+
+		}else{
+
+			$_SESSION['_devem_'][self::$base][$key] = $val;
+
+		}
 	}
 
 	public static function setNull($key)

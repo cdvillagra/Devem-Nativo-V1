@@ -69,7 +69,7 @@ final class InstallController {
 
       $v_db_ativo = 'false';
 
-      if($this->existeSession('db_no')){
+      if(!$this->existeSession('db_no')){
 
         $arquivo = 'config\\conn.php';
 
@@ -158,7 +158,7 @@ final class InstallController {
 
       $arquivo = 'config\\globals.php';
 
-      if($this->existeSession('db_no')){
+      if(!$this->existeSession('db_no')){
 
         require_once('../model/Install.model.php');
 

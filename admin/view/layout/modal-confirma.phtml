@@ -1,0 +1,20 @@
+<? $p = $this->pParametros(); ?>
+
+<div class="content-modal">
+
+	<h3><?=$p['titulo']?></h3>
+
+	<br />
+
+	<p><?=$p['texto']?></p>
+	
+	<button class='btn bt-acao' onClick="<?=$p['acao_bt']?>"><?=$p['label_bt']?></button>
+	<button class='btn bt-ok'>Cancelar</button>
+
+</div>
+ 
+ <script> 
+
+ 	$('.content-modal .bt-ok').click(function(){$.fancybox.close();}); 
+
+ </script>

@@ -59,6 +59,9 @@ setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 date_default_timezone_set('America/Sao_Paulo');
 set_time_limit(300);
 
+//# Define se é uma atividade no Admin
+define('ADMIN_USE', isset($_REQUEST['admin']));
+
 //# Define a conexão com o banco de dados
 require_once ('config/globals.php');
 
@@ -108,6 +111,7 @@ require_once ('config/conn.php');
 
 //# Define Url Default do sistema
 define('URL', Url::defineUrl());
+
 
 try {
 

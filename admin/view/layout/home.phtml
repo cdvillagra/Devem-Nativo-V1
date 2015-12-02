@@ -1,0 +1,604 @@
+<? 
+
+  $p = $this->pParametros(); 
+
+  $cards = $p['cards'];
+
+  $at_cliente = $p['atividade']['cliente'];
+  $at_pedidos = $p['atividade']['pedidos'];
+
+  $reputacao = $p['reputacao'];
+
+  $cli_mensagem = $p['cli_mensagem'];
+
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+
+      <meta charset="utf-8">
+
+      <?php include('core/include.tags.core.php');?>
+
+      <?php require_once('admin/include/include.scripts.admin.php');?>
+    
+  </head>
+
+<body class="bg-1">
+
+    <!-- Preloader -->
+    <div class="mask"><div id="loader"></div></div>
+    <!--/Preloader -->
+
+    
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+
+      <!-- Make page fluid -->
+      <div class="row">
+        
+        <!-- @HEADER -->
+          <?php include('admin/include/include.header.admin.php');?>
+        <!-- @END HEADER -->        
+        
+        <!-- Page content -->
+        <div id="content" class="col-md-12">
+          
+          <!-- page header -->
+          <div class="pageheader">
+            
+            <h2><i class="fa fa-tachometer"></i> Dashboard</h2>
+            
+            <div class="breadcrumbs">
+
+              <ol class="breadcrumb">
+
+                <li>Você está em </li>
+                <li class="active">Dashboard</li>
+
+              </ol>
+
+            </div>
+
+          </div>
+          <!-- /page header -->
+          
+          <!-- content main container -->
+          <div class="main">
+
+            <!-- cards -->
+            <div class="row cards">
+
+              <div class="card-container col-lg-3 col-sm-6 col-xs-12">
+
+                <div class="card card-slategray hover">
+
+                  <div class="front"> 
+
+                    <div class="media">    
+
+                      <span class="pull-left">
+                        <i class="fa fa-star media-object"></i>
+                      </span>
+
+                      <div class="media-body">
+                        <small>Pontuação</small>
+                        <h2 class="media-heading animate-number" data-value="10" data-animation-duration="1500">0</h2>
+                      </div>
+
+                    </div> 
+
+                    <div class="progress-list">
+
+                      <div class="details">
+                        <div class="title">Sua Posição no Ranking</div>
+                      </div>
+
+                      <div class="status pull-right bg-transparent-black-1">
+                        <span class="animate-number" data-value="10" data-animation-duration="1500">0</span>
+                      </div>
+
+                      <div class="clearfix"></div>
+
+                      <div class="progress progress-little progress-transparent-black">
+                        <div class="progress-bar animate-progress-bar" data-percentage="100%"></div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="back">
+
+                    <a href="<?=Url::base('rendimento/ranking')?>">
+                      <i class="fa fa fa-signal fa-4x"></i>
+                      <span>Veja o Ranking</span>
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </div>
+              
+              <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+
+                <div class="card card-redbrown hover">
+
+                  <div class="front"> 
+
+                    <div class="media"> 
+
+                      <span class="pull-left">
+                        <i class="fa fa-users media-object"></i>
+                      </span>
+
+                      <div class="media-body">
+                        <small>Total de Clientes</small>
+                        <h2 class="media-heading animate-number" data-value="10" data-animation-duration="1500">0</h2>
+                      </div>
+
+                    </div> 
+
+                    <div class="progress-list">
+
+                      <div class="details">
+                        <div class="title">Média de Potencial dos clientes</div>
+                      </div>
+
+                      <div class="status pull-right bg-transparent-black-1">
+                        <span class="animate-number" data-value="10" data-animation-duration="1500">0</span>%
+                      </div>
+
+                      <div class="clearfix"></div>
+
+                      <div class="progress progress-little progress-transparent-black">
+                        <div class="progress-bar animate-progress-bar" data-percentage="10%"></div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="back">
+
+                    <a href="<?=Url::base('cliente/cadastro')?>">
+                      <i class="fa fa-file-text-o fa-4x"></i>
+                      <span>Cadastrar Cliente</span>
+                    </a>  
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+
+                <div class="card card-greensea hover">
+
+                  <div class="front">        
+                    
+                    <div class="media">
+
+                      <span class="pull-left">
+                        <i class="fa fa-usd media-object"></i>
+                      </span>
+
+                      <div class="media-body">
+                        <small>Rendimento Total</small>
+                        <h2 class="media-heading animate-number" data-value="10" data-animation-duration="1500">0</h2>
+                      </div>
+
+                    </div>
+
+                    <div class="progress-list">
+
+                      <div class="details">
+                        <div class="title">Rendimento Mensal em relação aos anteriores %</div>
+                      </div>
+
+                      <div class="status pull-right bg-transparent-black-1">
+                        <span class="animate-number" data-value="10" data-animation-duration="1500">0</span>%
+                      </div>
+
+                      <div class="clearfix"></div>
+
+                      <div class="progress progress-little progress-transparent-black">
+                        <div class="progress-bar animate-progress-bar" data-percentage="10%"></div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="back">
+
+                    <a href="<?=Url::base('relatorio/ganho')?>">
+                      <i class="fa fa-bar-chart-o fa-4x"></i>
+                      <span>Veja os indicativos</span>
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+
+                <div class="card card-blue hover">
+
+                  <div class="front">        
+                    
+                    <div class="media">   
+
+                      <span class="pull-left">
+                        <i class="fa fa-shopping-cart media-object"></i>
+                      </span>
+
+                      <div class="media-body">
+                        <small>Suas Compras</small>
+                        <h2 class="media-heading animate-number" data-value="10" data-animation-duration="1500">0</h2>
+                      </div>
+
+                    </div> 
+
+                    <div class="progress-list">
+
+                      <div class="details">
+                        <div class="title">Seu potencial de compra</div>
+                      </div>
+
+                      <div class="status pull-right bg-transparent-black-1">
+                        <span class="animate-number" data-value="10" data-animation-duration="1500">0</span>%
+                      </div>
+
+                      <div class="clearfix"></div>
+
+                      <div class="progress progress-little progress-transparent-black">
+                        <div class="progress-bar animate-progress-bar" data-percentage="10%"></div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="back">
+
+                    <a href="http://www.aguarochabranca.com.br" target="_blank">
+                      <i class="fa fa-money fa-4x"></i>
+                      <span>Ir para a loja</span>
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+            <!-- /cards -->
+            
+            <!-- row -->
+            <div class="row">
+
+              <!-- col 8 -->
+              <div class="col-lg-8 col-md-12">
+
+                <!-- tile -->
+                <section class="tile transparent">
+
+                  <!-- tile header -->
+                  <div class="tile-header transparent">   
+
+                    <h1>Sua <strong>Reputação</strong></h1>
+
+                    <div class="controls">
+
+                      <a href="#" class="minimize"><i class="fa fa-chevron-down"></i></a>
+                      
+
+                    </div>
+
+                  </div>
+                  <!-- /tile header -->
+
+
+                  <!-- tile body -->
+                  <div class="tile-body color transparent-black rounded-bottom-corners">
+
+                    <div class="row">
+
+                      <ul class="inline">
+                        
+                        <li class="col-md-8 col-sm-12 col-xs-12 text-center">
+                          
+                          <h4 class="underline text-left">Seu <strong>Rendimento</strong> do mês</h4>
+                          
+                          <div class="inner-container inline">
+
+                            <p class="chart-overall text-center medium-thin uppercase color-transparent-black">Ganho</p>
+                            <div data-percent="100" data-size="140" class="pie-chart inline" data-scale-color="false" data-track-color="rgba(0,0,0,0)" data-bar-color="#ffffff" data-line-width="5">
+                              <div class="text-center">
+                                <i class="fa fa-usd fa-5x"></i>
+                              </div>
+                            </div>
+                            <p class="chart-overall text-center medium-thin uppercase">R$ <span class="big-medium animate-number" data-value="10" data-animation-duration="2500">0</span></p>
+
+                          </div>
+
+
+                          <div class="inner-container inline">
+
+                            <p class="chart-overall text-center medium-thin uppercase color-transparent-black">Clientes</p>
+                            <div data-percent="100" data-size="140" class="pie-chart inline" data-scale-color="false" data-track-color="rgba(0,0,0,0)" data-bar-color="rgba(0,0,0,.4)" data-line-width="5">
+                              <div class="text-center">
+                                <span><i class="fa fa fa-users fa-5x color-transparent-black"></i></span>
+                              </div>
+                            </div>
+                            <p class="chart-overall text-center medium-thin uppercase color-transparent-black"><span class="big-medium animate-number" data-value="10" data-animation-duration="2500">0</span></p>
+
+                          </div>
+
+                        </li>
+
+                        <li class="col-md-4 col-sm-12 col-xs-12">
+
+                          <h4 class="underline"><strong>Ranking</strong> Geral</h4>
+
+
+                          <p> <a href="#" >Ver Ranking Completo </a></p>
+
+                        </li>
+
+                      </ul>
+
+                    </div>
+
+                  </div>
+                  <!-- /tile body -->
+
+                </section>
+                <!-- /tile -->
+
+                <!-- tile -->
+                <section class="tile transparent recent-activity">
+
+                  <!-- tile header -->
+                  <div class="tile-header transparent">   
+
+                    <h1><strong>Atividades</strong> Recentes</h1>
+
+                    <div class="controls">
+
+                      <a href="#" class="minimize"><i class="fa fa-chevron-down"></i></a>
+                      
+
+                    </div>
+
+                  </div>
+                  <!-- /tile header -->
+
+                  <!-- tile widget -->
+                  <div class="tile-widget color transparent-black rounded-top-corners nopadding">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs tabdrop">
+
+                      <li class="active"><a href="#users-tab" data-toggle="tab">Clientes</a></li>
+                      <li><a href="#orders-tab" data-toggle="tab">Pedidos</a></li>
+
+                    </ul>
+                    <!-- / Nav tabs -->
+
+                  </div>
+                  <!-- /tile widget -->
+
+                  <!-- tile body -->
+                  <div class="tile-body tab-content nopadding rounded-bottom-corners">
+                    <!-- Tab panes -->
+                    
+                  
+
+                    <!-- / Tab panes -->
+                  </div>
+                  <!-- /tile body -->
+                
+                </section>
+
+              </div>
+              <!-- /col 8 -->
+
+              <!-- col 4 -->
+              <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                
+                <!-- tile -->
+                <section class="tile color transparent-black">
+
+                  <!-- tile header -->
+                  <div class="tile-header">
+
+                    <h2 class="tit-box">Reputação dos clientes <strong>X</strong> Potencial de rendimentos</h2>
+
+                    <div class="controls">
+
+                      <a href="#" class="minimize"><i class="fa fa-chevron-down"></i></a>
+                      
+
+                    </div>
+
+                  </div>
+                  <!-- /tile header -->
+
+                  <!-- tile body -->
+                  <div class="tile-body">
+
+                    <div id="browser-usage" style="height: 230px;" class="morris-chart"></div>
+
+                    <ul class="inline text-center chart-legend">
+
+                      <li><span class="badge badge-outline" style="border-color: #1693A5"></span> Ótimo <small><span id="dd-otimo">0</span>%</small>,</li>
+                      <li><span class="badge badge-outline" style="border-color: #ffc100"></span> Regular <small><span id="dd-regular">0</span>%</small>,</li>
+                      <li><span class="badge badge-outline" style="border-color: #d9544f"></span> Ruim <small><span id="dd-ruim">0</span>%</small></li>
+
+                    </ul>
+
+                  </div>
+                  <!-- /tile body --> 
+
+                </section>
+                <!-- /tile -->
+
+                <!-- tile -->
+                <section class="tile color transparent-black">
+
+                  <!-- tile header -->
+                  <div class="tile-header">
+
+                    <h1>Fale com seus <strong>Clientes</strong></h1>
+
+                    <div class="controls">
+
+                      <a href="#" class="minimize"><i class="fa fa-chevron-down"></i></a>
+                      
+
+                    </div>
+
+                  </div>
+                  <!-- /tile header -->
+
+                  <!-- tile widget -->
+                  <div class="tile-widget color transparent">
+
+                    <form class="form-horizontal" role="form" id="form_mensagem">
+
+                      <div class="form-group">
+
+                        <label for="message-to" class="col-sm-2 control-label font-slab">Cliente</label>
+
+                        <div class="col-sm-10">
+
+                          <select data-placeholder="Selecione seus Clientes..." multiple="" tabindex="3" class="chosen-select form-control chosen-transparent cp_msg" id="msg_dest" name="msg_dest[]">
+
+                           
+                          </select>
+
+                        </div>
+
+                      </div>
+
+                      <div class="form-group no-bottom-margin">
+
+                        <label for="subject" class="col-sm-2 control-label font-slab">Assunto</label>
+
+                        <div class="col-sm-10">
+
+                          <input type="text" class="form-control transparent cp_msg" id="msg_assu" name="msg_assu" placeholder="Assunto...">
+
+                        </div>
+
+                      </div>
+
+                      <input type="hidden" name="msg_msgn" id="msg_msgn" class="cp_msg" />
+                      <input type="hidden" name="msg_tt" id="msg_tt" />
+                      <input type="hidden" name="msg_acao" id="msg_acao" value="nova" />
+
+                    </form>
+
+                  </div>
+                  <!-- /tile widget -->
+
+                  <!-- tile body -->
+                  <div class="tile-body nopadding">
+
+                    <div id="msg-box"></div>
+
+                  </div>
+                  <!-- /tile body -->
+
+                  <!-- tile footer -->
+                  <div class="tile-footer rounded-bottom-corners text-right">
+
+                    <button class="btn btn-primary" id="bt_enviar_mensagem">Enviar Mensagem</button>
+
+                  </div>
+                  <!-- /tile footer -->
+
+                </section>
+                <!-- /tile -->
+
+              </div>
+              <!-- /col 4 -->
+              
+            </div>
+            <!-- /row -->
+
+          </div>
+          <!-- /content container -->
+
+        </div>
+        <!-- Page content end -->
+
+      </div>
+      <!-- Make page fluid-->
+
+    </div>
+    <!-- Wrap all page content end -->
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <script src="<?=Url::base('core/js/vendor/bootstrap/bootstrap.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/bootstrap/bootstrap-dropdown-multilevel.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/mmenu/js/jquery.mmenu.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/sparkline/jquery.sparkline.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/nicescroll/jquery.nicescroll.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/animate-numbers/jquery.animateNumbers.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/blockui/jquery.blockUI.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/easypiechart/jquery.easypiechart.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/rickshaw/raphael-min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/rickshaw/d3.v2.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/rickshaw/rickshaw.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/morris/morris.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/tabdrop/bootstrap-tabdrop.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/summernote/summernote.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/chosen/chosen.jquery.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/devem/minimal.min.js')?>"></script>
+
+    <script>
+    $(function(){
+
+      // Initialize card flip
+      $('.card.hover').hover(function(){
+        $(this).addClass('flip');
+      },function(){
+        $(this).removeClass('flip');
+      });
+
+      //generate actual pie charts
+      $('.pie-chart').easyPieChart();
+
+      // sortable table
+      $('.table.table-sortable th.sortable').click(function() {
+        var o = $(this).hasClass('sort-asc') ? 'sort-desc' : 'sort-asc';
+        $('th.sortable').removeClass('sort-asc').removeClass('sort-desc');
+        $(this).addClass(o);
+      });
+
+      // Initialize tabDrop
+      $('.tabdrop').tabdrop({text: '<i class="fa fa-th-list"></i>'});
+
+      //load wysiwyg editor
+      $('#msg-box').summernote({
+        toolbar: false,
+        height: 161   //set editable area's height
+      });
+
+      
+      
+    })
+      
+    </script>
+  </body>
+</html>

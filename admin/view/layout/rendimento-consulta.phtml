@@ -1,0 +1,228 @@
+<? $p = $this->pParametros(); ?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+      <meta charset="utf-8">
+
+      <?php include('core/include.tags.core.php');?>
+
+      <?php require_once('core/include.scripts.core.php');?>
+
+      <script  src="<?=Configuracoes::CheckFileCustomer('js/Rendimento.class.js', true)?>" ></script>
+    
+  </head>
+
+  <body class="bg-1">
+
+    <!-- Preloader -->
+    <div class="mask"><div id="loader"></div></div>
+    <!--/Preloader -->
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+
+      <!-- Make page fluid -->
+      <div class="row">
+
+        <!-- @HEADER -->
+          <?php include('core/include.header.core.php');?>
+        <!-- @END HEADER -->
+        
+        <!-- Page content -->
+        <div id="content" class="col-md-12">
+          
+          <!-- page header -->
+          <div class="pageheader">
+            
+            <h2><i class="fa fa-users" style="line-height: 48px;padding-left: 0;"></i> Rendimento</h2>
+            
+            <div class="breadcrumbs">
+
+              <ol class="breadcrumb">
+
+                <li>Você está em</li>
+                <li><a>Rendimento</a></li>
+
+              </ol>
+
+            </div>
+
+          </div>
+          <!-- /page header -->
+          
+          <!-- content main container -->
+          <div class="main">
+
+            <!-- row -->
+            <div class="row">
+
+              <!-- col 12 -->
+              <div class="col-md-12">
+                
+                <!-- /tile -->
+
+                <!-- tile -->
+                <section class="tile transparent">
+
+                  <!-- tile header -->
+                  <div class="tile-header nopadding">   
+
+                    <div class="controls">
+
+                      <a class="minimize" href="#"><i class="fa fa-chevron-down"></i></a>
+                      <!--a class="refresh" href="#"><i class="fa fa-refresh"></i></a>
+                      <a class="remove" href="#"><i class="fa fa-times"></i></a-->
+
+                    </div>
+
+                  </div>
+                  <!-- /tile header -->
+
+                  <!-- tile widget -->
+                  <div class="tile-widget color cyan rounded-top-corners">
+
+                    <div class="fa fa-money watermark"></div>
+                    
+                    <div class="media social-feed">   
+
+                      <span class="pull-left">
+
+                        <img class="img-circle" alt="" src="<?=Url::imgApp('avatar.jpg')?>">
+
+                      </span>
+
+                      <div class="media-body">
+
+                        <h4 class="media-heading"><strong><?=Configuracoes::MetaUsuario(Session::get('ID'), 'first_name')?></strong> <?=Configuracoes::MetaUsuario(Session::get('ID'), 'last_name')?></h4>
+
+                        <small><a href="#"><?=Session::get('user_email')?></a></small>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <!-- /tile widget -->
+
+                  <!-- tile body -->
+                  <div class="tile-body color transparent-black rounded-bottom-corners">
+
+                    <ul class="inline divided social-feed">
+
+                      <li>
+                        <h4><?=$p['pontos_total']?></h4>
+                        Pontuação
+                      </li>
+
+                      <li>
+                        <h4><?=$p['ganho_total']?></h4>
+                        Ganho
+                      </li>
+
+                      <li>
+                        <h4><?=$p['desconto']?></h4>
+                        Desconto
+                      </li>
+
+                      <li>
+                        <h4><?=$p['resgatado']?></h4>
+                        Resgatado
+                      </li>
+
+                      <li>
+                        <h4><?=$p['ganho']?></h4>
+                        Disponível
+                      </li>
+
+                    </ul>
+
+                  </div>
+                  <!-- /tile body -->
+                
+                </section>
+                <!-- /tile -->
+
+                <section class="tile">
+
+                  <!-- tile header -->
+                  <div class="tile-header">
+
+                    <h1><strong>Resgatar</strong></h1>
+
+                    <div class="controls">
+
+                      <a class="minimize" href="#"><i class="fa fa-chevron-down"></i></a>
+                      <!--a class="refresh" href="#"><i class="fa fa-refresh"></i></a>
+                      <a class="remove" href="#"><i class="fa fa-times"></i></a-->
+
+                    </div>
+
+                  </div>
+                  <!-- /tile header -->
+
+                  <!-- tile body -->
+                  <div class="tile-body">
+                   
+                    <div class="input-group margin-bottom-20">
+
+                      <span class="input-group-addon">$</span>
+
+                      <input type="text" class="form-control mascara-numero" id="valor_resgate">
+
+                      <span class="input-group-addon">.00</span>
+
+                    </div>
+
+                  </div>
+
+                    <div class="form-group form-footer" style="overflow: hidden ! important;">
+
+                      <div class="col-sm-offset-5 col-sm-5">
+
+                        <button class="btn btn-primary" id="bt_resgate">Solicitar Resgate</button>
+
+                      </div>
+
+                    </div>
+                  <!-- /tile body -->
+                
+                </section>
+
+                <!-- /tile -->
+
+              </div>
+              <!-- /col 12 -->
+
+            </div>
+            <!-- /row -->
+          
+          </div>
+          <!-- /content container -->
+
+        </div>
+        <!-- Page content end -->
+
+      </div>
+      <!-- Make page fluid-->
+
+    </div>
+    <!-- Wrap all page content end -->
+
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&amp;skin=sons-of-obsidian"></script>
+    <script src="<?=Url::base('core/js/vendor/bootstrap/bootstrap.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/bootstrap/bootstrap-dropdown-multilevel.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/mmenu/js/jquery.mmenu.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/sparkline/jquery.sparkline.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/nicescroll/jquery.nicescroll.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/animate-numbers/jquery.animateNumbers.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/blockui/jquery.blockUI.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/tabdrop/bootstrap-tabdrop.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/summernote/summernote.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/vendor/chosen/chosen.jquery.min.js')?>"></script>
+    <script src="<?=Url::base('core/js/devem/minimal.js')?>"></script>
+
+  </body>
+</html>
+      
