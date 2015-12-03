@@ -52,8 +52,8 @@ devem.devemApp = {
 
         var mg = ( ( $(window).height() / 2 ) - ( $('.content').height() / 2 ) );
 
-        if(mg > 100)
-            mg = 100;
+        if(mg > 380)
+            mg = 380;
       
         $('.content').css('margin-top',mg); 
 

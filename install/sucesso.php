@@ -21,7 +21,8 @@
         <div class="sub-content">           
 
             <p>
-                Olha só que bom! Terminamos!<br />
+                Olha só que bom! Terminamos!<br /><br />
+                Você poderá acessar o admin atravez da sua URL mais o sufixo '/admin'.<br /><br />
                 Agora você deverá clicar no botão concluir, para fechar a instalação e começar a utilizar a arquitetura Devem.
             </p>
 

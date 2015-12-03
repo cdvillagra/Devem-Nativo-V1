@@ -33,9 +33,9 @@
 
             <p>
                 Vamos lá! <br/>
-                Nesses quatro passos, vamos definir algumas informações importantes para que você desenvolva seu sistema ou website com o DEVEM.<br/>
-                É importante que o apontamento da sua aplicação esteja apontada para a raiz do DEVEM. Caso esteja trabalhando local, configure seu arquivo httpd.conf para sertar o document root para a pasta que vocÊ descarregou o Devem.<br/>
-                Esperamos que você tenha sucesso com a sua aplicação.
+                Nesses quatro passos, vamos definir algumas informações importantes para que você desenvolva seu sistema ou website com o DEVEM.<br/><br/>
+                É importante que você não esteja com nenhum arquivo aberto, ou com a pasta de instalação aberta em algum lugar da sua máquina.<br/><br/>
+                <br />Esperamos que você tenha sucesso com a sua aplicação.
             </p>
 
             <button id="bt-iniciar">Iniciar<i class="fa fa-sign-out"></i></button>

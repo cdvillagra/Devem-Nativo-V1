@@ -26,6 +26,8 @@
             </p>
             <form class="form-parametros">
 
+                <input type="checkbox" id="auth_app" name="auth_app" value="true" /> Meu Front-End ignora autenticação para as páginas
+                <br />
                 <input type="text" placeholder="E-mail - Host" id="email_host" name="email_host" autocomplete="off" />
                 <input type="text" placeholder="E-mail - Segurança" id="email_secure" name="email_secure" autocomplete="off" />
                 <input type="text" placeholder="E-mail - Porta" id="email_porta" name="email_porta" autocomplete="off" />
@@ -38,8 +40,8 @@
                 <input type="text" placeholder="S3 - KEY" id="s3_key" name="s3_key" autocomplete="off" />
                 <input type="text" placeholder="S3 - BUCKET" id="s3_bucket" name="s3_bucket" autocomplete="off" />
                 <input type="text" placeholder="S3 - URL" id="s3_url" name="s3_url" autocomplete="off" />
-                <br />
-                <input type="checkbox" id="auth_app" name="auth_app" value="true" /> Meu Front-End ignora autenticação para as páginas
+                
+                
 
                 <input type="hidden" id="method" name="method" value="gravaSession" />
             </form>

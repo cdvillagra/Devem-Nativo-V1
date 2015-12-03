@@ -217,12 +217,20 @@ final class LoginController extends Controller {
 
             $email = new Email;
 
-            $conteudo = '<h3>Redefinição de senha do DevemAnager</h3>';
-            $conteudo .= '<p>Uma redefinição de senha foi solicitada, acessando o link abaixo você poderá redefinir a senha e acessar o sistema.</p>';
-            $conteudo .= '<p><a href="'.Url::baseAdmin('login/redefinirSenha/'.$existe['idUsuario'].'/'.$key).'">Redefina sua senha aqui</a></p>';
-            $conteudo .= '<p>Caso não tenha solicitado essa redefinição, ignore esta mensagem.</p>';
-            
-            $conteudo .= '<br /><br />Fim da mensagem';
+            $conteudo = '<div style="background: #1f0802; border-radius: 10px 10px 0 0; color: #F4EAEA; padding: 10px; width: 630px; opacity: 0.8;">';
+            $conteudo .= '    <img src="https://raw.githubusercontent.com/cdvillagra/Devem-Nativo-V1/master/core/img/icone_email.png" width="45px" style="border-right: 2px solid #f4eaea; float: left; margin-right: 12px; padding-right: 10px;" >';
+            $conteudo .= '    <h1 style="font-size: 28px; line-height: 43px; margin: 0;">DevemAnager</h1>';
+            $conteudo .= '    <span>Redefinição de senha</span>';
+            $conteudo .= '</div>';
+            $conteudo .= '<div style="background: #f4eaea none repeat scroll 0 0; font-size: 14px; color: #1f0802; font-size: 59px; overflow: hidden; padding: 10px; text-align: left; width: 630px; opacity: 0.6;">';
+            $conteudo .= '  <h3 style=" font-size: 18px;">Olá '.$existe['auNome'].'</h3>';
+            $conteudo .= '  <p style=" font-size: 14px;">Uma redefinição de senha foi solicitada, acessando o link abaixo você poderá redefinir a senha e acessar o sistema.</p>';
+            $conteudo .= '  <p style=" font-size: 14px;"><a href="'.Url::baseAdmin('login/redefinirSenha/'.$existe['idUsuario'].'/'.$key).'">Redefina sua senha aqui</a></p>';
+            $conteudo .= '  <p style=" font-size: 14px;">Caso não tenha solicitado essa redefinição, ignore esta mensagem.</p>';
+            $conteudo .= '</div>';
+            $conteudo .= '<div style="background: #1f0802; border-radius: 0 0 10px 10px; color: #F4EAEA; padding: 10px; width: 630px; opacity: 0.8; font-size: 12px; text-align: center;">';
+            $conteudo .=     '<span>Direitos Reservados | DVillagra</span>';
+            $conteudo .= '</div>';
 
             $arrMail = array('email_destino' => $existe['auEmail'],
                             'nome_destino' => $existe['auEmail'],

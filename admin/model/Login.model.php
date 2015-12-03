@@ -333,6 +333,7 @@ final class LoginModel extends Repositorio
         $this->pQuery("SELECT
                             idUsuario,
                             auEmail,
+                            auNome,
                             auLogin
                         FROM
                             dv_admusuario
