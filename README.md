@@ -44,7 +44,7 @@ Para dúvidas envie um e-mail para `devem@dvillagra.com.br`
 License
 ---------
 DVillagra
-Copyright © 2015 Devem Nativo (http://devem.dv1.biz)
+Copyright © 2015 Devem Nativo V 1.1.0 (http://devem.dv1.biz)
 
 [1]: http://devem.dv1.biz
 [2]: http://dvillagra.com.br
