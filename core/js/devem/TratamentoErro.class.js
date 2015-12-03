@@ -112,17 +112,11 @@ devem.core.tratamentoerro = {
 	
 	formcamposComErro: function(collection_id)
 	{
-		// console.log(collection_id);
-		/* ============================================	*
-		 * @Felipe										*
-		 * ============================================	*
-		 * Remove todas as classes de erro dos objetos	*
-		 * e dai pinta apenas os que estao com erro		*
-		 * ============================================	*/
+		
 		$('input').each(
 			function() {
 				//$(this).parent('.custom-input').removeClass('error');
-				$(this).parent('.input-devem').removeClass('error');
+				$(this).removeClass('error_devem_form');
 			}
 		);
 		
@@ -149,8 +143,8 @@ devem.core.tratamentoerro = {
 		{
 			if($('#' + collection_id[i]).is("input"))
 			{
-				$('#' + collection_id[i]).parent('.custom-input').addClass('error');
-				$('#' + collection_id[i]).parent('.input-devem').addClass('error');
+				$('#' + collection_id[i]).addClass('error_devem_form');
+				$('#' + collection_id[i]).addClass('error_devem_form');
 			}
 			
 			if($('#' + collection_id[i]).is("select"))

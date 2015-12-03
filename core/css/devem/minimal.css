@@ -589,9 +589,9 @@ ul.inbox > li.msg.active { background-color: rgba(0, 0, 0, 0.3); border: 1px sol
 /************* PROFILE PAGE **************/
 /*****************************************/
 .user-card h3 { text-align: center; }
-.user-card h5 { text-align: center; font-size: 12px; color: rgba(0, 0, 0, 0.3); font-family: "Roboto", "Arial", sans-serif; }
+.user-card h5 { text-align: center; font-size: 12px; color: rgba(255, 255, 255, 0.7); font-family: "Roboto", "Arial", sans-serif; }
 .user-card .profile-controls { text-align: center; }
-.user-card .profile-controls .profile-photo { width: 120px; border: 5px solid white; position: relative; z-index: 99; -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); }
+.user-card .profile-controls .profile-photo { width: 105px; border: 5px solid white; position: relative; z-index: 99; -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); }
 .user-card .profile-controls > li { vertical-align: middle; padding: 0; }
 .user-card .profile-controls .mailto, .user-card .profile-controls .callto { position: relative; }
 .user-card .profile-controls .mailto > a, .user-card .profile-controls .callto > a { background-color: white; padding: 5px 10px; position: absolute; top: -15px; white-space: nowrap; font-size: 11px; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; transition: all 0.2s linear; color: rgba(0, 0, 0, 0.2); }
@@ -1564,7 +1564,7 @@ select.form-control.input-lg + .chosen-container .chosen-choices .search-field i
 .tile .tile-header.transparent { background-color: transparent; border-bottom: 1px solid rgba(255, 255, 255, 0.3); margin-bottom: 15px; color: white; }
 .tile .tile-header.transparent .controls a { color: rgba(0, 0, 0, 0.4); }
 .tile .tile-header.transparent .controls a:hover { color: rgba(0, 0, 0, 0.7); }
-.tile .tile-widget { padding: 15px; }
+.tile .tile-widget { padding: 0px; }
 .tile .tile-widget h2 { margin: 5px 0; color: white; font-size: 24px; }
 .tile .tile-widget .description { font-size: 11px; font-weight: 300; }
 .tile .tile-body { padding: 15px; position: relative; }
@@ -2670,7 +2670,7 @@ a.submit:hover { text-decoration: none; }
 .social-feed .media-body .media-heading { margin-top: 20px; margin-bottom: 0; }
 .social-feed .media-body small a { color: rgba(255, 255, 255, 0.5); }
 .social-feed .media-body small a:hover { color: white; text-decoration: none; }
-.social-feed > li { width: 19.5%; text-align: center; color: rgba(255, 255, 255, 0.5); font-size: 12px; }
+.social-feed > li { color: rgba(255, 255, 255, 0.5); font-size: 12px; }
 .social-feed > li h4 { font-family: "Roboto", "Arial", sans-serif; font-weight: 300; color: white; margin: 0; }
 
 /************************************/

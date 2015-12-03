@@ -130,7 +130,8 @@ final class LoginModel extends Repositorio
                             auNome,
                             auEmail,
                             auNivel,
-                            auImagem
+                            auImagem,
+                            auDataAtualizacao
                         FROM
                             dv_admusuario
                         WHERE
