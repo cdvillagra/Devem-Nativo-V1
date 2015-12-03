@@ -130,20 +130,21 @@ final class LoginController extends Controller {
 
     public function checkLoginCookie(){
 
-        if(!Session::get('login') && Cookie::verificaCookie('devem_lg_connect_'.ADM_KEY)){
+        if(!Session::get('login') && Cookie::verificaCookie('devem_lg_adm_connect_'.ADM_KEY)){
 
-            $this->model->pcodeCookie(Cookie::valorCookie('devem_lg_connect_'.ADM_KEY));
+
+            $this->model->pcodeCookie(Cookie::valorCookie('devem_lg_adm_connect_'.ADM_KEY));
 
             $retorno = $this->model->checkLoginCookie();
 
             if($retorno)
-               $this->login($retorno['auLogin'], false, true, $retorno['user_code_cookie']); 
+               $this->login($retorno['auLogin'], false, true, $retorno['auCodeCookie']); 
 
         }
 
     }
 
-    private function login($usr, $psw, $con, $cookie = false){
+    private function login($usr, $psw, $con = false, $cookie = false){
 
         $this->model->pUsuario($usr);
 
@@ -216,22 +217,22 @@ final class LoginController extends Controller {
 
             $email = new Email;
 
-            $conteudo = '<h3>Redefinição de senha do sistema de representantes Rocha Branca</h3>';
+            $conteudo = '<h3>Redefinição de senha do DevemAnager</h3>';
             $conteudo .= '<p>Uma redefinição de senha foi solicitada, acessando o link abaixo você poderá redefinir a senha e acessar o sistema.</p>';
-            $conteudo .= '<p><a href="'.Url::base('login/redefinirSenha/'.$existe['ID'].'/'.$key).'">Redefina sua senha aqui</a></p>';
+            $conteudo .= '<p><a href="'.Url::baseAdmin('login/redefinirSenha/'.$existe['idUsuario'].'/'.$key).'">Redefina sua senha aqui</a></p>';
             $conteudo .= '<p>Caso não tenha solicitado essa redefinição, ignore esta mensagem.</p>';
-            $conteudo .= '<p>Atenciosamente Água Rocha Branca</p>';
+            
             $conteudo .= '<br /><br />Fim da mensagem';
 
-            $arrMail = array('email_destino' => $existe['user_email'],
-                            'nome_destino' => $existe['user_email'],
-                            'assunto' => 'Redefinição de Senha - Água Rocha Branca',
+            $arrMail = array('email_destino' => $existe['auEmail'],
+                            'nome_destino' => $existe['auEmail'],
+                            'assunto' => 'Redefinição de Senha - DevemAnager',
                             'html' => $conteudo
                 );
 
             $email->send($arrMail);
 
-            $this->model->pId($existe['ID']);
+            $this->model->pId($existe['idUsuario']);
 
             $this->model->pCode($key);
 
@@ -260,7 +261,7 @@ final class LoginController extends Controller {
 
                 $pagina = 'login-redefinicao';
 
-                $arrParametros = array('code' => $this->model->pCode(), 'id' => $existe['ID']);
+                $arrParametros = array('code' => $this->model->pCode(), 'id' => $existe['idUsuario']);
 
             }
 
@@ -288,7 +289,7 @@ final class LoginController extends Controller {
         $this->model->validaRedefinicao();
 
         if($redefinir !== false)
-            $redefinir = $this->login($redefinir['user_login'], $this->model->pSenha());
+            $redefinir = $this->login($redefinir['auLogin'], $this->model->pSenha());
 
         echo json_encode($redefinir);
 

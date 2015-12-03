@@ -70,7 +70,7 @@ devem.login = {
 
             var email = $('#es_email').val();
 
-            if((email != '') && (email.length > 5)){
+            if((email != '') && (email.length > 4)){
 
                 devem.login.esqueciSenha();
 
@@ -106,6 +106,7 @@ devem.login = {
                 val = false;
             }
 
+            console.log(campos);
             if(val !== false){
 
                 devem.login.redefinir();

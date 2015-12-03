@@ -69,7 +69,7 @@ final class InstallController {
 
       $v_db_ativo = 'false';
 
-      if(!$this->existeSession('db_no')){
+      if(filter_var($this->getSession('db_no'), FILTER_VALIDATE_BOOLEAN)){
 
         $arquivo = 'config\\conn.php';
 
@@ -116,7 +116,7 @@ final class InstallController {
 
       $arquivo = 'config\\globals.php';
 
-      if(!$this->existeSession('db_no')){
+      if(filter_var($this->getSession('db_no'), FILTER_VALIDATE_BOOLEAN)){
 
         require_once('../model/Install.model.php');
 
@@ -158,7 +158,7 @@ final class InstallController {
 
       $arquivo = 'config\\globals.php';
 
-      if(!$this->existeSession('db_no')){
+      if(filter_var($this->getSession('db_no'), FILTER_VALIDATE_BOOLEAN)){
 
         require_once('../model/Install.model.php');
 
@@ -191,7 +191,7 @@ final class InstallController {
 
     public function testeDb(){
 
-      if(!isset($this->request['db_no'])){
+      if(!isset($this->request['db_nos'])){
 
         $conn = mysql_connect($this->request['db_host'], $this->request['db_user'], $this->request['db_pass']) or die(self::response(false)); 
 

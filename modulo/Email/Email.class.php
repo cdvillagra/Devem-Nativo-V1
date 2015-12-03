@@ -39,6 +39,9 @@ class Email
 {
 
 	public function send($obj_dados){
+
+		require_once('PHPmailer.class.php');
+		require_once('SMTP.class.php');
 	
 		$obj_config = $this->GetParametros();	
 				
@@ -64,9 +67,9 @@ class Email
 	
 		$mail->Password = $obj_config['email_senha'];
 	
-		$mail->setFrom($obj_config['email_rementente_email'], $obj_config['nome_rementente_email']);
+		$mail->setFrom($obj_config['email_rementente_email'], $obj_config['email_rementente_nome']);
 	
-		$mail->addReplyTo($obj_config['email_rementente_email'], $obj_config['nome_rementente_email']);
+		$mail->addReplyTo($obj_config['email_rementente_email'], $obj_config['email_rementente_nome']);
 	
 		$mail->addAddress($obj_dados['email_destino'], $obj_dados['nome_destino']);
 	

@@ -112,6 +112,14 @@ require_once ('config/conn.php');
 //# Define Url Default do sistema
 define('URL', Url::defineUrl());
 
+if(ADMIN_USE !== false){
+  
+  //# Verifica se está logado
+  $cLogin = new LoginController;
+  $cLogin->checkLoginCookie();
+
+}
+
 
 try {
 

@@ -55,24 +55,7 @@ final class LoginModel extends Repositorio
     private $__senha;
     private $__code;
     private $__codeCookie;
-    private $__nome;
-    private $__sobrenome;
-    private $__tipo;
-    private $__cep;
-    private $__endereco;
-    private $__numero;
-    private $__complemento;
-    private $__bairro;
-    private $__cidade;
-    private $__estado;
-    private $__pais;
-    private $__telefone;
-    private $__celular;
-    private $__cpf;
-    private $__cnpj;
     private $__aberto;
-    private $__usuarioFacebook;
-    private $__arrFacebook;
 	
 	/**
     * Metodo Construtor da Classe
@@ -126,112 +109,10 @@ final class LoginModel extends Repositorio
         else $this->__codeCookie = $val;
     }
 
-    public function pNome($val="")
-    {
-        if($val === "") return $this->__nome;
-        else $this->__nome = $val;
-    }
-
-    public function pSobrenome($val="")
-    {
-        if($val === "") return $this->__sobrenome;
-        else $this->__sobrenome = $val;
-    }
-
-    public function pTipo($val="")
-    {
-        if($val === "") return $this->__tipo;
-        else $this->__tipo = $val;
-    }
-
-    public function pCep($val="")
-    {
-        if($val === "") return $this->__cep;
-        else $this->__cep = $val;
-    }
-
-    public function pEndereco($val="")
-    {
-        if($val === "") return $this->__endereco;
-        else $this->__endereco = $val;
-    }
-
-    public function pNumero($val="")
-    {
-        if($val === "") return $this->__numero;
-        else $this->__numero = $val;
-    }
-
-    public function pComplemento($val="")
-    {
-        if($val === "") return $this->__complemento;
-        else $this->__complemento = $val;
-    }
-
-    public function pBairro($val="")
-    {
-        if($val === "") return $this->__bairro;
-        else $this->__bairro = $val;
-    }
-
-    public function pCidade($val="")
-    {
-        if($val === "") return $this->__cidade;
-        else $this->__cidade = $val;
-    }
-
-    public function pEstado($val="")
-    {
-        if($val === "") return $this->__estado;
-        else $this->__estado = $val;
-    }
-
-    public function pPais($val="")
-    {
-        if($val === "") return $this->__pais;
-        else $this->__pais = $val;
-    }
-
-    public function pTelefone($val="")
-    {
-        if($val === "") return $this->__telefone;
-        else $this->__telefone = $val;
-    }
-
-    public function pCelular($val="")
-    {
-        if($val === "") return $this->__celular;
-        else $this->__celular = $val;
-    }
-
-    public function pCpf($val="")
-    {
-        if($val === "") return $this->__cpf;
-        else $this->__cpf = $val;
-    }
-
-    public function pCnpj($val="")
-    {
-        if($val === "") return $this->__cnpj;
-        else $this->__cnpj = $val;
-    }
-
     public function pAberto($val="")
     {
         if($val === "") return $this->__aberto;
         else $this->__aberto = $val;
-    }
-
-    public function pUsuarioFacebook($val="")
-    {
-        if($val === "") return $this->__usuarioFacebook;
-        else $this->__usuarioFacebook = $val;
-    }
-
-    public function pArrFacebook($val="")
-    {
-        if($val === "") return $this->__arrFacebook;
-        else $this->__arrFacebook = $val;
     }
 
     public function validaLogin(){
@@ -246,12 +127,15 @@ final class LoginModel extends Repositorio
         $this->pQuery("SELECT
                             idUsuario,
                             auLogin,
-                            auEmail
+                            auNome,
+                            auEmail,
+                            auNivel,
+                            auImagem
                         FROM
                             dv_admusuario
                         WHERE
                             auLogin = :usuario AND
-                            au".($this->pSenha() !== false ? 'Senha' : 'Cookie')." = :senha AND
+                            au".($this->pSenha() !== false ? 'Senha' : 'CodeCookie')." = :senha AND
                             auStatus = 1
                         LIMIT 1
                         ;");
@@ -325,14 +209,14 @@ final class LoginModel extends Repositorio
                     );
 
         $this->pQuery("UPDATE
-                            rbc_users
+                            dv_admusuario
                         SET
-                            user_pass = :senha,
-                            user_code_redefinicao = DEFAULT
+                            auSenha = :senha,
+                            auCodeRedefine = DEFAULT
                         WHERE
-                            ID = :id AND
-                            user_code_redefinicao = :code AND 
-                            user_status = 1
+                            idUsuario = :id AND
+                            auCodeRedefine = :code AND 
+                            auStatus = 1
                         ;");
 
         $this->ExecutaQuery($binds);
@@ -349,14 +233,14 @@ final class LoginModel extends Repositorio
                     );
 
         $this->pQuery("SELECT
-                            ID,
-                            user_login
+                            idUsuario,
+                            auLogin
                         FROM
-                            rbc_users
+                            dv_admusuario
                         WHERE
-                            ID = :id AND
-                            user_code_redefinicao = :code AND
-                            user_status_representante = 1
+                            idUsuario = :id AND
+                            auCodeRedefine = :code AND
+                            auStatus = 1
                         LIMIT 1
                         ;");
 
@@ -364,55 +248,6 @@ final class LoginModel extends Repositorio
 
         if($this->TotalRows() > 0)
             $return = $this->Lista();
-
-        return $return;
-
-    }
-
-    public function ativacaoExistente(){
-
-        $return = false;
-
-        $binds = array(
-                        ':id' => $this->pId(),
-                        ':code' => md5($this->pCode())
-                    );
-
-        $this->pQuery("SELECT
-                            ID,
-                            user_login,
-                            user_email
-                        FROM
-                            rbc_users
-                        WHERE
-                            ID = :id AND
-                            user_activation_key = :code AND
-                            user_status = 0
-                        LIMIT 1
-                        ;");
-
-        $this->ExecutaQuery($binds);
-
-        if($this->TotalRows() > 0){
-
-            $return = $this->Lista();
-
-            $binds2 = array(
-                            ':id' => $return['ID']
-                        );
-
-            $this->pQuery("UPDATE
-                                rbc_users
-                            SET
-                                user_activation_key = DEFAULT,
-                                user_status = 1
-                            WHERE
-                                ID = :id
-                            ;");
-
-            $this->ExecutaQuery($binds2);
-
-        }
 
         return $return;
 
@@ -446,11 +281,11 @@ final class LoginModel extends Repositorio
                     );
 
         $this->pQuery("UPDATE
-                            rbc_users
+                            dv_admusuario
                         SET
-                            user_code_redefinicao = :code
+                            auCodeRedefine = :code
                         WHERE
-                            ID = :id
+                            idUsuario = :id
                         ;");
 
         $this->ExecutaQuery($binds);
@@ -482,6 +317,34 @@ final class LoginModel extends Repositorio
 
         if($this->TotalRows() > 0)
             $return = true;
+
+        return $return;
+
+    }
+
+    public function cadastroExistente($aberto = false){
+
+        $return = false;
+
+        $binds = array(
+                        ':aberto' => ($aberto !== false ? $this->pAberto() : $this->pEmail())
+                    );
+
+        $this->pQuery("SELECT
+                            idUsuario,
+                            auEmail,
+                            auLogin
+                        FROM
+                            dv_admusuario
+                        WHERE
+                            (auEmail = :aberto) OR (auLogin = :aberto)
+                        LIMIT 1
+                        ;");
+
+        $this->ExecutaQuery($binds);
+
+        if($this->TotalRows() > 0)
+            $return = $this->Lista();
 
         return $return;
 

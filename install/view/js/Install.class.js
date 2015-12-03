@@ -122,9 +122,17 @@ devem.install = {
 
         });
 
-        if($('#db_no').is(':checked'))
-            validate = true;
+        if($('#db_nos').is(':checked') !== false){
 
+            validate = false;
+
+            $('#db_no').val('false');
+
+        }else{
+
+            $('#db_no').val('true');
+
+        }
         if(validate){
 
             var msg = 'Aguarde';
@@ -134,7 +142,7 @@ devem.install = {
 
             $.post('controller/Install.controller.php',$('form').serialize(),function(data){
 
-                if((data) || $('#db_no').is(':checked')){
+                if((data) || ($('#db_no').is(':checked') !== false)){
 
                     if(typeof data.db_criar != 'undefined'){
 

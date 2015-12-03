@@ -13,37 +13,37 @@
   <body>
 
     <div class="content">
-    	<div class="titulo">
-    		<img src="view/img/logo_urso1.jpg" width="60px">
-    		<h1>Instalação DEVEM</h1>
-    		<span>Bem Vindo</span>
-    	</div>
-    	<div class="sub-content">
+        <div class="titulo">
+            <img src="view/img/bike-mini-white.png" width="45px">
+            <h1>Instalação DEVEM</h1>
+            <span>Bem Vindo</span>
+        </div>
+        <div class="sub-content">
 
-    		<div class="demo">
-	    		<i class="fa fa-file-text"></i>
-	    		<i class="fa fa-arrow-right"></i>
-	    		<i class="fa fa-database"></i>
-	    		<i class="fa fa-arrow-right"></i>
-	    		<i class="fa fa-cogs"></i>
-	    		<i class="fa fa-arrow-right"></i>
-	    		<i class="fa fa-check"></i>
-	    	</div>
-    		
+            <div class="demo">
+                <i class="fa fa-file-text"></i>
+                <i class="fa fa-arrow-right"></i>
+                <i class="fa fa-database"></i>
+                <i class="fa fa-arrow-right"></i>
+                <i class="fa fa-cogs"></i>
+                <i class="fa fa-arrow-right"></i>
+                <i class="fa fa-check"></i>
+            </div>
+            
 
-    		<p>
+            <p>
                 Vamos lá! <br/>
                 Nesses quatro passos, vamos definir algumas informações importantes para que você desenvolva seu sistema ou website com o DEVEM.<br/>
                 É importante que o apontamento da sua aplicação esteja apontada para a raiz do DEVEM. Caso esteja trabalhando local, configure seu arquivo httpd.conf para sertar o document root para a pasta que vocÊ descarregou o Devem.<br/>
                 Esperamos que você tenha sucesso com a sua aplicação.
-    		</p>
+            </p>
 
-    		<button id="bt-iniciar">Iniciar<i class="fa fa-sign-out"></i></button>
+            <button id="bt-iniciar">Iniciar<i class="fa fa-sign-out"></i></button>
 
-    	</div>
-    	<div class="footer">
-    		<span>Direitos Reservados | DVillagra</span>
-    	</div>
+        </div>
+        <div class="footer">
+            <span>Direitos Reservados | DVillagra</span>
+        </div>
     </div>
   
   </body>

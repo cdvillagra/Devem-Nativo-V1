@@ -82,11 +82,13 @@ final class InstallModel extends Repositorio
 
         $this->pQuery("CREATE TABLE dv_admusuario (
                             idUsuario INT(11) NOT NULL AUTO_INCREMENT,
+                            auNivel INT(1) NOT NULL DEFAULT '2',
                             auNome VARCHAR(90) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
                             auEmail VARCHAR(70) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
                             auLogin VARCHAR(30) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
+                            auImagem VARCHAR(70) NULL DEFAULT 'avatar.jpg' COLLATE 'latin1_general_ci',
                             auSenha VARCHAR(32) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
-                            auCookie VARCHAR(32) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
+                            auCodeRedefine VARCHAR(32) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
                             auCodeCookie VARCHAR(32) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
                             auCodeAuth VARCHAR(32) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
                             auStatus TINYINT(1) NULL DEFAULT '1',
@@ -120,6 +122,56 @@ final class InstallModel extends Repositorio
                         ;");
         $this->ExecutaQuery();
 
+        $this->pQuery("DROP TABLE IF EXISTS dv_admpageview;");
+        $this->ExecutaQuery();
+
+        $this->pQuery("CREATE TABLE dv_admpageview (
+                            idPageView INT(11) NOT NULL AUTO_INCREMENT,
+                            pvIpCli VARCHAR(15) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
+                            pvBrowserCli VARCHAR(120) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
+                            pvReferer VARCHAR(500) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
+                            pvDataRegistro TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+                            PRIMARY KEY (idPageView)
+                        )
+                        COLLATE='latin1_general_ci'
+                        ENGINE=InnoDB
+                        ;");
+        $this->ExecutaQuery();
+
+        $this->pQuery("DROP TABLE IF EXISTS dv_admcliquepublicidade;");
+        $this->ExecutaQuery();
+
+        $this->pQuery("CREATE TABLE dv_admcliquepublicidade (
+                            idCliquePublicidade INT(11) NOT NULL AUTO_INCREMENT,
+                            cpIpCli VARCHAR(15) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
+                            idPublicidade VARCHAR(120) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
+                            cpBrowserCli VARCHAR(120) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
+                            cpReferer VARCHAR(500) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
+                            cpDataRegistro TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+                            PRIMARY KEY (idCliquePublicidade)
+                        )
+                        COLLATE='latin1_general_ci'
+                        ENGINE=InnoDB
+                        ;");
+        $this->ExecutaQuery();
+
+        $this->pQuery("DROP TABLE IF EXISTS dv_admclique;");
+        $this->ExecutaQuery();
+
+        $this->pQuery("CREATE TABLE dv_admclique (
+                            idClique INT(11) NOT NULL AUTO_INCREMENT,
+                            ckIpCli VARCHAR(15) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
+                            ckHref VARCHAR(120) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
+                            ckBrowserCli VARCHAR(120) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
+                            ckReferer VARCHAR(500) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
+                            ckDataRegistro TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+                            PRIMARY KEY (idClique)
+                        )
+                        COLLATE='latin1_general_ci'
+                        ENGINE=InnoDB
+                        ;");
+        $this->ExecutaQuery();
+        
     }
 
     public function installParametros(){
@@ -218,10 +270,11 @@ final class InstallModel extends Repositorio
         $this->pQuery(
                        "INSERT INTO
                             dv_admUsuario
-                            (auNome, auEmail, auLogin, auSenha, auDataCadastro)
+                            (auNome, auNivel, auEmail, auLogin, auSenha, auDataCadastro)
                             VALUES
                             (
                                 '".$_SESSION['_devem_install_']['adm_nome']."',
+                                0,
                                 '".$_SESSION['_devem_install_']['adm_email']."',
                                 '".$_SESSION['_devem_install_']['adm_usuario']."',
                                 MD5('".$_SESSION['_devem_install_']['adm_senha']."'),

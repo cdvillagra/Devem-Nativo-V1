@@ -13,24 +13,24 @@
   <body>
 
     <div class="content">
-    	<div class="titulo">
-    		<img src="view/img/logo_urso1.jpg" width="60px">
-    		<h1>Instalação DEVEM</h1>
-    		<span>Concluído</span>
-    	</div>
-    	<div class="sub-content">    		
+        <div class="titulo">
+            <img src="view/img/bike-mini-white.png" width="45px">
+            <h1>Instalação DEVEM</h1>
+            <span>Concluído</span>
+        </div>
+        <div class="sub-content">           
 
-    		<p>
-    			Olha só que bom! Terminamos!<br />
+            <p>
+                Olha só que bom! Terminamos!<br />
                 Agora você deverá clicar no botão concluir, para fechar a instalação e começar a utilizar a arquitetura Devem.
-    		</p>
+            </p>
 
-    		<button id="bt-concluir">Concluir<i class="fa fa-sign-out"></i></button>
+            <button id="bt-concluir">Concluir<i class="fa fa-sign-out"></i></button>
 
-    	</div>
-    	<div class="footer">
-    		<span>Direitos Reservados | DVillagra</span>
-    	</div>
+        </div>
+        <div class="footer">
+            <span>Direitos Reservados | DVillagra</span>
+        </div>
     </div>
   
   </body>

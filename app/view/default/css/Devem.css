@@ -1,9 +1,9 @@
 
-body{
-
-	font-family: 'Open Sans', sans-serif;
-
+body {
+    background: rgba(0, 0, 0, 0) url("../img/bg1.jpg") no-repeat scroll 0 0 / 100% auto;
+    font-family: "Open Sans",sans-serif;
 }
+
 
 .content{
 
@@ -15,11 +15,12 @@ body{
 }
 
 .titulo, .footer {
-    background: #150f4d;
+    background: #1f0802;
     border-radius: 10px 10px 0 0;
     color: #F4EAEA;
     padding: 10px;
-    width: 630px;
+    width: 630px;  
+    opacity: 0.8;
 }
 
 .footer {
@@ -32,6 +33,7 @@ body{
     border-right: 2px solid #f4eaea;
     float: left;
     margin-right: 12px;
+    padding-right: 10px;
 }
 
 .titulo h1 {
@@ -46,12 +48,13 @@ body{
 
 .sub-content {
     background: #f4eaea none repeat scroll 0 0;
-    color: #150f4d;
+    color: #1f0802;
     font-size: 59px;
     overflow: hidden;
     padding: 10px;
     text-align: center;
     width: 630px;
+    opacity: 0.6;
 }
 
 button {

@@ -24,10 +24,15 @@ RewriteRule ^install - [L,NC]
 # Pastas que estão ignoradas nas regras seguintes
 RewriteCond %{REQUEST_URI} "/api/" [OR]
 RewriteCond %{REQUEST_URI} "/upload/" [OR]
-RewriteCond %{REQUEST_URI} "/media/"
+RewriteCond %{REQUEST_URI} "/media/" [OR]
+RewriteCond %{REQUEST_URI} "/admin/view/js/" [OR]
+RewriteCond %{REQUEST_URI} "/admin/view/img/" [OR]
+RewriteCond %{REQUEST_URI} "/admin/view/css/"
 RewriteRule (.*) $1 [L]
 
 # Regras de URL do Admin
+RewriteRule ^admin/([^/]+)/([^/]+)/([^/]+)/([^/]+)/?$ index.php?controle=$1&acao=$2&id=$3&code=$4&admin=true [L,QSA]
+RewriteRule ^admin/([^/]+)/([^/]+)/([^/]+)/?$ index.php?controle=$1&acao=$2&id=$3&admin=true [L,QSA]
 RewriteRule ^admin/([^/]+)/([^/]+)/?$ index.php?controle=$1&acao=$2&admin=true [L,QSA]
 RewriteRule ^admin/([^/]+)/?$ index.php?controle=$1&acao=index&admin=true [L,QSA]
 RewriteRule ^admin/?$ index.php?controle=Principal&acao=index&admin=true [L,QSA]

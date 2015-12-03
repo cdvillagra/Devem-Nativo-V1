@@ -79,8 +79,8 @@
           
           <!-- Branding -->
           <div class="navbar-header col-md-2">
-            <a href="<?=Url::url()?>" class="navbar-brand">
-              Água <strong>Rocha Branca</strong>
+            <a href="<?=Url::baseAdmin('')?>" class="navbar-brand">
+              Devem<strong>Anager</strong>
             </a>
             <div class="sidebar-collapse">
               <a href="#">
@@ -109,6 +109,7 @@
               <li class="dropdown divided">
                 
                 <a class="dropdown-toggle button" data-toggle="dropdown" href="#">
+                  <span>Formulários</span>
                   <i class="fa fa-envelope"></i>
                   <span class="label label-transparent-black qtd_msg off">1</span>
                 </a>
@@ -117,7 +118,7 @@
                   <li id="msg_mensagem"><h1>Você tem <strong>0</strong> nova mensagem</h1></li>
 
 
-                  <li class="topborder"><a href="<?=Url::base('mensagem')?>">Todas Mensagens <i class="fa fa-angle-right"></i></a></li>
+                  <li class="topborder"><a href="<?=Url::baseAdmin('fomulario')?>">Todas Mensagens <i class="fa fa-angle-right"></i></a></li>
                 </ul>
 
               </li>
@@ -125,6 +126,7 @@
               <li class="dropdown divided">
                 
                 <a class="dropdown-toggle button" data-toggle="dropdown" href="#">
+                  <span>Notificações</span>
                   <i class="fa fa-bell"></i>
                   <span class="label label-transparent-black off ">0</span>
                 </a>
@@ -134,17 +136,17 @@
                   
                   
 
-                   <li><a href="<?=Url::base('notificacao/consulta')?>">Todas Notificações <i class="fa fa-angle-right"></i></a></li>
+                   <li><a href="<?=Url::baseAdmin('configura/notificacao')?>">Todas Notificações <i class="fa fa-angle-right"></i></a></li>
                 </ul>
 
               </li>
 
               <li class="dropdown divided user" id="current-user">
                 <div class="profile-photo">
-                  <img src="<?=Url::imgApp('avatar.jpg')?>" alt />
+                  <img src="<?=Url::imgApp(Session::get('auImagem'), false, true)?>" alt />
                 </div>
                 <a class="dropdown-toggle options" data-toggle="dropdown" href="#">
-                  dfhdfg
+                  <?=Session::get('auNome')?>
                 </a>
                 
                 <ul class="dropdown-menu arrow settings">
@@ -170,136 +172,102 @@
               
 
               <li class="navigation" id="navigation">
-                <a href="#" class="sidebar-toggle" data-toggle="#navigation">Navegação <i class="fa fa-angle-up"></i></a>
+                <a href="#" class="sidebar-toggle" data-toggle="#navigation">Conteúdo <i class="fa fa-file"></i></a>
                 
                 <ul class="menu">
                   
-                  <li class="active dropdown">
+                  <li class=" dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <i class="fa fa-users"></i> Clientes <b class="fa fa-plus dropdown-plus"></b>
+                      <i class="fa fa-home"></i> Home <b class="fa fa-plus dropdown-plus"></b>
                     </a>
                     <ul class="dropdown-menu">
                       <li>
-                        <a href="<?=Url::base('cliente/consulta')?>">
-                          <i class="fa fa-caret-right"></i> Consultar
+                        <a href="<?=Url::baseAdmin('conteudo/home/destaque')?>">
+                          <i class="fa fa-certificate"></i> Destaque
                         </a>
                       </li>
                       <li>
-                        <a href="<?=Url::base('cliente/cadastro')?>">
-                          <i class="fa fa-caret-right"></i> Cadastrar
+                        <a href="<?=Url::baseAdmin('conteudo/home/blocos')?>">
+                          <i class="fa fa-th"></i> Blocos
+                        </a>
+                      </li>
+                      <li>
+                        <a href="<?=Url::baseAdmin('conteudo/home/publicidade')?>">
+                          <i class="fa fa-newspaper-o"></i> Publicidade
+                        </a>
+                      </li>
+                      <li>
+                        <a href="<?=Url::baseAdmin('conteudo/home/seo')?>">
+                          <i class="fa fa-google"></i> SEO
                         </a>
                       </li>
                     </ul>
                   </li>
-
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <i class="fa fa-tint"></i> Pedidos <b class="fa fa-plus dropdown-plus"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="<?=Url::base('pedido/consulta')?>">
-                          <i class="fa fa-caret-right"></i> Consultar
-                        </a>
-                      </li>
-                      <li>
-                        <a href="<?=Url::base('pedido/produto')?>">
-                          <i class="fa fa-caret-right"></i> Produtos / Novo Pedido
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li>
-                    <a href="<?=Url::base('mensagem')?>">
-                      <i class="fa fa-envelope"></i> Mensagens
-                      <span class="badge badge-red qtd_msg off">1</span>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="<?=Url::base('atividade')?>">
-                      <i class="fa fa-exchange"></i> Atividades
-                    </a>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <i class="fa fa-star"></i> Rendimento  <b class="fa fa-plus dropdown-plus"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="<?=Url::base('rendimento/consulta')?>">
-                          <i class="fa fa-caret-right"></i> Consulta e Resgate
-                        </a>
-                      </li>
-                      <li>
-                        <a href="<?=Url::base('rendimento/ranking')?>">
-                          <i class="fa fa-caret-right"></i> Ranking
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <!--li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <i class="fa fa-bar-chart-o"></i> Relatórios <b class="fa fa-plus dropdown-plus"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="<?=Url::base('relatorio/ganho')?>">
-                          <i class="fa fa-caret-right"></i> Rendimentos
-                        </a>
-                      </li>
-                      <li>
-                        <a href="<?=Url::base('relatorio/resgates')?>">
-                          <i class="fa fa-caret-right"></i> Resgates
-                        </a>
-                      </li>
-                      <li>
-                        <a href="<?=Url::base('relatorio/cliente')?>">
-                          <i class="fa fa-caret-right"></i> Clientes
-                        </a>
-                      </li>
-                    </ul>
-                  </li-->
+                  
                 </ul>
 
               </li>
-
-              <li class="summary" id="order-summary">
-                <a href="#" class="sidebar-toggle underline" data-toggle="#order-summary">Pedidos dos seus clientes<i class="fa fa-angle-up"></i></a>
-
-                <div class="media">
-                  <a class="pull-right" href="#">
-                    <span id="sales-chart"></span>
-                  </a>
-                  <div class="media-body">
-                    Pendentes
-                    <h3 class="media-heading" id="pedidos_nav_pendente">0</h3>
-                  </div>
-                </div>
-
-                <div class="media">
-                  <a class="pull-right" href="#">
-                    <span id="balance-chart"></span>
-                  </a>
-                  <div class="media-body">
-                    Efetivados
-                    <h3 class="media-heading" id="pedidos_nav_efetivado">0</h3>
-                  </div>
-                </div>
-
-              </li>
-
-              <li class="settings" id="general-settings">
-                <a href="#" class="sidebar-toggle underline" data-toggle="#general-settings"> Compartilhe <i class="fa fa-angle-up"></i></a>
-
+              <? if((int)Session::get('auNivel') < 2){ ?>
+              <li class="navigation" id="navigation2">
+                <a href="#" class="sidebar-toggle" data-toggle="#navigation2">Relatórios <i class="fa fa-bar-chart"></i></a>
                 
-                    <a href="#cal-new-event" data-toggle="modal">
-                      <i class="fa fa-desktop"></i> Redes Sociais</b>
+                <ul class="menu">
+                  
+                  <li class="">
+                    <a href="<?=Url::baseAdmin('relatorio/acesso')?>">
+                      <i class="fa fa-line-chart"></i> Acessos e Cliques
                     </a>
+                  </li>
+                  
+                </ul>
 
               </li>
+              <? } ?>
+
+              <? if((int)Session::get('auNivel') < 2){ ?>
+              <li class="navigation" id="navigation3">
+                <a href="#" class="sidebar-toggle" data-toggle="#navigation3">configurações <i class="fa fa-cogs"></i></a>
+                
+                <ul class="menu">
+                  
+                    <li class="">
+                      <a href="<?=Url::baseAdmin('configura/usuario')?>">
+                        <i class="fa fa-user"></i> Usuarios 
+                      </a>
+                    </li>
+                  
+                  <? if((int)Session::get('auNivel') == 0){ ?>
+                  <li class="">
+                    <a href="<?=Url::baseAdmin('configura/parametro')?>">
+                      <i class="fa fa-cog"></i> Parametros 
+                    </a>
+                  </li>
+                  <? } ?>
+
+                  <? if((int)Session::get('auNivel') == 0){ ?>
+                  <li class="">
+                    <a href="<?=Url::baseAdmin('configura/regras')?>">
+                      <i class="fa fa-asterisk"></i> Regras
+                    </a>
+                  </li>
+                  <? } ?>
+
+                  <li class="">
+                    <a href="<?=Url::baseAdmin('configura/publicidade')?>">
+                      <i class="fa fa-newspaper-o"></i> Publicidade
+                    </a>
+                  </li>
+                  
+                  <li class="">
+                    <a href="<?=Url::baseAdmin('configura/seo')?>">
+                      <i class="fa fa-google"></i> SEO
+                    </a>
+                  </li>
+                  
+                </ul>
+
+              </li>
+              <? } ?>
 
               
             </ul>

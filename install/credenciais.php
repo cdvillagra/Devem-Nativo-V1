@@ -14,29 +14,29 @@
   <body>
 
     <div class="content">
-    	<div class="titulo">
-    		<img src="view/img/logo_urso1.jpg" width="60px">
-    		<h1>Instalação DEVEM</h1>
-    		<span>Definições > Credenciais de Login</span>
-    	</div>
-    	<div class="sub-content">
+        <div class="titulo">
+            <img src="view/img/bike-mini-white.png" width="45px">
+            <h1>Instalação DEVEM</h1>
+            <span>Definições > Credenciais de Login</span>
+        </div>
+        <div class="sub-content">
             <div class="alert">  </div>
-    		<p>
-    			Ensira os dados de acesso ao Admin
-    		</p>
-    		<form>
+            <p>
+                Ensira os dados de acesso ao Admin
+            </p>
+            <form>
                 <input type="text" placeholder="Nome do Administrador" id="adm_nome" name="adm_nome" autocomplete="off" />
                 <input type="text" placeholder="E-mail do Administrador" id="adm_email" name="adm_email" autocomplete="off" />
                 <input type="text" placeholder="Usuario" id="adm_usuario" name="adm_usuario" autocomplete="off" />
                 <input type="password" placeholder="Senha" id="adm_senha" name="adm_senha" autocomplete="off" />
                 <input type="hidden" id="method" name="method" value="gravaSession" />
-    		</form>
-    		<button id="bt-avancar-p4">Instalar<i class="fa fa-chevron-right"></i></button>
+            </form>
+            <button id="bt-avancar-p4">Instalar<i class="fa fa-chevron-right"></i></button>
 
-    	</div>
-    	<div class="footer">
-    		<span>Direitos Reservados | DVillagra</span>
-    	</div>
+        </div>
+        <div class="footer">
+            <span>Direitos Reservados | DVillagra</span>
+        </div>
     </div>
   
   </body>

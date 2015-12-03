@@ -1155,7 +1155,7 @@ menu button .fa, menu .btn .fa { margin-right: 3px; }
 .navbar.navbar-transparent-black { background-color: rgba(0, 0, 0, 0.1); }
 .navbar.navbar-transparent-black .navbar-header { background-color: rgba(0, 0, 0, 0.05); }
 .navbar .navbar-header { width: 250px; position: relative; z-index: 99; }
-.navbar .navbar-header .navbar-brand { font-weight: 300; font-size: 18px; font-family: "Roboto Condensed", sans-serif; color: white; padding: 0; padding-left: 50px; height: 45px; line-height: 45px; background: url(../../img/minimal-logo.png) no-repeat 0 5px; }
+.navbar .navbar-header .navbar-brand { font-weight: 300; font-size: 18px; font-family: "Roboto Condensed", sans-serif; color: white; padding: 0; padding-left: 50px; height: 45px; line-height: 45px; background: url(../../img/bola-admin-mini-white.png) no-repeat 0 5px; }
 .navbar .navbar-header .navbar-brand img { vertical-align: top; }
 .navbar .navbar-header .sidebar-collapse { display: inline-block; float: right; line-height: 43px; }
 .navbar .navbar-header .sidebar-collapse a { font-size: 18px; line-height: 45px; color: #f2f2f2; }
@@ -1294,12 +1294,12 @@ menu button .fa, menu .btn .fa { margin-right: 3px; }
 .navbar-nav.side-nav > li.collapsed-content > ul > li.user > .settings > li #color-schemes > li > a.bg-6 { background: url(../../img/backgrounds/thumbs/6.jpg) center center no-repeat; }
 .navbar-nav.side-nav > li.collapsed-content > ul > li.user > .settings > li .form-group label { color: #717171; font-size: 12px; font-weight: 400; }
 .navbar-nav.side-nav > li.collapsed-content > ul > li.user > .settings.arrow:before { border-bottom-color: white; left: 55px; }
-.navbar-nav.side-nav > li > a.sidebar-toggle { font-family: "Roboto Condensed", sans-serif; font-size: 11px; color: rgba(0, 0, 0, 0.3); text-transform: uppercase; font-weight: 700; }
+.navbar-nav.side-nav > li > a.sidebar-toggle { font-family: "Roboto Condensed", sans-serif; font-size: 11px; color: rgba(255, 255, 255, 0.4); text-transform: uppercase; font-weight: 700; }
 .navbar-nav.side-nav > li > a.sidebar-toggle > i { font-size: 14px; line-height: 45px; float: right; }
-.navbar-nav.side-nav > li > a.sidebar-toggle:hover { color: rgba(0, 0, 0, 0.4); }
+.navbar-nav.side-nav > li > a.sidebar-toggle:hover { color: rgba(255,255,255, 0.6); }
 .navbar-nav.side-nav > li > a.sidebar-toggle.underline { border-bottom: 1px solid rgba(0, 0, 0, 0.2); padding: 0; margin: 0 15px; }
 .navbar-nav.side-nav > li.navigation .menu { list-style-type: none; padding: 0; margin: 0; }
-.navbar-nav.side-nav > li.navigation .menu > li > a, .navbar-nav.side-nav > li.navigation .menu > li > .dropdown-menu .dropdown > a { display: inline-block; line-height: 40px; padding: 0 15px; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; transition: all 0.2s linear; font-size: 14px; color: rgba(255, 255, 255, 0.9); text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); width: 100%; position: relative; z-index: 2; font-weight: 700; }
+.navbar-nav.side-nav > li.navigation .menu > li > a, .navbar-nav.side-nav > li.navigation .menu > li > .dropdown-menu .dropdown > a { display: inline-block; line-height: 40px; padding: 0 15px; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; transition: all 0.2s linear; font-size: 14px; color: rgba(255, 255, 255, 0.6); text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); width: 100%; position: relative; z-index: 2; font-weight: 700; }
 .navbar-nav.side-nav > li.navigation .menu > li > a > i, .navbar-nav.side-nav > li.navigation .menu > li > .dropdown-menu .dropdown > a > i { font-size: 14px; margin-right: 8px; width: 15px; display: inline-block; text-align: center; }
 .navbar-nav.side-nav > li.navigation .menu > li > a > b.dropdown-plus, .navbar-nav.side-nav > li.navigation .menu > li > .dropdown-menu .dropdown > a > b.dropdown-plus { float: right; line-height: 40px; color: rgba(0, 0, 0, 0.2); }
 .navbar-nav.side-nav > li.navigation .menu > li > a:after, .navbar-nav.side-nav > li.navigation .menu > li > .dropdown-menu .dropdown > a:after { content: ""; display: inline-block; width: 3px; height: 39px; background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%); background: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%); position: absolute; top: 0; left: 0; z-index: -1; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; transition: all 0.2s linear; }

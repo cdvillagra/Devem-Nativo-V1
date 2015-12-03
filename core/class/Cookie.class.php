@@ -14,12 +14,7 @@ class Cookie {
 
 		parent::__construct();
 
-    	$host = '[seu_dominio_com_ou_sem_subdominio]';
-
-		if(strstr($host, ':8080'))
-			$host = $name;
-
-		self::$__host = $host;
+		self::$__host = Url::url();
 	}
 
 static function verificaCookie($cookie_name){
@@ -33,9 +28,9 @@ static function verificaCookie($cookie_name){
 		return (isset($_COOKIE[$cookie_name]) ? $_COOKIE[$cookie_name] : false); 
     }
 
-    static function criaCookie($cookie_name, $cookie_value = 1){
+    static function criaCookie($cookie_name, $cookie_value = 1, $session = true){
 
-    	self::excluirCookie($cookie_name);
+    	self::excluirCookie($cookie_name, $session);
 
 		setcookie($cookie_name, $cookie_value, time() + ((86400 * 30) * 3), '/', self::$__host); 
     }
@@ -45,8 +40,8 @@ static function verificaCookie($cookie_name){
 		unset($_COOKIE[$cookie_name]);
 		setcookie($cookie_name, '', time() - 60, '/', self::$__host);
 
-		if($session)
-			session_destroy();
+		// if($session)
+		// 	session_destroy();
 
     }
     

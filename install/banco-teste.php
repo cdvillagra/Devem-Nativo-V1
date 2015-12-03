@@ -14,30 +14,31 @@
   <body>
 
     <div class="content">
-    	<div class="titulo">
-    		<img src="view/img/logo_urso1.jpg" width="60px">
-    		<h1>Instalação DEVEM</h1>
-    		<span>Definições > Banco de dados</span>
-    	</div>
-    	<div class="sub-content">
+        <div class="titulo">
+            <img src="view/img/bike-mini-white.png" width="45px">
+            <h1>Instalação DEVEM</h1>
+            <span>Definições > Banco de dados</span>
+        </div>
+        <div class="sub-content">
             <div class="alert">  </div>
-    		<p>
-    			Insira os dados de conexão
-    		</p>
-    		<form>
-    			<input type="text" placeholder="Host" id="db_host" name="db_host" autocomplete="off" class="req" />
-    			<input type="text" placeholder="Usuário" id="db_user" name="db_user" autocomplete="off" class="req" />
-    			<input type="password" placeholder="Senha" id="db_pass" name="db_pass" autocomplete="off" />
-    			<input type="text" placeholder="Base de Dados" id="db_db" name="db_db" autocomplete="off" class="req" />
-    			<input type="checkbox" id="db_no" name="db_no" value="true" /> <span>Meu sistema não utilizará banco de dados</span>
+            <p>
+                Insira os dados de conexão
+            </p>
+            <form>
+                <input type="text" placeholder="Host" id="db_host" name="db_host" autocomplete="off" class="req" />
+                <input type="text" placeholder="Usuário" id="db_user" name="db_user" autocomplete="off" class="req" />
+                <input type="password" placeholder="Senha" id="db_pass" name="db_pass" autocomplete="off" />
+                <input type="text" placeholder="Base de Dados" id="db_db" name="db_db" autocomplete="off" class="req" />
+                <input type="checkbox" id="db_nos" name="db_nos" value="true" /> <span>Meu sistema não utilizará banco de dados</span>
                 <input type="hidden" id="method" name="method" value="testeDb" />
-    		</form>
-    		<button id="bt-avancar-p2">Avançar<i class="fa fa-chevron-right"></i></button><button id="bt-testeDb">Testar Conexão<i class="fa fa-compress"></i></button>
+                <input type="hidden" id="db_no" name="db_no" value="" />
+            </form>
+            <button id="bt-avancar-p2">Avançar<i class="fa fa-chevron-right"></i></button><button id="bt-testeDb">Testar Conexão<i class="fa fa-compress"></i></button>
 
-    	</div>
-    	<div class="footer">
-    		<span>Direitos Reservados | DVillagra</span>
-    	</div>
+        </div>
+        <div class="footer">
+            <span>Direitos Reservados | DVillagra</span>
+        </div>
     </div>
   
   </body>

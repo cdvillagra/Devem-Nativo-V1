@@ -91,9 +91,12 @@ class Url
 
 	}
 
-	static function imgApp($arquivo, $custom = false){
+	static function imgApp($arquivo, $custom = false, $admin = false){
 
 		$path_default = 'app/view/default/img/';
+
+		if($admin !== false)
+			$path_default = 'admin/view/img/';
 
 		if(($custom !== false) && (file_exists(Configuracoes::CustomerTemp().$path_default.$arquivo)))
 			return URL.Configuracoes::CustomerTemp().$path_default.$arquivo;

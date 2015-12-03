@@ -58,13 +58,25 @@ final class PrincipalController extends Controller {
         // MonitorController::checkLogado(true);
 
         $this->mLogin = new LoginModel;
+        $this->mDados = new DadosModel;
 	}
 
     public function indexAction(){
-
+ 
         $view = new View("layout/home.phtml");
 
-        //$view->pParametros();
+        $view->pParametros(
+                            array(
+                                   "uud" => $this->mDados->getPageView(true,true),
+                                   "uudTotal" => $this->mDados->getPageView(true,true,true),
+                                   "pvd" => $this->mDados->getPageView(),
+                                   "pvdTotal" => $this->mDados->getPageView(true,false,true),
+                                   "cld" => $this->mDados->getCliques(),
+                                   "cldTotal" => $this->mDados->getCliques(true, true),
+                                   "pud" => $this->mDados->getCliquePublicidade(),
+                                   "pudTotal" => $this->mDados->getCliquePublicidade(true, true)
+                                )
+                            );
 
         $view->Show();
 
@@ -112,7 +124,7 @@ final class PrincipalController extends Controller {
 
         Auth::atualizaDeslogado();
 
-        Cookie::excluirCookie('devem_lg_connect');
+        Cookie::excluirCookie('devem_lg_adm_connect_'.ADM_KEY);
 
         echo json_encode(Auth::loginValido());
 

@@ -1,25 +1,27 @@
 
-body{
 
-	font-family: 'Open Sans', sans-serif;
 
+body {
+    background: rgba(0, 0, 0, 0) url("../img/bg1.jpg") no-repeat scroll 0 0 / 100% auto;
+    font-family: "Open Sans",sans-serif;
 }
 
 .content{
 
-	width: 650px;
-	position: absolute;
-	left: 50%;
-	margin-left: -325px;
-	vertical-align: middle;
+    width: 650px;
+    position: absolute;
+    left: 50%;
+    margin-left: -325px;
+    vertical-align: middle;
 }
 
 .titulo, .footer {
-    background: #150f4d;
+    background: #000019;
     border-radius: 10px 10px 0 0;
     color: #F4EAEA;
     padding: 10px;
-    width: 630px;
+    width: 630px;    
+    opacity: 0.8;
 }
 
 .footer {
@@ -29,9 +31,10 @@ body{
 }
 
 .titulo > img {
-    border-right: 2px solid #f4eaea;
+  border-right: 2px solid #f4eaea;
     float: left;
     margin-right: 12px;
+    padding-right: 10px;
 }
 
 .titulo h1 {
@@ -41,16 +44,17 @@ body{
 
 .sub-content {
     background: #f4eaea none repeat scroll 0 0;
-    color: #150f4d;
+    color: #000019;
     overflow: hidden;
     padding: 10px;
     width: 630px;
+    opacity: 0.6;
 }
 
 button {
     border: 1px solid #150f4d;
     border-radius: 5px;
-    color: #bf4444;
+    color: #4a4a4a;
     font-size: 16px;
     padding: 5px;
     cursor: pointer;
@@ -71,7 +75,7 @@ button i {
 }
 
 .sub-content .demo i{
-	font-size: 42px;
+    font-size: 42px;
 }
 
 .sub-content .demo i {
@@ -79,8 +83,8 @@ button i {
 }
 
 .sub-content .demo i.fa-arrow-right{
-	font-size: 21px !important;
-	color: #ffabab;
+    font-size: 21px !important;
+    color: #b0b0b0;
 }
 
 form {

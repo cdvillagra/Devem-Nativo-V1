@@ -14,17 +14,17 @@
   <body>
 
     <div class="content">
-    	<div class="titulo">
-    		<img src="view/img/logo_urso1.jpg" width="60px">
-    		<h1>Instalação DEVEM</h1>
-    		<span>Definições > Parametros</span>
-    	</div>
-    	<div class="sub-content">
+        <div class="titulo">
+            <img src="view/img/bike-mini-white.png" width="45px">
+            <h1>Instalação DEVEM</h1>
+            <span>Definições > Parametros</span>
+        </div>
+        <div class="sub-content">
             <div class="alert">  </div>
-    		<p>
-    			Insira alguns parametros importantes para o funcionamento do sistema
-    		</p>
-    		<form class="form-parametros">
+            <p>
+                Insira alguns parametros importantes para o funcionamento do sistema
+            </p>
+            <form class="form-parametros">
 
                 <input type="text" placeholder="E-mail - Host" id="email_host" name="email_host" autocomplete="off" />
                 <input type="text" placeholder="E-mail - Segurança" id="email_secure" name="email_secure" autocomplete="off" />
@@ -42,13 +42,13 @@
                 <input type="checkbox" id="auth_app" name="auth_app" value="true" /> Meu Front-End ignora autenticação para as páginas
 
                 <input type="hidden" id="method" name="method" value="gravaSession" />
-    		</form>
-    		<button id="bt-avancar-p3">Avançar<i class="fa fa-chevron-right"></i></button>
+            </form>
+            <button id="bt-avancar-p3">Avançar<i class="fa fa-chevron-right"></i></button>
 
-    	</div>
-    	<div class="footer">
-    		<span>Direitos Reservados | DVillagra</span>
-    	</div>
+        </div>
+        <div class="footer">
+            <span>Direitos Reservados | DVillagra</span>
+        </div>
     </div>
   
   </body>
