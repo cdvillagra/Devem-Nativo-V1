@@ -17,3 +17,26 @@
 .note-editable{
 	color: #666 !important;
 }
+
+.mask {
+    background-color: rgba(0, 0, 0, 0.8);
+    box-sizing: content-box;
+    height: 100%;
+    padding-bottom: 45px;
+    position: fixed;
+    top: -45px;
+    width: 100%;
+    z-index: 100000;
+    display: none;
+}
+
+.mask #loader {
+    background: rgba(0, 0, 0, 0) url("../img/loader.gif") no-repeat scroll center center;
+    height: 15px;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    position: absolute;
+    top: 50%;
+    width: 15px;
+    display: none;
+}

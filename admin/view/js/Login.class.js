@@ -158,7 +158,11 @@ devem.login = {
 
     redefinir: function(){
 
+        devem.geral.displayLoader();
+
         $.post(devem.core.defaults.url("login/redefinir", null, true), $("#form_redefinir").serialize(), function(data){
+            
+            devem.geral.displayLoader();
 
             if(data){
 
@@ -185,7 +189,11 @@ devem.login = {
 
     esqueciSenha: function(){
 
+        devem.geral.displayLoader();
+
         $.post(devem.core.defaults.url("login/enviarSenha", null, true), $("#form_esqueci").serialize(), function(data){
+
+            devem.geral.displayLoader();
 
             if(data){
 
