@@ -1,4 +1,4 @@
-![Devem](https://github.com/cdvillagra/Devem-Nativo-V1/blob/master/core/img/icone_git.png) Devem Nativo V1 <span><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YCZ6C5VXFGQ2Q" title="Doe para o Devem" target="_blank"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" alt="Doe para o Devem" /></a></span>
+![Devem](https://github.com/cdvillagra/Devem-Nativo-V1/blob/master/core/img/icone_git.png) Devem Nativo V1 <span style="float:right;"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YCZ6C5VXFGQ2Q" title="Doe para o Devem" target="_blank"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" alt="Doe para o Devem" /></a></span>
 ====================
 
 ATENÇÃO > os links abaixo estão desativados temporariamente
