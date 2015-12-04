@@ -1,6 +1,9 @@
 ![Devem](https://github.com/cdvillagra/Devem-Nativo-V1/blob/master/core/img/icone_git.png) Devem Nativo V1
 ====================
 
+<span><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YCZ6C5VXFGQ2Q" title="Doe para o Devem"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" alt="Doe para o Devem" /></a></span>
+
+----------------
 ATENÇÃO > os links abaixo estão desativados temporariamente
 ----------------
 
@@ -43,3 +46,4 @@ Copyright © 2015 Devem Nativo V 1.1.1 (http://devem.dv1.biz)
 [1]: http://devem.dv1.biz
 [2]: http://dvillagra.com.br
 [3]: http://smokedev.com.br
+[4]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YCZ6C5VXFGQ2Q
