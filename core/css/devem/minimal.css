@@ -2902,3 +2902,19 @@ form input.error_devem_form {
 	font-size: 24px;
 
 }
+
+
+.dv_versao {
+    border-top: 1px solid #2a2a2a;
+    bottom: -55px;
+    color: #7f7f7f;
+    margin-left: 15px;
+    padding-top: 12px;
+    position: absolute !important;
+    text-align: left;
+}
+.dv_versao > img {
+    margin-right: 7px;
+    opacity: 0.5;
+    width: 38px;
+}

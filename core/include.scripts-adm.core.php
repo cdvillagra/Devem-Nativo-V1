@@ -18,7 +18,7 @@
     <script src="<?=Url::base('core/js/jquery/fancySelect.js')?>"></script>
     <link rel="stylesheet" href="<?=Url::base('core/css/jquery/jquery.fancybox.css')?>">
     
-    <script src="<?=Url::base('core/js/devem/Default.class.js')?>"></script>
+    <script src="<?=Url::base('core/js/devem/Default.class.js.php')?>"></script>
     <script src="<?=Url::base('core/js/devem/ValidaFormatos.class.js')?>"></script>
     <script src="<?=Url::base('core/js/devem/TratamentoErro.class.js')?>"></script>
     <script src="<?=Url::base('core/js/devem/Mascara.class.js')?>"></script>

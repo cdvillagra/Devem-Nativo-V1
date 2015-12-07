@@ -502,7 +502,7 @@ class Utilitarios
 		if(is_null($acao))
 			$acao = '';
 
-		header('Location: '. Url::base((isset($_REQUEST['admin']) && !strpos($_SERVER['REQUEST_URI'], '/admin') ? 'admin/' : '').$controller.'/'. $acao . $qs));
+		header('Location: '. Url::base((isset($_REQUEST['admin']) && (strpos($_SERVER['REQUEST_URI'], '/admin') !== false) ? 'admin/' : '').$controller.'/'. $acao . $qs));
 
 	}
 

@@ -35,6 +35,9 @@ MINOR VERSION E FECHAMENTOS DE VERSÃO SERÁ INSERIDA COMO MAJOR VERSION.
 --------------------------------------------------------------------
 */
 
+//# Define a versão do Devem Atual
+define('DEVEM_VERSAO', 'Devem Nativo V 1.1.2');
+
 //# Verifica se existe a pasta install para instalar as dependencias da framework
 if(is_dir('install')){
 
@@ -59,11 +62,13 @@ setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 date_default_timezone_set('America/Sao_Paulo');
 set_time_limit(300);
 
-//# Define se é uma atividade no Admin
-define('ADMIN_USE', isset($_REQUEST['admin']));
-
 //# Define a conexão com o banco de dados
 require_once ('config/globals.php');
+
+//# Define se é uma atividade no Admin
+$sessionId = isset($_REQUEST['admin']) ? SESSION_ADMIN : SESSION_APP;
+define('SESSION_ID', $sessionId);
+define('ADMIN_USE', $isset($_REQUEST['admin']));
 
 //# Chama a classe de autoloader para iniciar todas as classes do sistema
 require_once ('core/class/Autoloader.class.php');
@@ -81,7 +86,7 @@ if(isset($_GET['SHOW_E'])){
 }else{
 
     //# Caso a variavel de sessão ainda não exista, ele cria a variavel com o valor booleano FALSE
-    if(!Session::existe('SHOW_E'))
+    if(!Session::realmenteExiste('SHOW_E'))
         Session::set('SHOW_E', false);
 
 }

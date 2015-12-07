@@ -264,12 +264,16 @@
                     </a>
                   </li>
                   
+                  
                 </ul>
 
               </li>
               <? } ?>
 
-              
+              <li class="dv_versao">
+                <img src="http://localhost/happysentantes/admin/view/img/bola-admin-white.png"><?=DEVEM_VERSAO?>
+              </li>
+
             </ul>
             <!-- Sidebar end -->
 

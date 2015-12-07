@@ -35,7 +35,10 @@ class Url
 
 		$uri = explode('/',$_SERVER['REQUEST_URI']);
 
-		return $protocolo . $host . '/' . $uri[1] . '/' ;
+		$uri = str_replace($_SERVER['DOCUMENT_ROOT'], '', $_SERVER['SCRIPT_FILENAME']);
+		$uri = str_replace('index.php', '', $uri);
+
+		return $protocolo . $host . $uri ;
 
 	}
 

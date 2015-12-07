@@ -3,8 +3,6 @@
 abstract class Auth
 {
 
-    static private $base = ADMIN_USE ? SESSION_ADMIN : SESSION_APP;
-
 	public function __construct()
 	{
 

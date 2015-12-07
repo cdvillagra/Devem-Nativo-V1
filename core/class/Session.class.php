@@ -7,11 +7,11 @@
 abstract class Session
 {
 
-    static private $base = ADMIN_USE ? SESSION_ADMIN : SESSION_APP;
+	$base = SESSION_ID;
 
 	public function __construct()
 	{
-
+		
 
 	}
 

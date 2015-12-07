@@ -25,7 +25,7 @@
 <script src="<?=Url::base('core/js/jquery/jquery.uploadfile.min.js')?>"></script>
 
 
-<script src="<?=Url::base('core/js/devem/Core.class.js')?>?20150608"></script>
+<script src="<?=Url::base('core/js/devem/Core.class.js.php')?>?20150608"></script>
 <script src="<?=Url::base('core/js/devem/Default.class.js')?>?20150723"></script>
 <script src="<?=Url::base('core/js/devem/Modal.class.js')?>?20150608"></script>
 <script src="<?=Url::base('core/js/devem/Mascara.class.js')?>?20150608"></script>
