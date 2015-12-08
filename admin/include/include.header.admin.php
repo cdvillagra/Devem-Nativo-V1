@@ -238,7 +238,7 @@
                   
                   <? if((int)Session::get('auNivel') == 0){ ?>
                   <li class="">
-                    <a href="<?=Url::baseAdmin('configura/parametro')?>">
+                    <a href="<?=Url::baseAdmin('configura/parametros')?>">
                       <i class="fa fa-cog"></i> Parametros 
                     </a>
                   </li>
@@ -263,17 +263,17 @@
                       <i class="fa fa-google"></i> SEO
                     </a>
                   </li>
-                  
-                  
+
                 </ul>
 
               </li>
               <? } ?>
 
-              <li class="dv_versao">
-                <img src="http://localhost/happysentantes/admin/view/img/bola-admin-white.png"><?=DEVEM_VERSAO?>
-              </li>
-
+                  
+                  <li class="dv_versao">
+                    <img src="http://localhost/happysentantes/admin/view/img/bola-admin-white.png"><?=DEVEM_VERSAO?>
+                  </li>
+              
             </ul>
             <!-- Sidebar end -->
 

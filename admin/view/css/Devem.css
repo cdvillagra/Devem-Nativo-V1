@@ -40,3 +40,7 @@
     width: 15px;
     display: none;
 }
+
+body.bg-1 {
+    background-image: url("../img/1a.jpg") !important;
+}

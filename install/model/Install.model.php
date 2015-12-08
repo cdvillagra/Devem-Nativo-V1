@@ -112,6 +112,7 @@ final class InstallModel extends Repositorio
                             pValorDefault VARCHAR(120) NULL,
                             pValorAtual VARCHAR(120) NULL,
                             pDescricao TEXT NULL,
+                            pStatus TINYINT(1) NULL DEFAULT '1',
                             pDataCadastro DATETIME NULL,
                             pDataAtualizacao TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
                             PRIMARY KEY (idParametro)

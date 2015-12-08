@@ -3,7 +3,28 @@ class FiltroDeDados
 {
     static function LimpaString( $st_string )
     {
-	    return addslashes(strip_tags($st_string));
+
+    	return self::recursiveLimpaString($st_string);
+
+    }
+
+    private static function recursiveLimpaString($st_string){
+
+    	if(is_array($st_string)){
+
+    		$arrReturn = array();
+
+    		foreach ($st_string as $key => $value)
+    			$arrReturn[$key] = self::recursiveLimpaString($value);
+
+    		return $arrReturn;
+
+    	}else{
+
+    		return addslashes(strip_tags($st_string));
+
+    	}
+
     }
     
     static function RemoveNullOrWhiteSpace ( $st_string )

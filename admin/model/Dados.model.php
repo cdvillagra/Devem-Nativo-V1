@@ -52,6 +52,7 @@ final class DadosModel extends Repositorio
     private $__id;
     private $__dtIni;
     private $__dtFim;
+    private $__arr;
 	
 	/**
     * Metodo Construtor da Classe
@@ -95,6 +96,17 @@ final class DadosModel extends Repositorio
     {
         if($val === "") return $this->__dtFim;
         else $this->__dtFim = $val;
+    }
+    
+    /**
+    * Metodo de encapsulamento GETSET
+    *
+    * @author    Christopher Dencker Villagra
+    */
+    public function pArr($val="")
+    {
+        if($val === "") return $this->__arr;
+        else $this->__arr = $val;
     }
 
     public function getPageView($qtd = true, $uud = false, $dtAberto = false){
@@ -163,7 +175,7 @@ final class DadosModel extends Repositorio
         $this->pQuery("SELECT
                             ".($qtd !== false ? 'null' : '*')."
                         FROM
-                            dv_admcliquePublicidade
+                            dv_admcliquepublicidade
                         WHERE
                             ".((empty($this->__dtFim) || ($dtAberto === false)) ? 'DATE(cpDataRegistro) = CURDATE()' : '')."
                         ;");
@@ -182,6 +194,124 @@ final class DadosModel extends Repositorio
         }
 
         return $return;
+
+    }
+
+    public function getListaParametro(){
+
+        $return = false;
+
+        $this->pQuery("SELECT
+                            *
+                        FROM
+                            rbc_devem_parametros
+                        WHERE
+                            pStatus = 1
+                        ;");
+
+        $this->ExecutaQuery();
+
+        if($this->TotalRows() > 0)
+            $return = $this->ListaAll();
+
+        return $return;
+
+    }
+
+    public function parametroExcluir(){
+
+        $binds = array(':id' => $this->__id);
+
+        $return = false;
+
+        $this->pQuery("SELECT
+                            null
+                        FROM
+                            rbc_devem_parametros
+                        WHERE
+                            idParametro = :id
+                        ;");
+
+        $this->ExecutaQuery($binds);
+
+        if($this->TotalRows() > 0){
+
+            $this->pQuery("UPDATE
+                                rbc_devem_parametros
+                            SET
+                                pStatus = 0
+                            WHERE
+                                idParametro = :id
+                            ;");
+
+            $this->ExecutaQuery($binds);
+
+            $return = true;
+
+        }
+
+        return $return;
+
+
+    }
+
+    public function parametroSalvar(){
+
+
+        $this->pQuery("UPDATE
+                            rbc_devem_parametros
+                        SET
+                            pAlias = :alias,
+                            pChave = :chave,
+                            pValorAtual = :valoratual,
+                            pDescricao = :descricao
+                        WHERE
+                            idParametro = :id
+                        ;");
+
+        if(empty($this->__arr))
+            return false;
+
+        foreach ($this->__arr as $k) {
+
+            $binds = array(
+                            ':id'   => $k['idParametro'],
+                            ':alias'   => ((empty($k['pAlias']) || ($k['pAlias'] == '- - -')) ? null : $k['pAlias']),
+                            ':chave'   => ((empty($k['pChave']) || ($k['pChave'] == '- - -')) ? null : $k['pChave']),
+                            ':valoratual'   => ((empty($k['pValorAtual']) || ($k['pValorAtual'] == '- - -')) ? null : $k['pValorAtual']),
+                            ':descricao'   => ((empty($k['pDescricao']) || ($k['pDescricao'] == '- - -')) ? null : $k['pDescricao'])
+                          );
+
+            $this->ExecutaQuery($binds);
+        }
+
+        return true;
+
+    }
+
+    public function parametroGrava(){
+
+        if(empty($this->__arr))
+            return false;
+
+        $binds = array(
+                        ':alias'   => ((empty($this->__arr['pr_nv_alias']) || ($this->__arr['pr_nv_alias'] == '- - -')) ? null : $this->__arr['pr_nv_alias']),
+                        ':chave'   => ((empty($this->__arr['pr_nv_chave']) || ($this->__arr['pr_nv_chave'] == '- - -')) ? null : $this->__arr['pr_nv_chave']),
+                        ':valordefault'   => ((empty($this->__arr['pr_nv_valor_default']) || ($this->__arr['pr_nv_valor_default'] == '- - -')) ? null : $this->__arr['pr_nv_valor_default']),
+                        ':valoratual'   => ((empty($this->__arr['pr_nv_valor_default']) || ($this->__arr['pr_nv_valor_default'] == '- - -')) ? null : $this->__arr['pr_nv_valor_default']),
+                        ':descricao'   => ((empty($this->__arr['pr_nv_descricao']) || ($this->__arr['pr_nv_descricao'] == '- - -')) ? null : $this->__arr['pr_nv_descricao'])
+                      );
+
+        $this->pQuery("INSERT INTO
+                            rbc_devem_parametros
+                        (pAlias, pChave, pValorDefault, pValorAtual, pDescricao, pDataCadastro)
+                        VALUES
+                            (:alias, :chave, :valordefault, :valoratual, :descricao, NOW())
+                        ;");
+
+        $this->ExecutaQuery($binds);
+
+        return true;
 
     }
 	
