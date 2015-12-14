@@ -33,6 +33,17 @@ MINOR VERSION E FECHAMENTOS DE VERSÃO SERÁ INSERIDA COMO MAJOR VERSION.
 --------------------------------------------------------------------
 */
 
+
+<?
+
+    header("Content-type: application/javascript");
+
+    $uri = explode('/',$_SERVER['REQUEST_URI']);
+    $uri = str_replace($_SERVER['DOCUMENT_ROOT'], '', $_SERVER['SCRIPT_FILENAME']);
+    $uri = str_replace('/core/js/devem/verificadorDePagina.class.js.php', '', $uri);
+
+?>
+
 if (typeof devem == 'undefined') { devem = new Object(); }
 if (typeof devem.core == 'undefined') { devem.core = new Object(); }
 if (typeof devem.core.verificadorpagina == 'undefined') { devem.core.verificadorpagina = new Object(); }
@@ -49,7 +60,7 @@ devem.core.verificadorpagina = {
 
 		this.getValue = [];
 		
-		var url = window.location.href.split('//');
+		var url = window.location.href.split('<?=$uri?>');
 		var getVars = url[1].split('/');
 		
 		var count = getVars.length;

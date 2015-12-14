@@ -45,7 +45,7 @@
 <script src="<?=Url::base('core/js/devem/Default.class.js.php')?>?20150723"></script>
 <script src="<?=Url::base('core/js/devem/Modal.class.js')?>?20150608"></script>
 <script src="<?=Url::base('core/js/devem/Mascara.class.js')?>?20150608"></script>
-<script src="<?=Url::base('core/js/devem/verificadorDePagina.class.js')?>?20150608"></script>
+<script src="<?=Url::base('core/js/devem/verificadorDePagina.class.js.php')?>?20150608"></script>
 <script src="<?=Url::base('core/js/devem/TratamentoErro.class.js')?>?20150608"></script>
 <script src="<?=Url::base('core/js/devem/ValidaFormatos.class.js')?>?20150608"></script>
 

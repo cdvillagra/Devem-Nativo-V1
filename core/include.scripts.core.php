@@ -29,7 +29,7 @@
 <script src="<?=Url::base('core/js/devem/Default.class.js')?>?20150723"></script>
 <script src="<?=Url::base('core/js/devem/Modal.class.js')?>?20150608"></script>
 <script src="<?=Url::base('core/js/devem/Mascara.class.js')?>?20150608"></script>
-<script src="<?=Url::base('core/js/devem/verificadorDePagina.class.js')?>?20150608"></script>
+<script src="<?=Url::base('core/js/devem/verificadorDePagina.class.js.php')?>?20150608"></script>
 
 <link rel="apple-touch-icon" sizes="57x57" href="<?=Configuracoes::CheckFileCustomer('img/icone/apple-icon-57x57.png', true)?>">
 <link rel="apple-touch-icon" sizes="60x60" href="<?=Configuracoes::CheckFileCustomer('img/icone/apple-icon-60x60.png', true)?>">
