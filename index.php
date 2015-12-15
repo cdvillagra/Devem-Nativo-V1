@@ -36,7 +36,7 @@ MINOR VERSION E FECHAMENTOS DE VERSÃO SERÁ INSERIDA COMO MAJOR VERSION.
 */
 
 //# Define a versão do Devem Atual
-define('DEVEM_VERSAO', 'Devem Nativo V 1.1.4');
+define('DEVEM_VERSAO', 'Devem Nativo V 1.1.5');
 
 //# Verifica se existe a pasta install para instalar as dependencias da framework
 if(is_dir('install')){
