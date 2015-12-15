@@ -36,7 +36,7 @@ MINOR VERSION E FECHAMENTOS DE VERSÃO SERÁ INSERIDA COMO MAJOR VERSION.
 */
 
 //# Define a versão do Devem Atual
-define('DEVEM_VERSAO', 'Devem Nativo V 1.1.3');
+define('DEVEM_VERSAO', 'Devem Nativo V 1.1.4');
 
 //# Verifica se existe a pasta install para instalar as dependencias da framework
 if(is_dir('install')){
@@ -68,7 +68,7 @@ require_once ('config/globals.php');
 //# Define se é uma atividade no Admin
 $sessionId = isset($_REQUEST['admin']) ? SESSION_ADMIN : SESSION_APP;
 define('SESSION_ID', $sessionId);
-define('ADMIN_USE', $isset($_REQUEST['admin']));
+define('ADMIN_USE', isset($_REQUEST['admin']));
 
 //# Chama a classe de autoloader para iniciar todas as classes do sistema
 require_once ('core/class/Autoloader.class.php');
