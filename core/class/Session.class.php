@@ -7,11 +7,11 @@
 abstract class Session
 {
 
-	$base = SESSION_ID;
+    static private $base = SESSION_ID;
 
 	public function __construct()
 	{
-		
+
 
 	}
 
@@ -51,6 +51,11 @@ abstract class Session
 	public static function setNull($key)
 	{
 		unset($_SESSION['_devem_'][self::$base][$key]);
+	}
+
+	public static function destroy()
+	{
+		unset($_SESSION['_devem_'][self::$base]);
 	}
 	
 }
