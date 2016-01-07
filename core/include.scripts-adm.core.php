@@ -9,7 +9,7 @@
     <link href="<?=Url::base('core/js/vendor/chosen/css/chosen-bootstrap.css')?>" rel="stylesheet">
     
     <link rel="stylesheet" href="<?=Url::base('core/css/devem/minimal.css')?>">
-    <link rel="stylesheet" href="<?=Configuracoes::CheckFileCustomer('css/devem.css', true)?>" >
+    <link rel="stylesheet" href="<?=Url::baseAdmin('view/css/Devem.css', true)?>" >
 
     <script src="//code.jquery.com/jquery-1.8.3.min.js"></script>
     <script src="<?=Url::base('core/js/jquery/jquery.meio.mask.min.js')?>"></script>

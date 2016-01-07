@@ -1,3 +1,13 @@
+<?
+
+    header("Content-type: application/javascript");
+
+    $uri = explode('/',$_SERVER['REQUEST_URI']);
+    $uri = str_replace($_SERVER['DOCUMENT_ROOT'], '', $_SERVER['SCRIPT_FILENAME']);
+    $uri = str_replace('/core/js/devem/Default.class.js.php', '', $uri);
+
+?>
+
 /* 
 -------------------------------------------------------------------- 
 DEVEM License, versão 1.0 [Nativo]
@@ -32,18 +42,6 @@ DA DVILLAGRA, ONDE ALTERAÇÕES GERAIS HOMOLOGADAS SERÃO INSERIDAS COMO
 MINOR VERSION E FECHAMENTOS DE VERSÃO SERÁ INSERIDA COMO MAJOR VERSION.
 --------------------------------------------------------------------
 */
-
-
-
-<?
-
-    header("Content-type: application/javascript");
-
-    $uri = explode('/',$_SERVER['REQUEST_URI']);
-    $uri = str_replace($_SERVER['DOCUMENT_ROOT'], '', $_SERVER['SCRIPT_FILENAME']);
-    $uri = str_replace('/core/js/devem/Default.class.js.php', '', $uri);
-
-?>
 
 //# Cria objeto primario caso não exista
 if (typeof devem == 'undefined') { devem = new Object(); }
