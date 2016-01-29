@@ -204,7 +204,7 @@ final class DadosModel extends Repositorio
         $this->pQuery("SELECT
                             *
                         FROM
-                            rbc_devem_parametros
+                            dv_parametros
                         WHERE
                             pStatus = 1
                         ;");
@@ -227,7 +227,7 @@ final class DadosModel extends Repositorio
         $this->pQuery("SELECT
                             null
                         FROM
-                            rbc_devem_parametros
+                            dv_parametros
                         WHERE
                             idParametro = :id
                         ;");
@@ -237,7 +237,7 @@ final class DadosModel extends Repositorio
         if($this->TotalRows() > 0){
 
             $this->pQuery("UPDATE
-                                rbc_devem_parametros
+                                dv_parametros
                             SET
                                 pStatus = 0
                             WHERE
@@ -259,7 +259,7 @@ final class DadosModel extends Repositorio
 
 
         $this->pQuery("UPDATE
-                            rbc_devem_parametros
+                            dv_parametros
                         SET
                             pAlias = :alias,
                             pChave = :chave,
@@ -303,7 +303,7 @@ final class DadosModel extends Repositorio
                       );
 
         $this->pQuery("INSERT INTO
-                            rbc_devem_parametros
+                            dv_parametros
                         (pAlias, pChave, pValorDefault, pValorAtual, pDescricao, pDataCadastro)
                         VALUES
                             (:alias, :chave, :valordefault, :valoratual, :descricao, NOW())

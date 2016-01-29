@@ -50,6 +50,20 @@ devem.geral = {
 
     init: function(){
 
+
+        $("#navbar div div.sidebar-collapse").click(function(){
+
+            var w = '38px';
+
+            $(".dv_versao span").toggle();
+
+            if($(".dv_versao span").is(':hidden'))
+                w = '25px';
+
+            $(".dv_versao img").css('width',w);
+
+        });
+
     },
 
     deslogar: function(){

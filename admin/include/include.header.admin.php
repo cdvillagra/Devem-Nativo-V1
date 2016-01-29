@@ -271,7 +271,7 @@
 
                   
                   <li class="dv_versao">
-                    <img src="http://localhost/happysentantes/admin/view/img/bola-admin-white.png"><?=DEVEM_VERSAO?>
+                    <img src="<?=Url::imgApp('bola-admin-white.png',true, true)?>"><span><?=DEVEM_VERSAO?></span>
                   </li>
               
             </ul>

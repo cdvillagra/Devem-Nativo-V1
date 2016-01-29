@@ -50,8 +50,6 @@ devem.login = {
 
     init: function(){
 
-
-
         $('#lg_senha').keypress(function(e){
             
             if(e.which == 13)
@@ -106,7 +104,6 @@ devem.login = {
                 val = false;
             }
 
-            console.log(campos);
             if(val !== false){
 
                 devem.login.redefinir();
@@ -142,8 +139,6 @@ devem.login = {
             
         }
 
-        console.log(campos);
-
         if(val !== false){
 
             devem.login.validaLogin();
@@ -161,14 +156,14 @@ devem.login = {
         devem.geral.displayLoader();
 
         $.post(devem.core.defaults.url("login/redefinir", null, true), $("#form_redefinir").serialize(), function(data){
-            
-            devem.geral.displayLoader();
 
             if(data){
 
                 window.location.href = devem.core.defaults.url('',null,true);
 
             }else{
+            
+                devem.geral.displayLoader();
 
                 var bt = 'Ok';
                 var titulo = 'Redefinição de senha';
@@ -193,13 +188,13 @@ devem.login = {
 
         $.post(devem.core.defaults.url("login/enviarSenha", null, true), $("#form_esqueci").serialize(), function(data){
 
-            devem.geral.displayLoader();
-
             if(data){
 
                 window.location.href = devem.core.defaults.url('login/esqueciConfirmacao', null, true);
 
             }else{
+
+                devem.geral.displayLoader();
 
                 var bt = 'Ok';
                 var titulo = 'Esqueci a minha senha';
@@ -226,13 +221,13 @@ devem.login = {
 
         $.post(devem.core.defaults.url("login/validar", null, true), dados_login, function(data){
 
-            devem.geral.displayLoader();
-
             if(data){
 
                 window.location.href = devem.core.defaults.url('', null, true);
 
             }else{
+
+                devem.geral.displayLoader();
 
                 var bt = 'Ok';
                 var titulo = 'Login';
