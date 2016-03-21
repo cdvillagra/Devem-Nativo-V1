@@ -65,8 +65,23 @@ devem.core.verificadorpagina = {
 		
 		var count = getVars.length;
 
-		this.getValue['controle'] = (((typeof getVars[1] === 'undefined') || (getVars[1].length == 0)) ? 'principal' : getVars[1]);
-		this.getValue['acao'] = (((typeof getVars[2] === 'undefined') || (getVars[2].length == 0)) ? 'index' : getVars[2]);
+		var controle = 'principal';
+		var acao = 'index';
+
+		if(((typeof getVars[1] !== 'undefined') && (getVars[1].length != 0)) && (getVars[1] == 'admin')){
+
+			controle = (((typeof getVars[2] === 'undefined') || (getVars[2].length == 0)) ? 'principal' : getVars[2]);
+			acao = (((typeof getVars[3] === 'undefined') || (getVars[3].length == 0)) ? 'index' : getVars[3]);
+
+		}else{
+
+			controle = (((typeof getVars[1] === 'undefined') || (getVars[1].length == 0)) ? 'principal' : getVars[1]);
+			acao = (((typeof getVars[2] === 'undefined') || (getVars[2].length == 0)) ? 'index' : getVars[2]);
+
+		}
+
+		this.getValue['controle'] = (controle.substring((controle.length - 1), controle.length) == '#' ? controle.substring( 0 , (controle.length - 1)) : controle);
+		this.getValue['acao'] = (acao.substring((acao.length - 1), acao.length) == '#' ? acao.substring( 0 , (acao.length - 1)) : acao);
 
 	},
 	
