@@ -17,7 +17,7 @@ class Cookie {
 		self::$__host = Url::url();
 	}
 
-static function verificaCookie($cookie_name){
+	static function verificaCookie($cookie_name){
 
 		return isset($_COOKIE[$cookie_name]);
 

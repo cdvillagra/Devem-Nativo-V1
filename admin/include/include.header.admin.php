@@ -207,7 +207,7 @@
                 </ul>
 
               </li>
-              <? if((int)Session::get('auNivel') < 2){ ?>
+              <?php if((int)Session::get('auNivel') < 2){ ?>
               <li class="navigation" id="navigation2">
                 <a href="#" class="sidebar-toggle" data-toggle="#navigation2">Relatórios <i class="fa fa-bar-chart"></i></a>
                 
@@ -222,9 +222,9 @@
                 </ul>
 
               </li>
-              <? } ?>
+              <?php } ?>
 
-              <? if((int)Session::get('auNivel') < 2){ ?>
+              <?php if((int)Session::get('auNivel') < 2){ ?>
               <li class="navigation" id="navigation3">
                 <a href="#" class="sidebar-toggle" data-toggle="#navigation3">configurações <i class="fa fa-cogs"></i></a>
                 
@@ -236,21 +236,21 @@
                       </a>
                     </li>
                   
-                  <? if((int)Session::get('auNivel') == 0){ ?>
+                  <?php if((int)Session::get('auNivel') == 0){ ?>
                   <li class="">
                     <a href="<?=Url::baseAdmin('configura/parametros')?>">
                       <i class="fa fa-cog"></i> Parametros 
                     </a>
                   </li>
-                  <? } ?>
+                  <?php } ?>
 
-                  <? if((int)Session::get('auNivel') == 0){ ?>
+                  <?php if((int)Session::get('auNivel') == 0){ ?>
                   <li class="">
                     <a href="<?=Url::baseAdmin('configura/regras')?>">
                       <i class="fa fa-asterisk"></i> Regras
                     </a>
                   </li>
-                  <? } ?>
+                  <?php } ?>
 
                   <li class="">
                     <a href="<?=Url::baseAdmin('configura/publicidade')?>">
@@ -267,7 +267,7 @@
                 </ul>
 
               </li>
-              <? } ?>
+              <?php } ?>
 
                   
                   <li class="dv_versao">

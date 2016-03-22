@@ -39,32 +39,50 @@ require_once 'class/location.class.php';
 
 class functions{
 
+	//# Definindo variaveis privadas
 	private $__request;
-
 	private $__dir;
 	
+	/**
+    * Metodo Construtor da Classe
+    *
+    * @author    Christopher Dencker Villagra
+    * @return    resource
+    */
 	function __construct($request){
 
+		//# Inseri todas as variaveis do request na variavel privada
 		$this->__request = $request;
 
+		//# Define a location caso seja enviado o módulo de forma correta
 		$this->l = new location($this->__request['module']);
 
+		//# Define o diretório que será salvo o arquivo a partir da location
 		$this->__dir = $this->l->dir_usage;
 
 	}
 
+	/**
+    * Metodo que salva o arquivo no diretório de media
+    *
+    * @author    Christopher Dencker Villagra
+    * @return    string
+    */
 	public function uploadImage(){
 		
+		//# Define um novo nome para o arquivo
 		$nome_novo = $this->__request['module'].'-'.str_replace('.', '', str_replace(' ', '', microtime())).'.'.$this->__request['type'];
 
-		$path = getcwd().$this->__dir . (@$this->__request['id'] != 'null' ? '\\' . @$this->__request['id'] . '\\' : '');
+		//# Define o diretório do arquivo e o caminho absoluto
+		$path = getcwd().$this->__dir . (@$this->__request['id'] != 'null' ? DIRECTORY_SEPARATOR . @$this->__request['id'] . DIRECTORY_SEPARATOR : '');
+		$path =  str_replace(DIRECTORY_SEPARATOR.'api','', $path);
 
-		$path =  str_replace('\\api','', $path);
 		if(!is_dir($path))
 			mkdir($path, 0775);
 
 		$caminho =  $path .  $nome_novo;
 
+		//# Abre ou cria o arquivo
 	    $ifp = fopen($caminho, "wb"); 
 
 		if(is_array($this->__request['data'])){
@@ -73,6 +91,7 @@ class functions{
 		
 	    $data = explode(',', $this->__request['data']);
 
+	    //# Grava o arquivo
 	    fwrite($ifp, base64_decode($data[1])); 
 
 	    fclose($ifp); 

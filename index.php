@@ -36,7 +36,7 @@ MINOR VERSION E FECHAMENTOS DE VERSÃO SERÁ INSERIDA COMO MAJOR VERSION.
 */
 
 //# Define a versão do Devem Atual
-define('DEVEM_VERSAO', 'Devem Nativo V 1.1.5');
+define('DEVEM_VERSAO', 'Devem Nativo V 1.1.6');
 
 //# Verifica se existe a pasta install para instalar as dependencias da framework
 if(is_dir('install')){
@@ -97,17 +97,6 @@ if(Session::get('SHOW_E') !== false){
     error_reporting(E_ALL);
     ini_set('display_errors', '1');
     
-} 
-
-
-//#verifica URL customizada iniciadas em www
-$valida_customer = Url::checkURLCustomer();
-
-if($valida_customer !== false){
-
-    header('Location: http://'. $valida_customer);
-    die();
-
 }
 
 //# Define a conexão com o banco de dados
@@ -124,7 +113,6 @@ if(ADMIN_USE !== false){
   $cLogin->checkLoginCookie();
 
 }
-
 
 try {
 

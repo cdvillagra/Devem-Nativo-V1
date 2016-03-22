@@ -16,7 +16,7 @@ Options +FollowSymLinks -MultiViews
 # Turn mod_rewrite on
 RewriteEngine On
 
-
+################################################## REGRAS INSTALAÇÂO
 RewriteRule ^banco/?$ banco-teste.php [L,QSA]
 RewriteRule ^parametros/?$ parametros.php [L,QSA]
 RewriteRule ^login/?$ credenciais.php [L,QSA]

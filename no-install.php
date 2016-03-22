@@ -40,8 +40,8 @@ require_once 'core/class/Utilitarios.class.php';
 //# Verifica se existe a pasta install para instalar as dependencias da framework
 Utilitarios::deleteFolderRecursive('install');
 
-header('Refresh: 3;url='.str_replace('/instalacao-concluida', '', $_SERVER['REQUEST_URI']));
+// header('Refresh: 3;url='.str_replace('/instalacao-concluida', '', $_SERVER['REQUEST_URI']));
 
-echo 'Aguarde, você está sendo redirecionado...';
+// echo 'Aguarde, você está sendo redirecionado...';
 
 

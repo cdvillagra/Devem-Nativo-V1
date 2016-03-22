@@ -1,23 +1,50 @@
 <?php
 abstract class Seguranca
 {
+
+    private static $exceptionValidate = true;
+    private static $exceptionKey = array();
+
+    function __construct(){
+
+    	self::$exceptionKey = array(   
+                                    ADM_KEY.'-analytics-code'
+                                );
+
+    }
+
 	public static function SQLAntiInjection($o)
 	{
 	    if (is_string($o)) {
+
 	        $o = self::doSQLAntiInjection($o);
+
 	        return $o;
+	        
 	    }
 	    if (is_array($o)) {
+
 	        foreach ($o as $k => $v) {
-	            $o[$k] = self::SQLAntiInjection($o[$k]);
+
+	        	foreach (self::$exceptionKey as $w) 
+		        	if($k == $w)
+		        		self::$exceptionValidate = false;
+
+		        if(self::$exceptionValidate)
+	            	$o[$k] = self::SQLAntiInjection($o[$k]);
+
 	        }
+
 	        return $o;
+
 	    }
 	    if (is_object($o)) {
+
 	        $l = get_object_vars($o);
-	        foreach ($l as $k => $v) {
+
+	        foreach ($l as $k => $v) 
 	            $o->$k = self::SQLAntiInjection($v);
-	        }
+
 	    }
 	    return $o;
 	}

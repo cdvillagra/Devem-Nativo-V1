@@ -61,6 +61,7 @@ final class CustomerController extends Controller {
 
         $view = new View("layout/customer.phtml");
 
+        //# Grava o log do customer
         Log::grava('Teste de gravação de log Customer');
 
         $view->Show();

@@ -57,38 +57,51 @@ final class InstallController {
     * @return    resource
     */
 
-	public function __construct($request) {
+  	public function __construct($request) {
 
-        $this->request = $request;
+          $this->request = $request;
 
-        // error_reporting(0);
+          // error_reporting(0);
 
-	}
+  	}
+
+    /**
+     * Método que define variaveis de banco de dados e grava as globais para serem utilizadas futuramente na framework
+     *
+     * @author  Christopher Villagra
+     * @param   session
+     * @return  json
+    */
 
     public function installBanco(){
 
+      //# Pré define a variável de utilização de banco, que será setada nas globais
       $v_db_ativo = 'false';
 
+      //# Realiza uma verificação se o usuário setou para utilizar ou não banco de dados
       if(filter_var($this->getSession('db_no'), FILTER_VALIDATE_BOOLEAN)){
 
-        $arquivo = 'config\\conn.php';
+        $arquivo = 'config'.DIRECTORY_SEPARATOR.'conn.php';
 
+        //# Realiza os sets para as variaveis globais a ser utilizada pelo DEVEM
         $this->gravaDado($arquivo, '[CONFIG_DB_SERVER]', $this->getSession('db_host'));
         $this->gravaDado($arquivo, '[CONFIG_DB_USUARIO]', $this->getSession('db_user'));
         $this->gravaDado($arquivo, '[CONFIG_DB_SENHA]', $this->getSession('db_pass'));
         $this->gravaDado($arquivo, '[CONFIG_DB_DATABASE]', $this->getSession('db_db'));
 
+        //# Instancia a model e cria as tabelas necessárias para a FW rodar
         require_once('../model/Install.model.php');
 
         $model = new InstallModel;
-
         $model->installBanco();
 
+        //# Define a variável de utilização de banco, que será setada nas globais
         $v_db_ativo = 'true';
 
       }
 
-      $arquivo = 'config\\globals.php';
+
+      $arquivo = 'config'.DIRECTORY_SEPARATOR.'globals.php';
 
       $this->gravaDado($arquivo, "'[CONFIG_DB_ATIVO]'", $v_db_ativo);
 
@@ -96,15 +109,24 @@ final class InstallController {
 
     }
 
+    /**
+     * Método que define o key de acesso à api e grava as globais para serem utilizadas futuramente na framework
+     *
+     * @author  Christopher Villagra
+     * @return  json
+    */
+
     public function installArquivos(){
 
-      $arquivo = 'config\\globals.php';
+      //# Define a localização do arquivo e grava a variavel de autenticação com a api interna
+      $arquivo = 'config'.DIRECTORY_SEPARATOR.'globals.php';
 
       $v_api_key = md5(md5($this->keys()));
 
       $this->gravaDado($arquivo, '[CONFIG_G_API_KEY]', $v_api_key);
 
-      $arquivo = 'api\\class\\service.class.php';
+      //# Define a localização do arquivo e grava a variavel de autenticação no arquivo de serviço da api interna
+      $arquivo = 'api'.DIRECTORY_SEPARATOR.'class'.DIRECTORY_SEPARATOR.'service.class.php';
 
       $this->gravaDado($arquivo, '[CONFIG_G_API_KEY]', md5($v_api_key));
 
@@ -112,20 +134,30 @@ final class InstallController {
 
     }
 
+    /**
+     * Método que define as variaveis de parametros, inseridas pelo usuário, e grava no banco de dados ou no arquivo de globais para serem utilizadas futuramente na framework
+     *
+     * @author  Christopher Villagra
+     * @param   session
+     * @return  json
+    */
+
     public function installParametros(){
 
-      $arquivo = 'config\\globals.php';
+      $arquivo = 'config'.DIRECTORY_SEPARATOR.'globals.php';
 
+      //# Realiza uma verificação se o usuário setou para utilizar ou não banco de dados
       if(filter_var($this->getSession('db_no'), FILTER_VALIDATE_BOOLEAN)){
 
+        //# Instancia a model e inserir os parametros necessários, ou não, para a FW rodar
         require_once('../model/Install.model.php');
 
         $model = new InstallModel;
-
         $model->installParametros();
 
       }else{
 
+        //# Grava todas os parametros no arquivo de globais, já que o usuário optou por não utilizar nenhuma base de dados
         $this->gravaDado($arquivo, '[CONFIG_S3_SECRET]', $this->getSession('s3_secret'));
         $this->gravaDado($arquivo, '[CONFIG_S3_KEY]', $this->getSession('s3_key'));
         $this->gravaDado($arquivo, '[CONFIG_S3_BUCKET]', $this->getSession('s3_bucket'));
@@ -152,22 +184,33 @@ final class InstallController {
 
     }
 
+    /**
+     * Método que define alguns dados do admin
+     *
+     * @author  Christopher Villagra
+     * @param   session
+     * @return  json
+    */
+
     public function installAdmin(){
 
+      //# Pré define a variável de utilização de banco pelo admin, que será setada nas globais
       $v_admin_via_db = 'true';
 
-      $arquivo = 'config\\globals.php';
+      $arquivo = 'config'.DIRECTORY_SEPARATOR.'globals.php';
 
+      //# Realiza uma verificação se o usuário setou para utilizar ou não banco de dados
       if(filter_var($this->getSession('db_no'), FILTER_VALIDATE_BOOLEAN)){
 
+        //# Instancia a model e inserir os dados de admin necessários, para o admin da FW rodar
         require_once('../model/Install.model.php');
 
         $model = new InstallModel;
-
         $model->installAdmin();
 
       }else{
 
+        //# Inseri nas globais os dados de admin necessários, para o admin da FW rodar
         $this->gravaDado($arquivo, '[CONFIG_ADM_CONN_USUARIO]', $this->getSession('adm_usuario'));
         $this->gravaDado($arquivo, '[CONFIG_ADM_CONN_SENHA]', $this->getSession('adm_senha'));
 
@@ -181,13 +224,26 @@ final class InstallController {
 
     }
 
+    /**
+     * Método que seta a instalação como concluída, para controle, caso algum passo seja interrompido no meio
+     *
+     * @author  Christopher Villagra
+    */
+
     public function installFinish(){
 
-      $arquivo = 'config\\globals.php';
+      $arquivo = 'config'.DIRECTORY_SEPARATOR.'globals.php';
 
       $this->gravaDado($arquivo, '//#[DV_INSTALL]', 'define("DV_INSTALL", true);');
 
     }
+
+    /**
+     * Método que seta a instalação como concluída, para controle, caso algum passo seja interrompido no meio
+     *
+     * @author  Christopher Villagra
+     * @param   REQUEST
+    */
 
     public function testeDb(){
 
@@ -195,7 +251,7 @@ final class InstallController {
 
         $conn = mysql_connect($this->request['db_host'], $this->request['db_user'], $this->request['db_pass']) or die(self::response(false)); 
 
-         mysql_select_db($this->request['db_db'], $conn) or die (self::response(array('db'=> false)));
+        mysql_select_db($this->request['db_db'], $conn) or die (self::response(array('db'=> false)));
         
         self::response(true);
 
@@ -208,13 +264,29 @@ final class InstallController {
 
     }
 
-    private static function response($data){
+    /**
+     * Método que 'constroi' o retorno json para a requisição realizada pelo js
+     *
+     * @author  Christopher Villagra
+     * @param   $data => [string/array/boolean]
+     * @return  json
+    */
+
+     private static function response($data){
 
         header('Content-type: application/json');
 
         echo json_encode($data);
 
     }
+
+    /**
+     * Método que grava os dados do request na sessão
+     *
+     * @author  Christopher Villagra
+     * @param   string/array/boolean
+     * @return  json
+    */
 
     public function gravaSession(){
 
@@ -225,11 +297,27 @@ final class InstallController {
 
     }
 
+    /**
+     * Método que checa se a chave existe na sessão
+     *
+     * @author  Christopher Villagra
+     * @param   $key [string/int]
+     * @return  boolean
+    */
+
     public function existeSession($key){
 
       return isset($_SESSION['_devem_install_'][$key]);
 
     }
+
+    /**
+     * Método que checa se a chave existe na sessão
+     *
+     * @author  Christopher Villagra
+     * @param   $key [string/int]
+     * @return  [string/array/boolean]
+    */
 
     private function getSession($key){
 
@@ -237,13 +325,31 @@ final class InstallController {
 
     }
 
+    /**
+     * Método que grava os dados nos arquivos de config
+     *
+     * @author  Christopher Villagra
+     * @param   $arquivo [string]
+     * @param   $campo [string]
+     * @param   $valor [string]
+    */
+
     private function gravaDado($arquivo, $campo, $valor){
 
-      $path = str_replace("install\\controller\\", "", getcwd()."\\".$arquivo);
+      $path = str_replace('install'.DIRECTORY_SEPARATOR.'controller'.DIRECTORY_SEPARATOR, "", getcwd().DIRECTORY_SEPARATOR.$arquivo);
 
       file_put_contents($path,str_replace($campo,$valor,file_get_contents($path)));
 
     }
+
+    /**
+     * Método auxiliar para criar chaves
+     *
+     * @author  Christopher Villagra
+     * @param   $tamanho [int]
+     * @param   $numeros [boolean]
+     * @return  string
+    */
 
     private static function keys($tamanho = 8, $numeros = false)
     {
@@ -271,8 +377,17 @@ final class InstallController {
 
 }
 
+//# Tratamento simples para que qualquer argumento de qualquer verbo seja inserido na variavel $data, como um request global
 $data = (!empty($_POST) ? $_POST : (!empty($_GET) ? $_GET : (!empty($_REQUEST) ? $_REQUEST : false)));
 
-$class = new InstallController($data);
 
-$class->$data['method']();
+//# Verifica se o metodo foi enviado na requisição
+if(isset($data['method'])){
+
+  //# Instancia a classe local e chama o método que foi recebido no request, se o mesmo existir
+  $class = new InstallController($data);
+
+  if(function_exists($class->$data['method']()))
+    $class->$data['method']();
+
+}

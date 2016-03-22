@@ -44,14 +44,12 @@ MINOR VERSION E FECHAMENTOS DE VERSÃO SERÁ INSERIDA COMO MAJOR VERSION.
  * @copyright   (c) 2015 - Devem
 **/
 
+//# faz um require das configurações de banco e do PDO
 require_once ('../../config/conn.php');
 require_once ('../core/Repositorio.class.php');
 
 final class InstallModel extends Repositorio
 {
-
-	//DECLARAÇÕES DE VARIAVEIS
-	private $__id;
 	
 	/**
     * Metodo Construtor da Classe
@@ -63,20 +61,16 @@ final class InstallModel extends Repositorio
 	{
 		parent::__construct(true);
 	}
-	
-	/**
-    * Metodo de encapsulamento GETSET
-    *
-    * @author    Christopher Dencker Villagra
-    */
-	public function pId($val="")
-	{
-		if($val === "") return $this->__id;
-		else $this->__id = $val;
-	}
 
+    /**
+     * Método que cria as tabelas da base de dados que será utilizado pelo DEVEM
+     *
+     * @author  Christopher Villagra
+    */
+    
     public function installBanco(){
 
+        //# Inserindo tabela de usuarios do admin
         $this->pQuery("DROP TABLE IF EXISTS dv_admusuario;");
         $this->ExecutaQuery();
 
@@ -102,6 +96,7 @@ final class InstallModel extends Repositorio
                         ;");
         $this->ExecutaQuery();
 
+        //# Inserindo tabela de parametros
         $this->pQuery("DROP TABLE IF EXISTS dv_parametros;");
         $this->ExecutaQuery();
 
@@ -122,59 +117,15 @@ final class InstallModel extends Repositorio
                         ENGINE=InnoDB
                         ;");
         $this->ExecutaQuery();
-
-        $this->pQuery("DROP TABLE IF EXISTS dv_admpageview;");
-        $this->ExecutaQuery();
-
-        $this->pQuery("CREATE TABLE dv_admpageview (
-                            idPageView INT(11) NOT NULL AUTO_INCREMENT,
-                            pvIpCli VARCHAR(15) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
-                            pvBrowserCli VARCHAR(120) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
-                            pvReferer VARCHAR(500) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
-                            pvDataRegistro TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-                            PRIMARY KEY (idPageView)
-                        )
-                        COLLATE='latin1_general_ci'
-                        ENGINE=InnoDB
-                        ;");
-        $this->ExecutaQuery();
-
-        $this->pQuery("DROP TABLE IF EXISTS dv_admcliquepublicidade;");
-        $this->ExecutaQuery();
-
-        $this->pQuery("CREATE TABLE dv_admcliquepublicidade (
-                            idCliquePublicidade INT(11) NOT NULL AUTO_INCREMENT,
-                            cpIpCli VARCHAR(15) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
-                            idPublicidade VARCHAR(120) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
-                            cpBrowserCli VARCHAR(120) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
-                            cpReferer VARCHAR(500) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
-                            cpDataRegistro TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-                            PRIMARY KEY (idCliquePublicidade)
-                        )
-                        COLLATE='latin1_general_ci'
-                        ENGINE=InnoDB
-                        ;");
-        $this->ExecutaQuery();
-
-        $this->pQuery("DROP TABLE IF EXISTS dv_admclique;");
-        $this->ExecutaQuery();
-
-        $this->pQuery("CREATE TABLE dv_admclique (
-                            idClique INT(11) NOT NULL AUTO_INCREMENT,
-                            ckIpCli VARCHAR(15) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
-                            ckHref VARCHAR(120) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
-                            ckBrowserCli VARCHAR(120) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
-                            ckReferer VARCHAR(500) NULL DEFAULT NULL COLLATE 'latin1_general_ci',
-                            ckDataRegistro TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-                            PRIMARY KEY (idClique)
-                        )
-                        COLLATE='latin1_general_ci'
-                        ENGINE=InnoDB
-                        ;");
-        $this->ExecutaQuery();
         
     }
 
+    /**
+     * Método que inseri todos os parametros na tabela de parametros para o DEVEM utilizar
+     *
+     * @author  Christopher Villagra
+    */
+    
     public function installParametros(){
 
         $this->pQuery(
@@ -266,6 +217,12 @@ final class InstallModel extends Repositorio
 
     }
 
+    /**
+     * Método que inseri os dados de acesso de usuários do admin
+     *
+     * @author  Christopher Villagra
+    */
+    
     public function installAdmin(){
 
         $this->pQuery(

@@ -39,14 +39,20 @@ class location{
 
 	public $dir_usage;
 
-	private $dir__default					= '\\';
-
-	private $dir__upload 					= '\\upload\\';
-	private $dir__arquivo 					= '\\media\\arquivos\\';
-	private $dir__audio 					= '\\media\\audio\\';
-	private $dir__imagem	 				= '\\media\\imagem\\';
-	private $dir__video 					= '\\media\\video\\';
+	//# Define os locais onde serão salvo os arquivos
+	private $dir__default					= DIRECTORY_SEPARATOR;
+	private $dir__upload 					= DIRECTORY_SEPARATOR.'upload'.DIRECTORY_SEPARATOR;
+	private $dir__arquivo 					= DIRECTORY_SEPARATOR.'media'.DIRECTORY_SEPARATOR.'arquivos'.DIRECTORY_SEPARATOR;
+	private $dir__audio 					= DIRECTORY_SEPARATOR.'media'.DIRECTORY_SEPARATOR.'audio'.DIRECTORY_SEPARATOR;
+	private $dir__imagem	 				= DIRECTORY_SEPARATOR.'media'.DIRECTORY_SEPARATOR.'imagem'.DIRECTORY_SEPARATOR;
+	private $dir__video 					= DIRECTORY_SEPARATOR.'media'.DIRECTORY_SEPARATOR.'video'.DIRECTORY_SEPARATOR;
 	
+	/**
+    * Metodo Construtor da Classe
+    *
+    * @author    Christopher Dencker Villagra
+    * @param 	 $modulo [string]
+    */
 	function __construct($modulo){
 
 		switch ($modulo) {
