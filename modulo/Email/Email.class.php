@@ -40,7 +40,7 @@ class Email
 
 	public function send($obj_dados){
 
-		require_once('PHPmailer.class.php');
+		require_once('PHPMailer.class.php');
 		require_once('SMTP.class.php');
 	
 		$obj_config = $this->GetParametros();	
