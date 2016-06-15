@@ -44,7 +44,7 @@ class Upload
      */
     protected $destination;
     // img
-    private $img, $img_data;   
+    private $img, $img_data, $img_name_old;   
     // dimensões
     private $largura, $altura, $nova_largura, $nova_altura;
     // dados do arquivo
@@ -172,6 +172,8 @@ class Upload
 
             $ext = explode('.', $_FILES[$fieldName]['name']);
 
+            $this->img_name_old = $ext[0];
+
             $this->extensao = end($ext);
 
             $thumb = false;
@@ -229,6 +231,7 @@ class Upload
                         'module' => $this->destination,
                         'method' => 'uploadImage',
                         'data' => $this->img_data,
+                        'name' => $this->img_name_old,
                         'type'      => $this->extensao,
                         'thumb' => $thumb,
                         'id' => $id

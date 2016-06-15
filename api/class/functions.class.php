@@ -69,12 +69,22 @@ class functions{
     * @return    string
     */
 	public function uploadImage(){
+
+		if(is_array($this->__request['data'])){
+			$this->__request['data'] = implode('',$this->__request['data']);
+		}
+
+	    $data = explode(',', $this->__request['data']);
+
+		$dataImg = base64_decode($data[1]);
+
+        $what = getimagesizefromstring($dataImg);
 		
 		//# Define um novo nome para o arquivo
-		$nome_novo = $this->__request['module'].'-'.str_replace('.', '', str_replace(' ', '', microtime())).'.'.$this->__request['type'];
+		$nome_novo = self::treatName($this->__request['name']).'-'.$this->__request['module'].'-'.$what[0].'X'.$what[0].'-'.rand(10000,99999).'.'.$this->__request['type'];
 
 		//# Define o diretório do arquivo e o caminho absoluto
-		$path = getcwd().$this->__dir . (@$this->__request['id'] != 'null' ? DIRECTORY_SEPARATOR . @$this->__request['id'] . DIRECTORY_SEPARATOR : '');
+		$path = getcwd().$this->__dir . (@$this->__request['id'] != 'null' ? DIRECTORY_SEPARATOR . @$this->__request['id'] . DIRECTORY_SEPARATOR : '') . (filter_var($this->__request['thumb'],FILTER_VALIDATE_BOOLEAN) !== false ? DIRECTORY_SEPARATOR . 'thumb' . DIRECTORY_SEPARATOR : '');
 		$path =  str_replace(DIRECTORY_SEPARATOR.'api','', $path);
 
 		if(!is_dir($path))
@@ -85,19 +95,37 @@ class functions{
 		//# Abre ou cria o arquivo
 	    $ifp = fopen($caminho, "wb"); 
 
-		if(is_array($this->__request['data'])){
-			$this->__request['data'] = implode('',$this->__request['data']);
-		}
-		
-	    $data = explode(',', $this->__request['data']);
-
 	    //# Grava o arquivo
-	    fwrite($ifp, base64_decode($data[1])); 
+	    fwrite($ifp, $dataImg); 
 
 	    fclose($ifp); 
 
 		return $nome_novo;
 		
-	}	
+	}
+
+	static private function treatName($string){
+	    
+		$a = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿŔŕ/?®: _²º,.&';
+		$b = 'aaaaaaaceeeeiiiidnoooooouuuuybsaaaaaaaceeeeiiiidnoooooouuuyybyRr----------e';
+
+		$string = utf8_decode($string);
+						
+		$string = strtr($string, utf8_decode($a), $b);
+
+		$arrayRem = array(".", "'", "(", ")", "´", "`", "[", "]", "º", "ª", ",", ".", "²", ";", "\"", "+", "$");
+		$countRem = count($arrayRem);
+
+		for ($rem=0; $rem<$countRem; $rem++) {
+			$string = str_replace($arrayRem[$rem], "", $string);
+		}
+
+		do {
+			$string = str_replace("--", "-", $string);
+		} while (strpos($string, '--') === true);
+		
+	    return strtolower($string);
+
+	}
 
 }
