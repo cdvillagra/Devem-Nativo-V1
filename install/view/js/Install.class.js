@@ -105,7 +105,7 @@ devem.install = {
 
             var location = window.location.pathname.split('/');
 
-            window.location.href = 'http://'+window.location.hostname+'/'+location[1]+'/instalacao-concluida';
+            window.location.href = 'http://'+window.location.hostname+(location.length > 3 ? '/'+location[1] : '')+'/instalacao-concluida';
 
         });
 
