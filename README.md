@@ -5,7 +5,7 @@
 
 [Devem][1] Nativo é a plataforma de desenvolvimento de sistemas e outras aplicações Web baseada em MVC.
 
-Desenvolvido pela [DVillagra][2] com parceria com a [Smoke Developers][3].
+Desenvolvido pela [DVillagra][2] com parceria com a [SmokeDev][3].
 
 Para iniciar é muito facil;
 ----------------
@@ -32,12 +32,12 @@ Para acessar a documentação do `Devem Nativo` acesse o site da [DVillagra][2],
 
 Duvidas
 ----------------------
-Para dúvidas envie um e-mail para `devem@dvillagra.com.br`
+Para dúvidas envie um e-mail para `chris@dvillagra.com.br`
 
 License
 ---------
 DVillagra
-Copyright © 2016 Devem Nativo V 1.1.6 (http://devem.dv1.biz)
+Copyright © 2013 Devem Nativo V 1.1.6 (http://devem.dv1.biz)
 
 [1]: http://devem.dv1.biz
 [2]: http://dvillagra.com.br
